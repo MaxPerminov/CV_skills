@@ -1,0 +1,194 @@
+Float specifies displaying of a position of an element on the web page. Floated
+element is going apart from normal main flow, so its displaying can be wrapped and
+overlapped by elements, which are nearby. The elements' content can't be overlapped.
+
+-margin/padding/width must be set to float elements;
+
+float: left;
+       right;
+----
+html:
+<p>
+  <img src="/source/icons/heroes_icon.png" alt="">
+  lorem150
+</p>
+----
+css:
+img {
+  float: right;
+  width:10%;
+}
+
+---------------------
+Three column layout:
+
+1)----
+html:
+<img src="1" alt="">
+<img src="2" alt="">
+<img src="3" alt="">
+----
+css:
+img {
+  display: block;
+  float: left;
+  width: 10%;
+  padding: 100px;
+}
+
+2)----
+html:
+<img class="a" src="1" alt="">
+<img class="b" src="2" alt="">
+<img class="c" src="3" alt="">
+----
+css:
+.a {
+  display: block;
+  float: left;
+  width: 300px;
+  padding: 100px;
+}
+.b {
+  display: block;
+  float: right;
+  width: 300px;
+  padding: 100px;
+}
+.c {
+  display: block;
+  padding: 100px;
+  margin-left: 750px;
+}
+
+---------------------------------------------------------------------------------
+Clear specifies displaying of a position of the element that is next to a floating
+element (puts it below).
+
+clear: left;
+       right;
+       both;
+
+----
+html:
+<img class="a" src="1" alt="">
+<img class="b" src="2" alt="">
+<img class="c" src="3" alt="">
+----
+css:
+.a {
+  display: block;
+  float: left;
+  width: 300px;
+  padding: 100px;
+}
+.b {
+  display: block;
+  float: right;
+  width: 300px;
+  padding: 100px;
+}
+.c {
+  display: block;
+  padding: 100px;
+  clear: both;
+}
+
+--------------------------------------------------------------------------------
+Clearfix Hack:
+If a floated element is taller than the containing element, it will "overflow"
+outside its container.
+
+Solving:
+
+----
+html:
+<p>
+  <img src="/source/icons/heroes_icon.png" alt="">
+  lorem150
+</p>
+----
+css:
+p {
+  border: 10px solid black;
+}
+img {
+  float: right;
+  width:10%;
+}
+p::after {
+  content:"";
+  clear: right;
+  display: block;
+}
+
+-----------------------------------------------
+-Block's width adjusts to content's width automatically, using float.
+-Floating Elements & Clearfix - obsolete technique, it's better using CSS Flexbox.
+
+____________________________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS3 Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <!-- Using example -->
+    <!-- <div>
+      <img src="http://placekitten.com/g/200/300" alt="kitten">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
+        voluptatibus! Ipsum, saepe, enim laborum ducimus neque dolores
+        reiciendis at adipisci voluptatem rerum culpa? Animi provident expedita
+        dolore itaque, voluptates et.
+      </p>
+    </div> -->
+    <div class="wrapper">
+      <div class="item item1">1</div>
+      <div class="item item2">2</div>
+      <div class="item item3">3</div>
+    </div>
+    <div class="wrapper2"></div>    
+  </body>
+</html>
+
+----------------
+
+styles.css
+
+----
+.wrapper,
+.wrapper2,
+.item {
+  padding: 20px;
+  color: white;
+}
+.wrapper {
+  background-color: grey;
+}
+.wrapper::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.wrapper2 {
+  background-color: green;
+}
+.item {
+  float: left;
+  width: 150px;
+}
+.item1 {
+  background-color: crimson;
+}
+.item2 {
+  background-color: cyan;
+}
+.item3 {
+  background-color: blueviolet;
+}

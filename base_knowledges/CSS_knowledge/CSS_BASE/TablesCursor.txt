@@ -1,0 +1,222 @@
+1)Table Borders
+
+To specify table borders in CSS, use the border property:
+
+table, th, td {
+  border: 1px solid;
+}
+
+-----------------------------
+Collapse Table Borders
+
+If table elements have separate borders, the table have double borders.
+To collapse it into a single border:
+
+table {
+  border-collapse: collapse;
+}
+
+----------------------------------
+The border-spacing property sets the distance between the borders of adjacent cells.
+
+
+#table {
+  border-collapse: separate;
+  border-spacing: 15px;
+}
+----
+#table {
+  border-collapse: separate;
+  border-spacing: 15px 50px;
+}
+
+---------------------------------------
+Add the border-bottom property to <th> and <td> for horizontal dividers:
+
+th, td {
+  border-bottom: 1px solid #ddd;
+}
+
+----------------------------------------
+empty-cells property sets whether or to display borders on empty cells in
+a table (hide/show).
+
+____________________________________________________________________________________
+2)Table Width and Height
+
+table {
+  width: 100%;
+}
+th {
+  height: 70px;
+}
+
+----
+table {
+  width: 50%;
+}
+
+_____________________________________________________________________________________
+3)Alignment
+
+-horizontal
+
+text-align: left; (default)
+            right;
+            center;
+
+td {
+  text-align: center;
+}
+
+--------------------------------
+-vertical
+
+vertical-align: bottom;
+                top;
+                middle; (default)
+
+td {
+  height: 50px;
+  vertical-align: bottom;
+}
+
+-----------------------------------------------
+to control the space between the border and the content in a table, use
+the padding property on <td> and <th> elements:
+
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+------------------------------------------------
+caption-side property specifies the placement of a table caption (top/bottom).
+
+_________________________________________________________________________________
+4)Table Color
+
+th {
+  background-color: green;
+  color: white;
+}
+
+---------------------------------------
+For zebra-striped tables, use the nth-child() selector and add a
+background-color to all even (or odd) table rows:
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+--------------------------------------------------
+Use the :hover selector on <tr> to highlight table rows on mouse over:
+
+tr:hover {background-color: coral;}
+
+____________________________________________________________________________________
+5)Responsive Table
+
+A responsive table will display a horizontal scroll bar if the screen is too
+small to display the full content:
+
+<div style="overflow-x:auto;">
+
+<table>
+... table content ...
+</table>
+
+</div>
+
+____________________________________________________________________________________
+cursor: alias;
+           ...
+
+------------
+pointer-events: auto; element reacts to pointer events, like :hover or click(default)
+                none;
+____________________________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <table>
+      <caption>
+        Team members price-list
+      </caption>
+      <thead>
+        <tr>
+          <th onclick="(function() { console.log('!!!') })()">Position</th>
+          <th class="dis" onclick="(function () {console.log('???') })">Price</th>
+          <th>Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Front-end</td>
+          <td>1000$</td>
+          <td>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi
+            perspiciatis qui accusamus magnam nulla accusantium praesentium
+            corporis, adipisci eum laboriosam facilis? Numquam aliquid aut autem
+            officia aliquam laboriosam reiciendis enim.
+          </td>
+        </tr>
+        <tr>
+          <td>Full-stack</td>
+          <td>1500$</td>
+          <td>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus
+            deleniti eaque impedit nisi saepe architecto molestiae. Recusandae
+            labore nihil, aut maxime ducimus, necessitatibus illum placeat
+            veniam ad dignissimos, laborum debitis!
+          </td>
+        </tr>
+        <tr>
+          <td>QA</td>
+          <td>700$</td>
+          <td>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem
+            sed assumenda, earum provident amet repellendus porro esse adipisci
+            suscipit. Temporibus accusamus nulla itaque doloribus aspernatur vel
+            assumenda dolorum quia fuga.
+          </td>
+        </tr>
+      </tbody>
+    </table>  
+  </body>
+</html>
+
+------------------------
+styles.css
+
+----
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+table,
+table * {
+  max-width: 600px;
+  border: 1px solid black;
+  border-collapse: separate;
+  /* border-spacing: 10px; */
+  caption-side: top;
+  min-width: 100px;
+  text-align: right;
+  vertical-align: baseline;
+  empty-cells: hide;
+  cursor: pointer;
+}
+.dis,
+td {
+  pointer-events: none;
+}

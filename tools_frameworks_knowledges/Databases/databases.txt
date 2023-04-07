@@ -1,0 +1,29 @@
+1)what is a database (explanation for children)
+
+Data - it is information (knowledge) that is stored somewhere, for example - in a book, in a picture, in a PC.
+Base - it is a main place in any construction, without a base - a house can't stand still or your
+foot contacts straight to the ground through your shoe.
+If talking of Database:
+1.It's a main place inside PC, that is controlling and manipulating almost of all PC information.
+2.Controlling and manipulating Database is through a keyboard of PC.
+3.There are a lot of different Databases for different PC apps.
+4.The special computer workers are trained to control and manipulate different Databases.
+
+
+2) What types of a database do you know
+
+1.Hierarchical databases - The child records are linked to the parent record, the parent record is allowed
+multiple child records. However, vice versa is not possible. 
+2.Network databases - The child records are linked to the parent record, the parent record is allowed
+multiple child records and the child record is allowed multiple parent records.
+3.Object-oriented databases - database data is represented as an object.
+4.Relational databases - every data in the database is linked with another,
+using a primary key and foreign key.
+5.NoSQL databases.
+
+
+3)what is crud
+
+CRUD is the acronym for CREATE, READ, UPDATE and DELETE.
+These terms describe the four main operations with stored data.
+

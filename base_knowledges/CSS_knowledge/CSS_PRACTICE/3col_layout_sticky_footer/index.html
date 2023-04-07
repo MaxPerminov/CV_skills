@@ -1,0 +1,29 @@
+<!-- Three column layout with:
+
+1.Header
+2.Changeable, by size of a screen, main's width
+3.Sticky footer -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS Flexbox learnings</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/source/styles/main.css">
+    <link rel="stylesheet" href="/source/styles/styles.css">
+  </head>
+  <body>
+    <div class="flex-container">
+      <header class="flex-item item-1">Header</header>
+      <main>
+        <aside class="flex-item item-2">Aside</aside>
+        <section class="flex-item item-3">Content</section>
+        <aside class="flex-item item-4">Aside</aside>
+      </main>
+      <footer class="flex-item item-5">Footer</footer>
+    </div>
+  </body>
+</html>

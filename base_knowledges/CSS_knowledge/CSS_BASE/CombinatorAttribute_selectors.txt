@@ -1,0 +1,207 @@
+1)Combinator selectors.
+
+----
+The descendant selector matches all elements, that are descendants of a specified
+element.
+
+div p: matches all <p>s of <div>
+div p span: matches all <span>s of <div> <p>s
+
+----
+The child selector selects all elements that are the children of a specified element.
+
+ul li > span: matches all <span>s of <ul> <li>s
+
+----
+The adjacent sibling combinator selects a sibling element, that is corresponding to
+selector, written after <+>.
+
+div + p:
+
+<div>
+</div>
+<p>hi</p> - selected
+<p>hi</p>
+
+--
+ol + li + li (CSS list doesn't see an order of list items, so every <li> after the
+first <li> will be selected):
+
+<ol>
+  <li>Li 1</li>
+  <li>Li 2</li> - selected
+  <li>Li 3</li> - selected
+</ol>
+
+----
+The general sibling combinator selects all sibling elements, that are corresponding
+to selector, written after < ~ >.
+
+div ~ p:
+
+<div>
+</div>
+<p>hi</p> - selected
+<p>hi</p> - selected
+<hr>
+<p>hoy</p> - selected
+<h1>Hello World</h1>
+<p>1</p> - selected
+<p>2</p> - selected
+
+___________________________________________________________________________________
+2)Attribute selectors is used to select elements with a specified attribute.
+
+----
+a[target]:
+
+<a href="http://www.disney.com" target="_blank">disney.com</a> - selected
+<a href="http://www.disney.com">disney.com</a>
+
+----
+a[href="http://www.disney.com]:
+
+<a href="http://www.disney.com" target="_blank">disney.com</a> - selected
+<a href="http://www.hockey.com" target="_blank">disney.com</a>
+
+----
+[title~="flower"]:
+
+<img src="clematis.jpg" title="clematis flower" width="150" height="113"> - selected
+<img src="img_flwr.gif" title="flower" width="224" height="162"> - selected
+<img src="img_tree.gif" title="tree" width="200" height="358">
+
+----
+[class|="top"](selecting elements with <top> or <top- >  values):
+
+<h1 class="top">Welcome</h1> - selected
+<p class="top-text">Hello world!</p> - selected
+<p class="topcontent">Are you learning CSS?</p>
+
+----
+a[href^="http://123"](selecting elements with matched value's beginning):
+
+<a href="http://123.com">Test Link 1</a> - selected
+<a href="http://4link56.com">Test Link 1</a>
+
+----
+a[href$=".jpg"](selecting elements with matched value's ending):
+
+<a href="http://4link56.com">Test Link 1</a>
+<a href="http://678.jpg" >Test Link 1</a> - selected
+
+----
+[class*="top"](selecting elements with partially matched value):
+
+<h1 class="top-header">Welcome</h1> - selected
+<p class="topheadear">Hello world!</p> - selected
+<p class="mopheadear">Hello world!</p>
+
+________________________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS3 Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <!--element, element  -->
+    <h1>Hello world!</h1>
+    <h2>Heading 1!</h2>
+    <span>Simple span element</span>
+    <hr>
+    <!--element element  -->
+    <div>
+      <p>Paragraph 1</p>
+    </div>
+    <p>Paragraph 2</p>
+    <hr>
+    <!-- element element element-->
+    <div>
+      <p>Super <span>Paragraph</span> 1</p>
+    </div>
+    <hr>
+    <!-- element > element -->
+    <ul>
+      <li>
+        <p><span>Span 1</span></p>
+      </li>
+      <li><span>Span 2</span></li>
+    </ul>
+    <span>Span 3</span>
+    <hr>
+    <!-- element + element -->
+    <ul>
+      <li>Li 1</li>
+      <li>Li 2</li>
+      <li>Li 3</li>
+    </ul>
+    <hr>
+    <!-- element ~ element -->
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <br>
+    <p>Paragraph 3</p>
+    <p>Paragraph 4</p>
+    <hr>
+    <!-- element [attribute] -->
+    <a href="http://test1.com">Test Link 1</a>
+    <a href="http://test2.com" target="_blank">Test Link 1</a>
+    <a href="http://test3.org" target="_top">Test Link 1</a>
+    <hr>
+    <!-- element [attribute="value"] -->
+    <a href="http://test1.com">Test Link 1</a>
+    <a href="http://test2.com" target="_blank">Test Link 1</a>
+    <a href="http://test1.org" target="_top">Test Link 1</a>
+    <hr>
+    <!-- element [attribute="value"] | element [attribute$="value"] | element [attribute*="value"] -->
+    <a href="http://123.com">Test Link 1</a>
+    <a href="http://4link56.com" target="_blank">Test Link 1</a>
+    <a href="http://678.jpg" target="_top">Test Link 1</a>
+  </body>
+</html>
+
+----------------------
+styles.css
+
+----
+h1, /* group selectors */
+h2,  
+span {
+    color: red;
+}
+div p {   /* Descendant Selector */
+    color: green;
+}
+div p span { /* Descendant Selector */
+    color: blue;
+}
+ul li > span { /*Child Selector - gets only straight child*/
+    font-weight: bold;
+}
+ul li + li { /* Adjacent Sibling Selector*/
+    color: aqua;
+}
+br ~ p {   /*General Sibling Selector*/
+    font-size: 30px;
+}
+/* attribute selectors: */
+a[target] {
+    background-color: yellow;
+}
+a[target="_blank"] {
+    background-color: blue;
+}
+a[href^="http://123"] {
+    background-color: aqua;
+}
+a[href$=".jpg"] {
+    background-color: teal;
+}
+a[href*="link"] {
+    background-color: rebeccapurple;
+}

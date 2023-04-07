@@ -1,0 +1,87 @@
+CSS Rule - <div {color:blue; text-align: justify}>:
+
+    One line syntax: h1 { color: red; }
+
+    Multiple line syntax: h1 {
+                            color:red;
+                          }
+
+Declaration block - <{color:blue; text-align: justify}>
+Property - <color>
+Selector - <div>
+Values - <blue>, <justify>
+
+_________________________________________________________________________________
+There are four ways to apply CSS to HTML document:
+
+1)External link with styles(is declared in head of html document).
+2)@import (is declared at the beginning of CSS file).
+3)Inner styles (are declared in head of html document within <style> tag).
+4)Inline styles (are declared inside tag of html document within  < =""> of <style>
+property.
+_________________________________________________________________________________
+Active - a state of an element, when a user presses a mouse button and activates it.
+
+----
+Enabled - a state of an element, when it is activated (selected,
+clicked on, typed into, etc.) or accept focus.
+
+----
+Focus - a state of an element, when it can immediately accept input(the cursor is in 
+an input box or a link that has been tabbed).
+
+-------------------------------
+Baseline - baseline of font.
+
+----
+Block of code - unchangeable part of code, can be used in different places,
+bringing the same result to page view.
+ 
+_____________________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS3 Learnings</title>
+    <!-- Inner styles -->
+    <style>
+      h1 { color: red; }
+    </style>
+    <!-- External link with styles -->
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <h1>Hello world!</h1>
+    <h2>Hello world!</h2>
+    <!-- Inline styles -->
+    <h3 style="color: blue;">Hello world!</h3>
+    <h4>Hello world!</h4>
+  </body>
+</html>
+
+-----------------------------------------------------------------------
+styles.css
+
+----
+@import "/main.css";
+
+h2 {
+    color: green;
+}
+
+----------------------------------------------------------------------
+main.css
+
+----
+h1,
+h2,
+h3,
+h4 {
+    text-transform: uppercase;
+    font-style: italic;
+    font-size: 16px;
+    border: 1px solid #000;
+}

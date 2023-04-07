@@ -1,0 +1,42 @@
+JS is dynamic typed programming language - it is able to reassign
+variables. To prevent, it's necessarily to use const.
+
+Style of naming variables:
+-Types and Classes: ExampleName
+-permanent known values: EXAMPLE_NAME
+-other: exampleName
+-----------------------------------------------------------------------------
+Declaring variables:
+
+1)let - temporary:
+
+let a = 20;
+let a //undefined
+a = 20
+a = 30
+--------------------------------------
+2)const - permanent:
+
+const c = 10
+--------------------------------------
+3)var - old, do not recommended
+
+-----------------------------------------------------------------------------
+//it is not recommended mutate external variables inside function
+--------------------------------------------------------------------------
+//it is not recommended of using undeclared variable.To avoid -  "use strict" -
+disallowing of using undeclared variable:
+
+"use strict"
+a=12
+console.log(a)
+_____________________________________________________________________________________________________
+
+Expression has result - value:
+-"Good " + "Evening"
+-10
+
+-console.log("Hello, World") // <console> - object; <log> - method (property-
+                            //function of <console>); <()> - calling
+                           //function; <"Hello, World"> - argument
+

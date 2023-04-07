@@ -1,0 +1,2 @@
+Simulator and emulator allow running incompatible software with a device.
+Emulator accurately replicates the behaviour of an emulated system.

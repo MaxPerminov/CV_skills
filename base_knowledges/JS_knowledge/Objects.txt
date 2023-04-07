@@ -1,0 +1,100 @@
+Object - is a set of unordered properties - Key: Value.
+Almost all in JS are objects(arrays, functions; numbers and strings
+act like an Objects)
+example:
+{                             // should be in <{}>
+    visible: true,           //<visible> - property
+    colorDepth: 24,         //<24> - value
+    title: "My Image",
+    orientat: {           //nested object
+        angle: 0,
+        type: "landscape"
+    }
+    pixelDepth: 24,
+    width: 1440    
+}
+-----------------------------------------------------------------------------
+//getting object properties using dot notation:
+
+const myCity = {
+    city: "New York",
+    popular: true,
+    country: "USA"
+}
+console.log(myCity.city) 
+console.log(myCity.popular)
+---------------------------------------------
+//Object methods <.keys()> and <.values()> can help getting object's
+properties - by using array method .forEach()
+
+Object.keys(myObj).forEach(key=>{  //<Object.keys> - getting all keys as
+    console.log(key, myObj[key])  //array
+})
+----
+Object.values(myObj).forEach(value=>{  //<Object.values> - getting all values
+    console.log(value)                //as array
+})
+------------------------------------------------------------------
+//changing object properties:
+myCity.city = "Las Vegas"
+---------------------------------------------
+//adding object properties:
+myCity.major = "Anushkevich"
+---------------------------------------------------
+//deletion object properties:
+delete myCity.country // <delete> - operator
+-------------------------------------------------------
+//getting object properties using bracket notation
+(it's appropriate to use bracket notation, when property is a variable or
+an expression):
+
+myCity["attraction"] = "casino" //adding object property. <["attraction"]>
+                                // - not quiet good, <.attraction> is better 
+----
+const a = "population"
+myCity[a] = 1000//using <[a]> is the way to get output <population: 1000>,
+               //not output <a: 1000>
+------------------------------------------------------------
+//nested objects
+
+const myCity = {
+    city: "New York",
+    info: {
+        isPopular: true,
+        country: "USA"
+    }
+}
+console.log(myCity.info.isPopular)
+delete myCity.info["isPopular"]
+console.log(myCity)
+--------------------------------------------------------------------
+//using variables and expressions for declaring object's value
+
+const who = "Max"
+const posts = 23
+
+const user = {
+    who,               // instead <who: who> shortcutting property
+                      //declaring - <who,>
+    posts,            
+    agreement: false
+}
+---------------------------------------------------------------------------
+
+//global objects
+window, globalThis - web browser; global, globalThis - Node.js
+
+__________________________________________________________________________________
+Object methods
+
+-----
+//Object.entries:
+ -gives an array with arrays of key-value pairs of a specified object.
+
+---
+const a = { 10: 'BRONZE', 20: 'SILVER', 30: 'PLATINUM', 40: 'GOLD', 50: 'DIAMOND' };  
+console.log(Object.entries(a)[4]) //[ '50', 'DIAMOND' ]
+
+
+
+

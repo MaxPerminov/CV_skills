@@ -1,0 +1,186 @@
+-content is the box, where text and images appear;
+-padding between content and border;
+-border is between padding and margin;
+-margin is between tags;
+
+-for inline elements margin top/bottom doesn't work;
+
+-collapsing margins - if two elements are near each other, sum of margin between
+them = the larger margin of those elements;
+
+--------------------------------------------------------------
+Setting padding or margin intends:
+
+----
+<padding/margin: 25px 50px 75px 100px;>:
+
+-top; right; bottom; left.
+-top; right and left; bottom.
+-top 'n bottom; right 'n left.
+
+----
+padding/margin-top: 100px;
+padding/margin-right: 100px;
+padding/margin-bottom: 100px;
+padding/margin-left: 100px;
+
+----
+% - specifies a padding/margin in % of the width of the containing element
+
+_______________________________________________________________________________________
+Sizing of element(setting width and height):
+
+SOE = c + p + b
+
+SOE - size of element
+c - content
+p - padding
+b - border
+
+
+box-sizing: content-box; - specified width and height is related to <c>;
+
+box-sizing: border-box; - specified width and height is related to <SOE> by reducing
+                                                                        size of <c>.
+
+____________________________________________________________________________________
+height: 1000px;
+             %;  (defines the height in percent of the containing block)
+            vh; (defines the height in percent(1vh = 1%) of the browser's height)
+
+----
+width: 1000px;
+            %; (percentage of overall block width)
+           wh; (percentage(1wh = 1%) of overall page width)
+
+----
+min height/width: 1000px;
+                       %; (Defines the minimal height/width in percent
+                                              of the containing block)
+
+----
+max height/width: 1000px;
+                       %; (Defines the maximal height/width in percent
+                                              of the containing block)
+----
+-for inline elements width & height doesn't work;
+
+_____________________________________________________________________________________
+CSS Units
+
+1) Absolute Lengths (not recommended because of different screen sizes)
+
+cm	                   centimeters
+mm	                   millimeters
+in	                   inches (1in = 96px = 2.54cm)
+px*	                   pixels (1px = 1/96th of 1in)
+pt	                   points (1pt = 1/72 of 1in)
+pc	                   picas (1pc = 12 pt)
+
+* Pixels (px) are relative to the viewing device. For low-dpi devices, 1px is one
+device pixel (dot) of the display. For printers and high resolution screens 1px
+implies multiple device pixels.
+
+--------------------------------
+2)Relative Lengths are relative to:
+
+em	                 the font-size of the element
+ex	                 the current font's x-height(the height of lowercase letters)
+ch	                 the width of the "0" (zero)
+rem	                 font-size of the root element(16px)
+vw	                 1% of the width of the viewport*
+vh	                 1% of the height of the viewport*
+
+vmin                 1% of viewport's* smaller dimension(with sizes of browser window
+                                                            1200px and 700px = 7px)
+
+vmax                 1% of viewport's* larger dimension(with sizes of browser window
+                                                            1200px and 700px = 12px)
+
+%	                 the parent element
+
+---------------------------------
+3)Calculated Lengths:
+
+width: calc(100% - 100px);
+
+_________________________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS3 Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <h4>Lorem ipsum dolor sit amet <span>consectetur</span> adipisicing elit. Placeat
+    dolor explicabo in, modi vitae quasi consectetur eum alias impedit quo rerum
+      nemo optio repellendus laudantium ducimus pariatur possimus. Aspernatur,
+      asperiores.</р> <!-- .cirrilic <p>  -->
+    <hr />
+    <h4>Lorem ipsum dolor sit amet <div>consectetur</div><div class="mar">consectetur</div>
+      adipisicing elit. Placeat dolor explicabo in, modi vitae quasi consectetur eum alias
+       impedit quo rerum nemo optio repellendus laudantium ducimus pariatur possimus.
+        Aspernatur, asperiores.</h4>
+    <hr />
+    <h4>Lorem ipsum dolor sit amet <div class="test">consectetur</div> adipisicing elit.
+      Placeat dolor explicabo in, modi vitae quasi consectetur eum alias impedit quo rerum
+       nemo optio repellendus laudantium ducimus pariatur possimus.
+        Aspernatur, asperiores.</h4>
+    <div class="sizing_wrapper">
+      <img class="sizing1" src="/source/images/preview.png" alt="sizing1">
+      <img class="sizing2" src="/source/icons/heroes_icon.png" alt="sizing2">
+    </div>
+  </body>
+</html>
+
+---------------------
+styles.css
+
+----
+span,
+div {
+  border:10px solid red;
+  /* margin: 10px;
+  padding: 10px; */
+  margin: 10px 20px;
+  /* padding: 10px 20px 30px 40px; */
+  padding-top: 10px;
+  padding-right: 20px;
+  padding-bottom: 30px;
+  padding-left: 40px; 
+} 
+/* inline, block, inline-block */
+.test {
+  display: inline;
+}
+/* Doesn't work for inline element */
+span {
+  width: 100px;
+  height: 100px;
+}
+.mar {
+  margin-top: 50px;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+.sizing_wrapper {
+  height: 1000px;
+  border: 20px dashed cyan;
+}
+.sizing1 {
+  display: inline-block;
+  padding: 100px;
+  max-width: 600px;
+  max-height: 400px;
+}
+.sizing2 {
+  padding:100px;
+  min-width: 600px;
+  min-height: 600px;
+}

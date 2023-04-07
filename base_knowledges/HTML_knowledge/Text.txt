@@ -1,0 +1,150 @@
+
+<address>(block, semantic) - defines the contact information for
+                             the author/owner of a document;
+
+<b>(obsolete) - bold text;
+<big>(semantic) - larger text;
+
+<blockquote> - defines a long quotation:
+    -cite - links to a document that explains the quote.
+
+<code>(semantic) - defines a piece of computer code;
+<del>(semantic) - defines deleted text, struck with a line;
+<em>(semantic)  - italic text;
+
+<h1> - <h6>(block, semantic) - defines six levels of headers.
+                                            <h1> - the highest semantic priority,
+                                            <h6> - the lowest semantic priority.
+
+<i>(obsolete) - italic text;
+<ins>(semantic) - defines an underlined inserted text;
+<p>(block) - defines a paragraph;
+<pre> - the text will be displayed exactly as written in the HTML source code;
+<q> - defines a short quotation;
+<s>(obsolete) - deleted text;
+<small>(semantic) - defines smaller text;
+<strong>(semantic) - bold text;
+<sub> - defines subscript text;
+<sup> - defines superscript text;
+
+<time>(semantic) - defines a specific time:
+    -datetime(semantic) - provides date reminders and smarter search results.
+
+<tt>(obsolete) - typing text.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Basics</title>
+</head>
+<body>
+
+  <!-- Headings; h1 - biggest-->
+  <h1>Different Headings</h1>
+  <h2>Different Headings</h2>
+  <h3>Different Headings</h3>
+  <h4>Different Headings</h4>
+  <h5>Different Headings</h5>
+  <h6>Different Headings</h6>
+  <hr>
+
+  <!-- Paragraph -->
+  <p>Simple paragraph with text</p>
+  <hr>
+
+  <!-- Information about author -->
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, magnam!</p>
+  <address>Lorem ipsum dolor sit.</address>
+  <hr>
+
+  <!-- Quote and author -->
+  <q>Lorem ipsum dolor sit amet.</q>
+  <address>Lorem ipsum dolor sit.</address>
+  <hr>
+
+  <!-- Block of Quote -->
+  <blockquote> 
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex repellat nisi
+       eligendi non labore. Deserunt hic excepturi, quam repellat, et, reprehenderit
+        odio eaque illo quod necessitatibus aperiam molestiae distinctio in.
+    </p>
+  </blockquote>
+  <hr>
+
+  <!-- Time or date information -->
+  <time>1984-11-06</time>  
+  <br>
+  <time datetime="1984-11-06">My Birthday</time>
+  <hr>
+
+  <!--Bold & Italic, Typing, Deleted text  obsolete-->
+  <b>Bold text</b>
+  <i>Italic text</i>
+  <tt>Typing text</tt>
+  <s>Deleted text</s>
+  <hr>
+
+  <!-- Code examples -->
+  <code>
+    const args ={
+      name: "Max",
+      age: 38
+    };
+    const getDate = () => new Date;
+  </code>
+  <hr>
+
+  <!-- Save test formatting -->
+  <pre>
+    <code>
+      const args = {
+        name: "Max",
+        age: 38
+      };
+      const getDate = () => new Date;
+    </code>
+  </pre>
+  <hr>
+
+  <!-- Bold & Italic text with semantic accent -->
+  <strong>Bold accent text</strong>
+  <em>Italic accent text</em>
+  <hr>
+
+  <!-- Small text -->
+  <small>Small</small>
+  <h2>To know HTML <small>semantic</small> is important</h2>
+  <hr>
+
+  <!-- Big text -->
+  <big>Big</big>
+  <h2>To know HTML <big>semantic</big> is important</h2>
+  <hr>
+  
+  <!-- Deleted text -->
+  <del>Deleted</del>
+  <h2>To know HTML <del>semantic</del> is important</h2>
+  <hr>
+
+  <!-- Inserted/added text -->
+  <ins>Inserted</ins>
+  <h2>To know HTML <ins>semantic</ins> is important</h2>
+  <hr>
+
+  <!-- Subscript -->
+  <sub>Subscript</sub>
+  <h2>To know HTML <sub>semantic</sub> is important</h2>
+  <h2>H<sub>2</sub>O</h2>
+  <hr>
+
+  <!-- Superscript text -->
+  <sup>Superscript</sup>
+  <h2>To know HTML <sup>semantic</sup> is important</h2>
+  <h2>X<sup>2</sup> = 9</h2>
+  <hr>
+  
+</body>
+</html>

@@ -1,0 +1,25 @@
+How I organize my work process:
+
+1 - standartization - creating and using the same effective methods for similar tasks to improve speed of completing.
+2 - planning - making plan that I be able to faster switch tasks.
+3 - estimation - creating time gaps that i be able to complete all necessary tasks.
+4 - sorting - every tool, task, material should be grouped and be located in matched places for faster access.
+5 - discipline - willpower to do things in way it was planned.
+6 - responsibility - do the things I am supposed to do and accept the results of my actions.
+
+
+Books:
+Lee Copeland - A Practitioner's Guide to Software Test Design (2004)
+Rapid Testing by Robert Culbertson
+Software Testing - Base Course (Svyatoslav Kulikov) - 3rd edition
+Roman Savin - Testirovanie dotcom
+Joseph M. Juran, A. Blanton Godfrey - Juran's Quality Handbook, fifth edition - up to section 7.2
+Al Sweigart - The Big Book of Small Python Projects - up to project 14 + 64
+
+
+
+
+
+
+
+

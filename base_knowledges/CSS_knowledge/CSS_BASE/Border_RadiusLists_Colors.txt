@@ -1,0 +1,87 @@
+
+color:red;
+      #ff0000; (color -#000 - black #fff - white)
+      rgb(255, 0, 0);
+      hsl(0, 100%, 50%);
+      rgba(255, 0, 0, 0.5);
+
+transparent - element set by this color is hidden.
+
+_________________________________________________________________________________
+Border-radius defines the radius of the element's corners.
+
+border-radius: 50px 40px 30px 20px; (applied clockwise from the top)
+border-radius: 20px/40px; (top and bottom/sides)
+border-top-left-radius: 50px;
+
+
+To make element's corner round - it's  necessary to set value of border-radius to
+half of side size(50% or 50px for 100px side size).
+
+_________________________________________________________________________________
+list-style-image: url();
+
+list-style-position: outside; (list-item markers outside the list item)
+                     inside; (list-item markers inside the list item)
+
+list-style-type: disc;
+                 square;
+                 circle;
+                 upper-roman;
+                 lower-alpha;
+                 none;
+
+_________________________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="example"></div>
+    <hr>
+    <ul>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+      <li>item 4</li>
+      <li>item 5</li>
+    </ul>
+    <hr>
+    <h1>Hello World!</h1>
+  </body>
+</html>
+
+---------------------
+styles.css
+
+----
+.example {
+  width: 100px;
+  height: 100px;
+  background-color: grey;
+  margin: 20px;
+ /* border-radius: 50px 40px 30px 20px; */
+ /* border-radius: 20px/40px; */
+ border-top-left-radius: 50px;
+ border-top-right-radius: 40px;
+ border-bottom-right-radius: 30px;
+ border-bottom-left-radius: 20px;
+}
+ul li {
+  list-style-type: disc;
+  list-style-position: inside;
+  /* list-style-image: url(https://image.flaticon.com/icons/png/128/66/66738.png); */
+}
+h1 {
+  /* color: red; */
+  /* color: #ff0000; */
+  /* color: rgb(255, 0, 0); */
+  /* color: hsl(0, 100%, 50%); */
+  color: rgba(255, 0, 0, 0.5);
+}

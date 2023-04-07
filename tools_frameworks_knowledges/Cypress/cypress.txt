@@ -1,0 +1,27 @@
+cypress is a framework for testing
+
+1)create folder cypress-tests
+2)touch .gitignore (node_modules)
+3)npm init -y
+4)npm install -D cypress (or npm install cypress --save-dev)
+
+5)npx cypress open(put this to package.json's "test":("test": "npx cypress open") and further it's possible to
+use <npm test> to open cypress)
+
+----lesson12:
+6)in opened app choose e2e(it is making directories)
+7)make new spec(it is making directories)
+8)in cypress-tests/cypress/e2e mkdir integration with Test.cy.js
+9)run test
+10)to integrate cypress with a project, it is necessarily to change package.json
+11)implement node event listeners in cypress.config.js
+
+ code - lesson 12, lesson 12(2)
+
+
+------------------------
+lesson 12(2):
+6)make new spec <first_test>(it is making directories)
+7)cypress.config.js - it's file for setting cypress settings, filling it with data
+9)in cypress catalog mkdir e2e mock interface video screenshot functions(+functions.js)
+10)text creation is through try catch(it allows to run next tests if previous falls)

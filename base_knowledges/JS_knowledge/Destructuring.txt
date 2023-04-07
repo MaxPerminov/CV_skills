@@ -1,0 +1,31 @@
+Destructuring - creating variables, based on existing object attributes:
+
+const userProfile = {
+    who: "Max",
+    commentsQty: 23,
+    hasSignedAgreement: false
+}
+const {who, commentsQty, hasSignedAgreement} = userProfile //{} Destructuring
+console.log(who)                                          // of
+console.log(commentsQty)                                 //parameters
+--------------------------------------------------------------
+//array's destructuring
+
+const fruits = ["apple", "banana"]
+const [fruit1, fruit2] = fruits //it’s important to follow array's elements
+console.log(fruit1)            //order
+--------------------------------------------------------------------    
+//function's destructuring
+
+const userProfile = {
+    who: "Max",
+    commentsQty: 23,
+    hasSignedAgreement: false
+}
+const userInfo = ({who, commentsQty}) => { //{}parameters' destructuring 
+    if (!commentsQty) {
+        return `User ${who} has no comments`
+    }
+    return `User ${who} has ${commentsQty} comments`
+}
+userInfo(userProfile)

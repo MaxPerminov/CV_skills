@@ -1,0 +1,21 @@
+1)what QA roles of game testing do you know
+
+- Game QA: bug tracking and reporting, gameplay testing.
+- Game producer, Release Manager: setting of estimations, quality requirements.
+- Lead tester: coordinating QA with designers, developers, chiefs. Controlling of test
+documentation.
+- SDET (Software Development Engineer in Test), Technical Testers or Automation Testers:
+performance and security.
+- Play Testers: Gameplay.
+- Coding testers.
+- Hardware Testers.
+- Localization Testers.
+
+2)what are stages of game testing
+
+1.Game architecture
+2.Session manager
+3.Front end
+4.Artificial Intelligence
+5.Animation
+6.Frame overlay

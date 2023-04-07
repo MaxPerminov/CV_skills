@@ -1,0 +1,21 @@
+Javascript Exception Handling
+
+const neError = () => {
+    throw new Error("Some errpr")
+}
+neError()               //when calling<neError()> - Uncaught Error appears
+console.log("continue")// and blocks further execution of code.
+                      // To prevent such a situation - it's necessarily to
+                     // use Try/Catch:
+
+const neError = () => {
+    throw new Error("Some errpr")
+}
+try {
+    neError()
+} catch(error) {
+    console.error(error)       //Error: Some errpr  at neError at anonymous
+    console.log(error.message)//Some errpr
+}                            //necessarily to use console.error or 
+                            //console.log(error.message)
+console.log("continue")     //output: <"continue">

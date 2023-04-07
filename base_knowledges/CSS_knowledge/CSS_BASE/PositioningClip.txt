@@ -1,0 +1,193 @@
+position: static; (default)
+          relative;
+          absolute;
+          fixed;
+          sticky.
+
+When position is not by default, it's possible to set position properties:
+
+-top;
+-bottom;
+-left;
+-right.
+
+-----------------------------
+relative:
+
+setting the top, right, bottom, and left properties of a relatively-positioned
+element will cause it to be adjusted away from its normal position. Other content
+will not be adjusted to fit into any gap left by the element:
+
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS3 Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <h2>position: relative;</h2>
+    <p>An element with position: relative; is positioned
+      relative to its normal position:</p>
+    <div class="relative">
+    This div element has position: relative;
+    </div>
+    <p>lorem1000</p>
+  </body>
+</html>
+
+----
+styles.css
+
+----
+.relative {
+  position: relative;
+  left: 100px;
+  top:30px;
+  border: 3px solid red;
+  height:300px;
+}
+
+------------------------------------------
+absolute:
+
+it is positioned relative to its closest positioned ancestor if it has it,
+otherwise, it is placed relative to the initial containing block and because the
+positioned element is removed from the normal document flow - no space is created for
+the element in the page layout, so its displaying can overlap nearby content:
+
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS3 Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <h2>position: relative;</h2>
+    <p>An element with position: relative; is positioned
+      relative to its normal position:</p>
+    <div class="relative">
+    This div element has position: relative;
+      <div class="absolute">
+        This div element has position: absolute;
+      </div>
+    </div>
+    <p>lorem1000</p>
+  </body>
+</html>
+
+----
+styles.css
+
+----
+.relative {
+  position: relative;
+  left: 100px;
+  top:30px;
+  border: 3px solid red;
+  height:300px;
+}
+.absolute {
+  position: absolute;
+  left:130px;
+  bottom:40px;
+  border: 10px solid red;
+}
+
+------------------------------------------
+fixed:
+
+it is positioned relative to the viewport - it always stays in the same
+place, even if the page is scrolled. Like an absolute - a fixed element does not
+leave a gap in the page where it would normally have been located:
+
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS3 Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <h2>position: relative;</h2>
+    <p>An element with position: fixed; is positioned
+      relative to the viewport:</p>
+    <div class="fixed">
+    This div element has position: fixed;
+    </div>
+    <p>lorem1000</p>
+  </body>
+</html>
+
+----
+styles.css
+
+----
+.fixed {
+  position: fixed;
+  left: 100px;
+  top:30px;
+  border: 13px solid red;
+  height:100px;
+}
+
+----------------------------------------------------------
+sticky:
+
+it is a hybrid of relative and fixed positioning. The element is treated as relative
+positioned until it crosses a specified threshold, at which point it is treated as
+fixed positioned:
+
+
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS3 Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <h2>position: sticky;</h2>
+    <p>An element with position: sticky; is positioned
+      sticky to its normal position:</p>
+    <div class="sticky">
+    This div element has position: sticky;
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit corporis eligendi obcaecati, impedit soluta quidem facilis optio doloremque cum et quia. Quasi, commodi eaque reiciendis incidunt, accusantium laudantium, minima itaque officiis in ab placeat. Reiciendis accusantium ipsam, culpa quam a esse. Libero non facilis voluptatem quae perspiciatis harum iusto ut fugit ducimus ipsum esse, nihil dolorem amet molestias animi beatae modi voluptatibus accusantium quidem nisi reprehenderit cupiditate illum architecto. Nobis ipsa exercitationem soluta obcaecati doloribus rerum quo velit laudantium repudiandae, in quibusdam inventore facere animi nihil quis odit nostrum? Eum quidem dicta, ipsa dolor reiciendis provident in necessitatibus quam quo eaque animi ex tempora illum quis nam iure natus enim cupiditate accusamus suscipit atque perspiciatis dignissimos? Architecto voluptatibus, error tenetur necessitatibus consectetur ab odio adipisci officia non hic omnis voluptas reiciendis, accusamus consequatur, dolorem soluta animi ipsa. Nihil eum magnam sit sequi ipsum vero sapiente minima officiis rem neque? Cum atque quisquam a placeat tempore similique ut totam sit repellat ipsam soluta mollitia incidunt numquam quo nulla, vitae saepe possimus accusantium. Repellat sint impedit, laudantium nemo alias expedita iste amet quae atque sunt adipisci veniam? Maxime dolorum culpa ullam ratione, asperiores voluptatem dignissimos pariatur, fugit aliquid quis amet corporis perferendis, molestias cupiditate? Dignissimos molestiae fuga consectetur consequuntur enim architecto suscipit? Eligendi saepe molestiae aut laboriosam asperiores quis adipisci commodi dolore aspernatur pariatur ipsa, iste nemo repellendus deleniti sint earum repudiandae officia? Maiores suscipit ad culpa quod amet illum inventore nesciunt esse corporis! Soluta laboriosam, earum nesciunt dolores quo voluptas, magnam quasi libero ipsam tempore, eum labore placeat necessitatibus aut. Velit fuga molestiae recusandae exercitationem maiores, itaque accusantium eius debitis fugiat veritatis a non placeat voluptatum esse perferendis id provident rerum sunt? Reprehenderit minus, nam illo nobis distinctio vero voluptatum sit aut aspernatur nihil quo maiores saepe iusto! Accusantium eaque, ab quidem autem ut porro vitae consequuntur sint architecto esse. Ipsum dolores nemo eveniet ut voluptatem, dolore molestiae! Minus dignissimos natus earum, quibusdam fuga harum possimus sapiente similique atque, nesciunt laborum quo autem nisi ullam sunt distinctio excepturi incidunt et cupiditate a enim quaerat facilis esse illo? Quam dolores, reiciendis maxime minus veritatis, vero mollitia assumenda nisi vitae voluptatum temporibus, sint cumque sit repellat? Incidunt eaque deleniti voluptatibus vel, voluptatum iure tenetur unde at? Totam ex in inventore, corporis dolore vitae impedit excepturi expedita dignissimos, magni labore natus porro ratione corrupti sed vero delectus deleniti. Quis obcaecati repudiandae animi? Quibusdam architecto tempore, consequatur ipsam quasi inventore. Et illo iste sint omnis veniam itaque recusandae earum commodi, adipisci id rerum ullam quae cum sequi facere reiciendis consequatur, quia ad, esse explicabo! Blanditiis quas, quis molestias eaque a veritatis cupiditate asperiores aliquid dolor voluptates et cum totam id, incidunt recusandae necessitatibus dolorum consequuntur ad saepe accusantium maxime eligendi tempora placeat? Itaque animi, deleniti dolores quisquam accusantium nulla aspernatur quas rem iste sed dolorum eligendi facere quae quibusdam atque veritatis esse provident explicabo nisi. Esse officia cum tempora soluta aperiam impedit dolore quidem repellendus sint delectus facere, omnis distinctio obcaecati debitis mollitia voluptates inventore natus consequuntur quos maxime earum corrupti! Sint ratione nobis quis nam odit error molestiae quaerat pariatur vitae repudiandae ducimus id porro, doloremque officia dolorem unde similique. Quas nostrum sint architecto, odit eos recusandae. Blanditiis obcaecati in magnam eum quibusdam aliquid, sed voluptates! Placeat unde distinctio accusamus ab fugit. Unde eaque dolorem reprehenderit rem dicta ex, fugit necessitatibus repellendus nulla cum blanditiis voluptatibus accusantium, eveniet quae, ipsum corporis saepe itaque! Assumenda iusto, accusamus maxime molestias nam, tempore possimus dolorum deleniti vitae fuga saepe sapiente omnis corrupti quisquam repellendus itaque vel perferendis minus. Tenetur sequi unde veritatis esse dolores error nobis similique temporibus inventore ratione facilis, suscipit ad. Veniam alias doloremque sit hic accusantium, necessitatibus blanditiis molestiae nobis rerum officiis odit sed dignissimos est maiores iusto veritatis reprehenderit repellendus neque illum! Qui voluptate doloremque ratione debitis, minus libero a optio corrupti, quibusdam perferendis esse doloribus, asperiores quod facere quaerat. Magnam libero possimus velit vero ratione suscipit porro a! Ad doloremque voluptas molestiae, accusantium provident quis illo aut excepturi esse voluptates, corporis alias a quos sint minima et laboriosam. Reprehenderit sed accusamus tenetur dolorum mollitia nostrum excepturi est eius officiis libero suscipit sapiente id eveniet expedita eos, harum nesciunt eaque optio sunt temporibus. Eum nobis, voluptas animi delectus fuga nihil, numquam doloremque veritatis iusto enim odit illum maiores velit aut deserunt culpa aliquam explicabo quo assumenda optio aperiam! Quae illo hic itaque a, deleniti quas ipsam eaque consequatur, necessitatibus ipsa dolore porro officiis vitae tempora architecto. Iure id at enim est alias? Debitis vel exercitationem harum nostrum magnam qui asperiores dolor eos modi quia, iste quam, quo cum repellat quos veniam? Quas assumenda quibusdam eaque, molestias fugiat hic optio! Quae dolorem unde similique, corrupti, ab molestiae autem at inventore vitae alias qui quam exercitationem ipsam quos placeat. Aut placeat ipsa animi quos ullam voluptate fugiat voluptatem ea eaque blanditiis praesentium, veritatis aspernatur vel numquam. Unde, deserunt? Minima ab neque provident distinctio assumenda error. Adipisci labore, laudantium quibusdam excepturi distinctio aliquid repellat laborum voluptatem dolorem fugiat incidunt sit quae impedit molestias quam reprehenderit commodi amet, eligendi pariatur cupiditate totam atque facilis. Labore quo, exercitationem adipisci eos, cumque natus fugit nobis iure non aliquid recusandae praesentium veniam, sequi quibusdam qui amet quia voluptas deleniti. Non possimus veritatis, earum ad id blanditiis exercitationem odio maiores similique magni? Alias repudiandae suscipit soluta. Suscipit vero officiis corrupti dignissimos delectus, sint consequatur animi unde iusto in, nemo eum sapiente? Cum consequuntur consequatur blanditiis assumenda illum sunt numquam magnam. Omnis voluptates magni dolorem fugiat sit impedit eligendi exercitationem ullam. Aut veniam tempore ex, quasi odit placeat ullam ipsa ratione illo minima. Nam vel ad, sapiente sunt assumenda magnam quisquam voluptatem in provident labore tenetur molestias facilis reprehenderit ex commodi deserunt ducimus laudantium fugiat explicabo voluptates alias ullam. Id voluptas, beatae officia inventore repudiandae quas eaque quod omnis accusamus cum quam saepe illum libero reprehenderit rerum alias laudantium voluptate distinctio impedit amet consequatur sit fugit minus? Vitae at voluptate ipsam a. Aperiam, unde rerum. Hic magni pariatur quidem, accusamus quia nihil?</p>
+  </body>
+</html>
+
+---------------------
+styles.css
+
+----
+.sticky {
+  position: sticky;
+  left: 100px;
+  top:30px;
+  border: 3px solid red;
+  height:300px;
+}
+
+-------------------------------------------------------------------------------
+Clip property lets you specify a rectangle to clip an absoluted or fixed positioned
+element. The rectangle is specified as four coordinates, all from the top-left corner
+of the element to be clipped:
+
+img {
+  position: absolute;
+  clip: rect(0px, 150px, 150px, 0px);;
+}

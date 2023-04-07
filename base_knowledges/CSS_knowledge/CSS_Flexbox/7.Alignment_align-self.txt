@@ -1,0 +1,106 @@
+align-self: stretch; the element is positioned to fit the container
+            center;	the element is positioned at the center of the container
+            flex-start;	the element is positioned at the beginning of the container
+            flex-end; the element is positioned at the end of the container
+
+            baseline; the element is positioned at the baseline of the container
+            (at least two elements with different baseline should be specified)
+
+
+The align-self is Flex Item property specifies the alignment for the selected item
+inside the flexible container in cross axis direction. It overrides the default
+alignment, set by the container's align-items property.
+
+__________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Flexbox</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item item-1">1</div>
+      <div class="flex-item item-2">2</div>
+      <div class="flex-item item-3">3</div>
+      <div class="flex-item item-4">4</div>
+      <div class="flex-item item-5">5</div>
+      <div class="flex-item item-6">6</div>
+    </div>
+  </body>
+</html>
+
+------------
+styles.css
+
+----
+/* base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.flex-container {
+  border: 10px solid  #7f00ff;
+}
+.flex-item {
+  padding: 10px;
+  font:900 60px "Roboto", sans-serif;
+  color: #777;
+  text-align: center;
+  text-shadow: 4px 2px 0 rgba(0, 0, 0, 0.2);
+}
+.item-1 {
+  background-image: linear-gradient(45deg, #ff8177, #cf556c);
+}
+.item-2 {
+  background-image: linear-gradient(45deg, #84fab0, #8fd3f4);
+}
+.item-3 {
+  background-image: linear-gradient(45deg, #a6c0fe, #f68084);
+}
+.item-4 {
+  background-image: linear-gradient(45deg, #d4fc79, #96e6a1);
+}
+.item-5 {
+  background-image: linear-gradient(45deg, #43e97b, #38f9d7);
+}
+
+.item-6 {
+  background-image: linear-gradient(45deg, #a18cd1, #fbc2eb);
+}
+/* custom styles */
+.flex-container {
+  display: flex;
+  height: 100vh;
+  flex-wrap: wrap;
+  /* flex-direction: column;  */
+}
+.flex-item {
+  width: 300px;
+}
+.item-1 {
+  align-self: stretch;
+}
+.item-2 {
+  align-self: flex-start;
+}
+.item-3 {
+  align-self: center;
+}
+.item-4 {
+  align-self: flex-end;
+}
+.item-5 {
+  align-self: baseline;
+}
+.item-6 {
+  align-self: baseline;
+  font-size: 100px;
+}

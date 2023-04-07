@@ -1,0 +1,113 @@
+align-content: stretch; (default)
+               center; lines are packed toward the center of the flex container
+                                        (<flex-wrap: wrap;> should be set)
+
+               flex-start; lines are packed toward the start of the flex container
+
+               flex-end; lines are packed toward the end of the flex container
+                                                (<flex-wrap: wrap;> should be set)
+
+               space-between; lines have same space between them, the first line is
+                               at the start of container and the last line is at the
+                               end of container(<flex-wrap: wrap;> should be set and
+                               width of the Flex Container must be lesser than items'
+                               line )
+
+               space-around; lines have same space between them, before the
+                              first and after the last - 1/2 space of default
+                              between space(<flex-wrap: wrap;> should be set; width
+                              of the Flex Container must be lesser than items' line
+                              to make several lines; if line is single - it's going to
+                              the center)
+
+               space-evenly; lines have equal space around them(<flex-wrap: wrap;>
+                             should be set; width of the Flex Container must be
+                             lesser than items' line to make several lines; if line
+                             is single - it's going to the center)
+
+The align-content is Flex Container property specifies how flex lines are
+distributed along the cross axis in a flexbox container. While align-items property
+isn't set by default, items don't take all Flex Container's space in Cross Axis.
+
+__________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Flexbox</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item item-1">1</div>
+      <div class="flex-item item-2">2</div>
+      <div class="flex-item item-3">3</div>
+      <div class="flex-item item-4">4</div>
+      <div class="flex-item item-5">5</div>
+      <div class="flex-item item-6">6</div>
+      <div class="flex-item item-7">7</div>
+      <div class="flex-item item-8">8</div>
+    </div>
+  </body>
+</html>
+
+------------
+styles.css
+
+----
+/* base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.flex-container {
+  border: 10px solid  #7f00ff;
+}
+.flex-item {
+  padding: 10px;
+  font:900 60px "Roboto", sans-serif;
+  color: #777;
+  text-align: center;
+  text-shadow: 4px 2px 0 rgba(0, 0, 0, 0.2);
+}
+.item-1 {
+  background-image: linear-gradient(45deg, #ff8177, #cf556c);
+}
+.item-2 {
+  background-image: linear-gradient(45deg, #84fab0, #8fd3f4);
+}
+.item-3 {
+  background-image: linear-gradient(45deg, #a6c0fe, #f68084);
+}
+.item-4 {
+  background-image: linear-gradient(45deg, #d4fc79, #96e6a1);
+}
+.item-5 {
+  background-image: linear-gradient(45deg, #43e97b, #38f9d7);
+}
+.item-6 {
+  background-image: linear-gradient(45deg, #a18cd1, #fbc2eb);
+}
+.item-7 {
+  background-image: linear-gradient(45deg, #8e2de2, #4a00e0);
+}
+.item-8 {
+  background-image: linear-gradient(45deg, #e1eec3, #f05053);
+}
+/* custom styles */
+.flex-container {
+  display: flex;
+  height: 100vh;
+  align-content: stretch;
+  flex-wrap: wrap;
+  flex-direction: column-reverse; 
+}
+.flex-item {
+  /* width: 200px; */
+}

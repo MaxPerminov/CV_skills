@@ -1,0 +1,175 @@
+Border - goes around the padding and content:
+
+---
+border-color: red;
+
+The border-color property:
+
+can have from one to four values (applied clockwise from the top):
+border-color: red green blue;
+
+can be single - border-top/right/bottom/left-color:
+border-top-color: red;
+
+---
+border-style: dotted;
+              dashed;
+              solid;
+              double;
+              groove;
+              ridge;
+              inset;
+              outset;
+              none; (to disable border from elements, where border displays by
+              hidden;                             default, for example - input)
+
+The border-style property:
+
+can have from one to four values (applied clockwise from the top):
+border-style: dotted double solid;
+
+can be single - border-top/right/bottom/left-style:
+border-top-style: double;
+
+---
+border-width: 4px;
+
+The border-width property:
+
+can have from one to four values (applied clockwise from the top):
+border-width: 3px 4px 5px;
+
+can be single - border-top/right/bottom/left-width:
+border-top-width: 10px;
+
+
+---------------------------
+Border shorthand property:
+
+<border: border-width border-style border-color>:
+border: 10px solid red;
+border-left: 6px solid red;
+
+____________________________________________________________________________
+Outline is a line drawn outside the element's border. It's useful for active
+elements, which can be tabbed.
+
+---
+outline: dotted;
+         dashed;
+         solid;
+         double;
+         groove;
+         ridge;
+         inset;
+         outset;
+         none;
+         hidden;
+
+---
+outline-color: red;
+
+---
+outline-offset: 10px;
+
+The outline-offset property adds space between an outline and the edge/border
+of an element. The space between an element and its outline is transparent.
+
+---
+outline-width: medium;
+
+---------------------------
+Outline shorthand property:
+
+<outline-width outline-style(required) outline-color>:
+outline: red dotted;
+
+_________________________________________________________________________________
+<text-shadow: h-shadow v-shadow blur-radius color>:
+text-shadow: 1px 2px 5px red;
+
+-h-shadow - horizontal shadow, required. Negative values are allowed;
+-v-shadow - vertical shadow, required. Negative values are allowed;
+-blur-radius - optional. Default value is 0;
+color - optional.
+
+----
+<box-shadow: inset h-offset v-offset blur spread color>:
+box-shadow: 1px 2px 5px red;
+box-shadow: inset 1px 2px 5px blue;
+
+-h-offset - horizontal offset, required. A positive value puts the shadow on the
+                                 right side of the box, a negative - on the left;
+
+-v-offset - vertical offset, required. A positive value puts the shadow below the
+                                                         box, a negative - above;
+
+-blur - optional;
+
+-spread	- optional. A positive value increases the size of the
+shadow, a negative - decreases.
+
+-color - optional.
+
+-inset - changes the outer shadow to the inner shadow.
+
+-----
+It's possible to set several shadows through the coma:
+text-shadow: 1px 2px 5px red, -1px -2px 5px green;
+
+__________________________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="example"></div>
+    <hr>
+    <button>BUTTON</button>
+    <input type="text">
+    <hr>
+    <h1>Hello World!</h1>
+    <hr>
+    <div class="shadow"></div>
+  </body>
+</html>
+
+--------------------------------
+styles. css
+
+----
+.example {
+  width: 100px;
+  height: 100px;
+  background-color: grey;
+  margin: 20px;
+  /* border-width: 10px;
+  border-style: solid;
+  border-color: red; */
+  border: 10px solid red;
+  border-right: none;
+  border-right-style: none;
+  border-bottom-width: 20px;
+  border-left-color: blue;
+  outline: 10px solid aqua;
+}
+button:focus,
+input:focus {
+  outline: 2px solid aqua;
+}
+h1 {
+  text-shadow: 1px 2px 5px red, -1px -2px 5px green;
+}
+.shadow {
+  width: 100px;
+  height: 100px;
+  background-color: grey;
+  margin: 20px;
+  box-shadow: inset 1px 2px 5px blue, inset -1px -2px 5px aqua;
+}

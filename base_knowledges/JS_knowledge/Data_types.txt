@@ -1,0 +1,40 @@
+Data types:
+
+1)Primitive - in computer's memory variable is assigned straight to value
+-string
+-boolean
+-numbers
+-null
+-undefined - if function does not have specified return
+-symbol
+-biglnt - number, appended with n and converted to string
+---------------------------------------------------------------------------
+
+2)Non-Primitive(reference) type - variable is assigned to reference, which
+connected to the object. It's able to create several
+variables with the same reference to the object. And changes in the
+object's properties from a side of any the variable will affect on the
+object, hence, on all the variables.
+
+example:
+
+const myName = {
+    a: 10,
+    b: true
+}
+console.log(myName)       // output - a: 10, b: true
+const myName1 = myName
+myName1.a = 20          // changing object attribute by copy mutation
+console.log(myName)    // output - a: 20, b: true
+myName1.c = "abc"     // adding new attribute to the object
+console.log(myName)  // output - a: 20, b: true, c: "abc"
+---------------------------------------------------------------------------
+False values evaluate to false: false, 0, "", undefined, null.
+----------------------------------------------------------------------------
+getting boolean:
+-Boolean()
+-!
+-!!
+----------------------------------------------------------------------------
+coercion - automatic values' conversion from one data type to another
+10 + "Max" = "10Max"// number + string = string

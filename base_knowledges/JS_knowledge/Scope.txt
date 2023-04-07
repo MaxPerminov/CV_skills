@@ -1,0 +1,32 @@
+Every execution of function creates a new local scope.
+
+
+//global and local
+
+let a                   //global
+let b                  //global
+function myFn() {
+    let b            //local
+    a = true
+    b = 10
+    console.log(b)
+}
+myFn()              //10
+console.log(a)     //true
+console.log(b)    //undefined
+------------------------------------------------------------------------------
+//Scope Chain
+
+const a = 5
+function myFn() {
+    function innerFn() {
+        console.log(a)      //5
+    }
+    innerFn() //without calling <innerFn()>
+}            //there'll no be output
+myFn()      //from <myFn>
+-----------------------------------------------------------------------------
+types of scope - 
+1)global
+2)local
+3)block - let or const, declared inside block ({}) has this block scope 

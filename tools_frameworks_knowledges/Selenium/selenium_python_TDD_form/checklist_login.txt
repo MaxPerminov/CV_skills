@@ -1,0 +1,10 @@
+get page = get_page.py 
+Positive = tests_login/login_tests.py 
+Do not enter any value in all fields. = tests_login/login_tests.py
+Enter valid value in login field, do not enter any value in pass field. = tests_login/login_tests.py
+Enter valid value in login field, enter any invalid value in pass field. = tests_login/login_tests.py
+Enter valid value in login field, enter 4 spaces in pass field. = tests_login/login_tests.py 
+Enter valid value in pass field, do not enter any value in login field. = tests_login/login_tests.py
+Enter valid value in pass field, enter any invalid value in login field. = tests_login/login_tests.py
+Enter valid value in pass field, enter 4 spaces in login field. = tests_login/login_tests.py
+Enter valid value in login field, enter valid login value in pass field. = tests_login/login_tests.py

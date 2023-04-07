@@ -1,0 +1,139 @@
+Promises - are objects, allow to handle delayed events during
+asynchronous operations. Promises are saying, that it will give 
+a result later.
+
+//Promise's states:
+
+Pending - waiting for result
+Fulfilled - promise is accomplished
+Rejected - for example, if error
+--------------------------------------------------------------------------------
+//Promise's creation: 
+
+const myPromise = new Promise ((reso, rej) =>{
+   /*executing of asynchronous operations;
+     calling reso cb (if promise succeeds) or rej cb (if error). 
+     Reso and rej are functions*/
+})
+----
+//getting promise's result by using methods <.then> or
+<.catch>. These methods take function as an argument.
+
+myPromise
+    .then(value =>{ 
+        //if resolve; value = <reso>
+    })
+    .catch(error =>{
+        //if reject; error = <rej>
+    })
+--------------------------------------------------------------------------
+//getting data with fetch API
+
+fetch() -  is used to request data from 
+a server. The request can be of any type of API that 
+returns the data in JSON or XML. The fetch() method
+requires one parameter, the URL to request, and
+returns a promise.
+
+<https://jsonplaceholder.typicode.com/> service for sending
+requests to remote server
+
+fetch("https://jsonplaceholder.typicode.com/todos")
+    .then(response => {        // outputting response
+        console.log(response)})
+----
+fetch("https://jsonplaceholder.typicode.com/todos")
+    .then(response => response.json())   // <.json()> converts server's
+                                        // response to JSON; 
+                                       //also returns promise - 
+    .then(json => console.log(json))  // that's why one more <.then>
+    .catch(error => console.error(error))
+----
+to simulate error - in DevTools console go to:
+network->no throttling->offline
+
+fetch("https://jsonplaceholder.typicode.com/todos")
+    .then(response => response.json())
+    .then(json => console.log(json))  
+    .catch(error => console.log(error.message))//error messaging
+----
+//creating of promise function to reduce code:
+
+const getData = (url) =>
+    new Promise ((resolve, reject)=>
+        fetch (url)
+            .then(response => response.json())
+            .then (json => resolve(json))  //calling resolve
+            .catch(error => reject(error))//calling reject
+    )
+getData("https://jsonplaceholder.typicode.com/todos")
+    .then(data => console.log(data))   //<data> = <resolve(json)>
+    .catch(error => console.log(error.message))
+
+____________________________________________________________________________________________________
+
+Async/await - special syntax to simplify promises handling
+
+1)Async - return promise:
+
+// async function:
+
+async function asyncFn() {     // keyword <async> is at the beginning
+        //Promise    
+}
+----
+const asyncFn = async () => {// keyword <async> is before parenthesis of arrow function
+    //Promise
+}
+----
+const asyncFn = async () => {
+    return "Success"         //getting Promise without remote requests
+}
+----
+const asyncFn = async () => {
+    return "Success"
+}
+asyncFn()
+.then(value => console.log(value)) //<value>'s value is <"Success">
+---------------------------------------------------------------------------------
+//error handling
+
+const asyncFn = async () => {
+    throw new Error ("Errpr") //Promise is rejected
+}
+asyncFn()
+.then(value => console.log(value)) 
+.catch (error => console.log(error.message)) // error is caught
+------------------------------------------------------------------------------------
+
+2)Await - keyword, that can be used only in async functions. It allows
+to wait for promise's result.
+
+const timerPromise = () =>
+    new Promise ((resolve, reject) => 
+        setTimeout(() => resolve(), 2000))
+const asyncFn = async () => {
+    console.log("Timer starts")
+    const startTime = performance.now() // <performance.now> counts time
+    await timerPromise () //function waits for <Promise> result
+    const endTime = performance.now()
+    console.log("Timer ended", endTime - startTime)
+}
+asyncFn()
+------------------------------------------------------------------------------------
+
+3)from Promise to async/await - it's recommended!!!! to use this
+pattern while handling asynchronous operations.
+
+const getData = async (url) => {
+    const res = await fetch(url)
+    const json = await res.json()
+    return json
+}
+const url = "https://jsonplaceholder.typicode.com/todos"
+try {
+    const data = await getData(url)
+    console.log(data)
+} catch (error) {
+    console.log(error.message)
+}

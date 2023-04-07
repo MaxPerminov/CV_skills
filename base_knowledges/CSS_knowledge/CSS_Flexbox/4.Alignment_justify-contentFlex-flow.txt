@@ -1,0 +1,111 @@
+The flex-flow property is a shorthand property for setting both the flex-direction
+and flex-wrap properties.
+
+.flex-container {
+  display: flex;
+  flex-flow: column wrap;
+}
+___________________________________________________________________________________
+justify-content: flex-start; - items positions are at the start of the container(default)
+                 flex-end; - items positions are at the end of the container
+                 center; - items positions are at the end of the container
+
+                 space-between;  items have same space between them, the first's
+                                  position is at the start of container and the last's
+                                  position is at the end of container
+
+                 space-around;  items have same space between them, before the
+                                 first and after the last - 1/2 space of default between
+                                 space
+
+                 space-evenly;  items have equal space around them
+
+
+
+The justify-content is Flex Container property, used to align the flex items, when
+the items do not use all available space on the main-axis.
+
+__________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Flexbox</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item item-1">1</div>
+      <div class="flex-item item-2">2</div>
+      <div class="flex-item item-3">3</div>
+      <div class="flex-item item-4">4</div>
+      <!-- <div class="flex-item item-5">5</div>
+      <div class="flex-item item-6">6</div>
+      <div class="flex-item item-7">7</div>
+      <div class="flex-item item-8">8</div> -->
+    </div>
+  </body>
+</html>
+
+-----------------
+styles.css
+
+----
+
+/* base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.flex-container {
+  border: 10px solid  #7f00ff;
+}
+.flex-item {
+  padding: 10px;
+  font:900 60px "Roboto", sans-serif;
+  color: #777;
+  text-align: center;
+  text-shadow: 4px 2px 0 rgba(0, 0, 0, 0.2);
+}
+.item-1 {
+  background-image: linear-gradient(45deg, #ff8177, #cf556c);
+}
+.item-2 {
+  background-image: linear-gradient(45deg, #84fab0, #8fd3f4);
+}
+.item-3 {
+  background-image: linear-gradient(45deg, #a6c0fe, #f68084);
+}
+.item-4 {
+  background-image: linear-gradient(45deg, #d4fc79, #96e6a1);
+}
+.item-5 {
+  background-image: linear-gradient(45deg, #43e97b, #38f9d7);
+}
+.item-6 {
+  background-image: linear-gradient(45deg, #a18cd1, #fbc2eb);
+}
+.item-7 {
+  background-image: linear-gradient(45deg, #8e2de2, #4a00e0);
+}
+.item-8 {
+  background-image: linear-gradient(45deg, #e1eec3, #f05053);
+}
+/* custom styles */
+.flex-container {
+  display: flex;
+  height: 100vh;
+  /* flex-flow: column-wrap; 
+  flex-direction: column;*/
+  flex-direction: column-reverse;
+  justify-content: space-evenly;
+}
+.flex-item {
+  /* width: 100px; */
+}

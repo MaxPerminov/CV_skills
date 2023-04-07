@@ -1,0 +1,118 @@
+Operators - in-build functions
+
+operands - elements of operation:
+
+a + b  // <a> - left-hand operand, <b> - right-hand operand
+----------------------------------------------------------------------------
+
+1)symbolic operators:
+
+=== - equal
+!== not equal
+! - not
+------------------------------------------------------------------------
+
+2)text operators:
+
+-typeof - check object type
+-instanceof - operator, that indicates object's belonging to a particular
+class:
+
+class Comment { 
+    constructor (text) {
+        this.text = text 
+        this. votesQty = 0  
+}
+const firstComment = new Comment("Hello, world!")// <new> - operator
+firstComment instanceof Comment  //true                                              
+firstComment instanceof Object  //true 
+-----------------------------------------------------------------------
+
+3)unary operators(have one operand):
+
+++ - increasing number by 1;
++a - converting string to a number;
+new - prefix unary operator, creates:
+new Object () - creating new Object, using an existing object
+                as the prototype
+------------------------------------------------------------------------
+
+4)binary operators (have two operands):
+a && b - and
+a || b - comparison
+---------------------------------------------------------------------
+
+4)infix operator - placed between operands (a = true, a + b) 
+-------------------------------------------------------------------------
+
+5)prefix operator - placed before operand (++i, delete obj.a)
+-------------------------------------------------------------------------
+
+6)postfix operator - placed after operand (i++, myFunction ())
+-------------------------------------------------------------------------
+
+7)operators precedence - see table in inet
+--------------------------------------------------------------------
+
+8)logic operators - 
+
+! - negation - return false if true (!10) and true if false (!"")
+!! - double negation - return true if true (!!10) and false if false (!0)
+----
+
+&& - short circuit operator:
+a && b //if a false - return false; if a true - go to b; if b false - return
+ false; if b true - return true.
+----
+
+|| - short circuit operator:
+a || b // if a true - return true; if a false - go to b; if b false - return
+ false; if b true - return true.
+-------------------------------------------------------------------------
+
+9)"prefer ++i over i++"
+-----------------------------------------------------------------------------
+
+10) ...(Spread operator) divides object into single
+properties and then unites them into new object.
+
+const button = {
+    width: 200,
+    text: "Buy"
+}
+const redButton = {
+    ...button,
+    color: "red" 
+}
+-----
+const buttonInfo = {
+    text: "Buy"
+}
+const buttonStyle = {
+    color: "Yellow",
+    width: 200
+}
+const button = {
+    ...buttonInfo,
+    ...buttonStyle
+}
+--------------------------------------
+
+11)string concatenation
+
+"Hello" + " World"
+------
+
+const hello = "Hello"
+const world = "World"
+const greeting = hello + " " + world
+----------------------------------------
+12) template string literal
+
+const hello = "Hello"
+const world = "World"
+const greeting = `${hello} ${world}` // <`> - tilda
+
+13)Ternary operator:
+? returns value based on the condition
+(5 > 3) ? 'success' : 'error'; // "success"

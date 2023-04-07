@@ -1,0 +1,179 @@
+1)what are test types
+
+1. functional
+2. non-functional
+3. structural
+4. change related
+
+2) what are types of integration testing
+
+Integration Testing tests interfaces between different software components.
+Big Bang - all is tested at one time.
+Top-down - first is tested  main module, then submodules.
+Bottom-up - first are tested modules, then main function.
+
+3)What are smoke and sanity testing, what is difference
+
+Smoke and sanity testing test stability of a system. Differences are:
+1.smoke testing is a subset of a system testing; testing of entire system from end to end.
+2.Sanity testing is a subset of regression testing; component's testing of a system.
+
+4)what's end-to-end testing
+
+End-to-end testing is a system testing.
+It tests all product, all components to make sure it's ready for acceptance testing.
+
+5)What is security testing
+
+Security testing - divides into vulnerability scanning, that uncovers vulnerabilities;
+and penetration testing - tests protection of a system.
+
+6)what is performance testing
+
+Performance testing tests stability, speed, scalability and responsiveness of an application.
+-scalability testing - when changes are made in size or volume of a system.
+-load testing - testing, while load is expected.
+-stress - testing, while load is maximum.
+-reliability - while load is medium and time of work is long.
+-testing of load time.
+
+7)what are regression and confirmation testing; what's difference
+
+Regression Testing searches for bugs related to program or code change.
+Confirmation testing is retest of a program or code. It searches for
+unfixed bugs, which were set to be fixed.
+
+8)how often is regression testing
+
+Every time when changes in codebase are happening.
+
+9) localization testing
+
+Localization testing verifies software accuracy and suitability for a specific region.
+
+Preparation stage:
+-gathering documentation about product
+-standardization
+
+Regional factors testing:
+-time, date
+-measurement systems
+-regional terminology and idioms: lorry, boot, table
+-cultural believing: white - luck in West, mourning in Asia
+
+Linguistic testing: spelling, syntax
+
+Interface testing:
+-tittles on images, dialogues, popup windows, buttons.
+-hyphenations
+
+Functional testing:
+-links are not blocked
+-input function
+-fonts
+-lists sorting
+
+10)what is configuration testing
+
+Configuration testing is a system testing with different
+software and hardware configurations (OS, devices). 
+
+11)what are black, grey, white box testing
+
+Black box testing tests a system from the outside,
+without knowing what is happening inside the system.
+White box testing tests code, infrastructure and integrations with knowing of code.
+Gray-box testing is a combination of white-box testing and black-box testing.
+
+12)what is exploratory testing
+
+Exploratory testing is learning the product, creating the tests
+and executing these tests at the same time.
+
+13)what is risk-based testing
+
+Risk Based Testing is based on the probability of risk.
+It contains such stages as:
+-searching of risks
+-evaluating of risks
+-making plan of responding to risks
+-scoping risks
+
+14)what is dynamic testing
+
+Dynamic testing tests system's functional behavior, memory/CPU consumption,
+and overall performance of the system with code execution.
+
+15)what is static testing
+
+Mainly, it's documentation testing or code testing without program being executed.
+Can be automated.
+
+16)what is difference between verification and validation
+
+Verification checks if requirements are followed. It uses static testing of
+documentation, code.
+Validation checks if product meets client needs. It uses dynamic testing,
+execution of code, etc.
+
+17)search relevance testing
+
+Search relevance testing is the evaluation of a search result closeness to the query.
+Metrics of search relevance testing is in percent:
+
+1. Precision - are all the correct results appearing?
+
+2. Recall - are all the existen relevant results appearing?
+
+3. Mean Reciprocal Rank (MRR):
+the most-desired result is on the top of search.
+
+4. Normalized Discounted Cumulative Gain (NDCG).
+It scales the results based on the best results seen.
+
+5. Click-Through Rate: number of clicks per search result.
+
+18)what is adhoc testing
+
+It is a testing without planning and documentation, based on the experience of a tester.
+
+19)what is compatibility testing
+
+compatibility testing  — is testing of product compatibility with:
+-operating system (Unix, Windows, MacOS, …)
+-devices (printers, mouse, USB, camera)
+-browsers (Internet Explorer, Firefox, Opera, Chrome, Safari)
+-data bases (Oracle, MS SQL, MySQL, …)
+-system software
+-network devices
+
+20) what is unit testing
+
+Unit Testing is a functional white box testing, when the minimal
+testable component is tested
+(program units, objects, classes, etc.). 
+
+21) what is monkey testing
+
+Monkey testing is a testing with the hope of finding bugs, when using inputs,
+like a monkey makes random inputs at the computer.
+
+22)what is fuzz testing
+
+Fuzz testing is an automated software testing, when a special fuzzing tool
+inputs invalid data to detect defects and vulnerabilities.
+
+23)what is API testing
+
+API testing - is functional software testing by using API.
+Application Programming Interface - set of functions for building and integrating software.
+proses are:
++early testing;
++time efficiency;
++independence of programming language;
++reduces risks.
+
+24)what are the disadvantages of test automation
+
+-requires an automation testing platform and scripter;
+-is not financially effective for less than 3 test cycles.

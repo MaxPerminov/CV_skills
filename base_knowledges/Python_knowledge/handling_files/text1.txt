@@ -1,0 +1,6 @@
+these 2 textel files are to run files.py file
+**********
+El oxígeno es un elemento químico
+ de número atómico 8 y representado
+ por el símbolo O. Su nombre proviene de las
+&&

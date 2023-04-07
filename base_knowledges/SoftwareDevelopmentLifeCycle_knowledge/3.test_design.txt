@@ -1,0 +1,41 @@
+1)what test design techniques do I know
+
+Equivalent Class Partitioning
+Boundary Value Analysis
+Error Guessing
+Pairwise Testing
+Cause/Effect Graphing(how does result depend on input)
+Decision table
+
+2)what is Equivalent Class Partitioning
+
+for example - valid range is from 1 to 10. Thus, Equivalent Partitioning
+is 0, 1 to 10, more than 10.
+
+3)what is Boundary Value Analysis what are the values of the technique
+
+Values near the boundary have higher chances of error.
+For example - valid range is from 1 to 10. Thus, Boundary Values
+are 0, 1, 10, 11. 
+
+4)decision table
+
+Decision table - is a table, that consists of:
+1)conditions
+2)rules of conditions(requirements)
+3)actions (results). Action is a complex of a condition and a rule.
+
+Example:
+Cost of car insurance depends on person's experience and incidents in the past.
+Decision table:
+____________________________________________________
+                   |        |       |       |       |
+condition:         |  rule 1| rule 2| rule 3| rule 4|
+___________________|________|_______|_______|_______|
+1)experience       |   no   |  no   |   yes |   yes |
+2)incidents in past|   yes  |  no   |   yes |   no  | 
+___________________|________|_______|_______|_______|
+action:                                             |
+____________________________________________________|                                                
+cost of insurance  |   200  |  100  |   50  |   10  |         
+___________________|________|_______|_______|_______|

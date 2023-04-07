@@ -1,0 +1,226 @@
+column-count: auto;
+              number;
+
+The column-count property specifies the number of columns an element should be
+divided into.
+
+--------------------------------------------------------------
+column-rule-width: 100px;
+column-rule-style: (like border-style);
+column-rule-color: red;
+
+It styles width, color and style of border between the columns.
+
+----
+column-rule shorthand property(rule style is required):
+
+column-rule: 4px double #ff00ff;
+
+----------------------------------------------------------------
+column-width: 100px;
+
+It reduces columns' number when its value reaches set threshold. This property can
+help to create responsive designs, that fit different screen sizes.
+
+-------------------------------------------------------------
+column-gap: 100px;
+
+The column-gap property specifies the gap between the columns.
+
+___________________________________________________________________________________
+letter-spacing:
+
+h2 {
+  letter-spacing: 2px;
+}
+
+----
+h3 {
+  letter-spacing: -1px;
+}
+
+__________________________________________________________________________________
+line-height: 2;	- number will be multiplied with the current font-size
+             length;
+             %; - percent of the current font size
+
+_________________________________________________________________________________
+text-align: left;
+            right;
+            center;
+            justify; - stretches the lines so that each line has equal width
+
+The text-align property specifies the horizontal alignment of text in an element.
+
+____________________________________________________________________________________
+text-decoration-line: none;
+                      underline;
+                      overline;
+                      line-through;
+
+--------
+text-decoration-color: red;
+
+----------
+text-decoration-style: solid;
+                       double;
+                       dotted;
+                       dashed;
+                       wavy;
+
+--------
+text-decoration shorthand property:
+
+
+h1 {
+  text-decoration: underline overline dotted red;
+}
+
+----
+h2 {
+  text-decoration: underline wavy blue 5px;
+}
+
+__________________________________________________________________________________
+text-indent: 10px;
+             %; - defines the indentation in % of the width of the parent element
+
+The text-indent property specifies the indentation of the first line in a text-block.
+
+----
+text-indent:-9999px; - to hide text
+
+___________________________________________________________________________________
+text-overflow: clip; - the text is clipped and not accessible(default)
+               ellipsis;  - <...> representing the clipped text
+
+The text-overflow property specifies how overflowed content that is not displayed
+should be signaled to the user.
+
+Note.<white-space: nowrap;> and <overflow: hidden;> are required.
+
+__________________________________________________________________________________
+
+text-transform: capitalize;	transforms the first character of each word to capital
+                uppercase;	transforms all characters to capital
+                lowercase;	transforms all characters to lowercase
+
+___________________________________________________________________________________
+white-space: normal; - sequences of whitespace will collapse into a single
+                       whitespace. Text will wrap when necessary(default)
+
+             nowrap; - sequences of whitespace will collapse into a single
+                    whitespace. Text will never wrap to the next line, until <br>.
+
+             pre; - empty line appears before the text. Sequences of whitespace won't
+                    collapse. Text will never wrap to the next line, until <br>.
+
+
+             pre-line; - empty line appears before the text.
+
+             pre-wrap; - empty line appears before the text. Sequences of whitespace
+                        won't collapse. Text will wrap when necessary.
+
+The white-space property specifies how white-space inside an element is handled.
+
+____________________________________________________________________________________
+word-break: break-all; - to prevent overflow, text may be broken at any character
+            keep-all; - text breaks should not be used for CJK text
+
+            break-word;	- to prevent overflow, text may be broken at arbitrary
+            points
+
+The word-break property specifies how text should break when reaching the end of a
+line.
+
+____________________________________________________________________________________
+word-spacing:
+
+p {
+  word-spacing: 30px;
+}
+
+----
+p {
+  word-spacing: -1px;
+}
+
+__________________________________________________________________________________
+word-wrap: normal; - break words only at allowed break points(default)
+           break-word; - allows unbreakable words to be broken
+
+The word-wrap property allows long words to be able to be broken and wrap onto the
+next line.
+
+____________________________________________________________________________________
+writing-mode: horizontal-tb; (default)
+              vertical-rl; - from top to bottom, from right to left
+              vertical-lr; - from top to bottom, from left to right
+
+The writing-mode property specifies whether lines of text are laid out horizontally
+or vertically.
+
+___________________________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <!-- <div class="example">CSS is awesome qweqweqweqweqwe</div>   -->
+    <div class="container">
+      <h2>Title 1</h2>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima saepe
+        nam tenetur et natus tempore fuga quia ea explicabo a!
+      </p>
+      <h2>Title 2</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni non
+        harum quo possimus deserunt ullam laboriosam eum dicta cumque saepe? 
+      </p>
+      <h2>Title 3</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate fugit
+        possimus totam officia quo. Iste quia aspernatur repellat provident
+        voluptatum!
+      </p>
+    </div>
+  </body>
+</html>
+
+-----------------------------------
+styles.css
+
+----
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.example {
+  font-size: 30px;
+  border: 1px solid black;
+  width: 150px;
+  min-height: 150px;
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
+  word-wrap: break-word;
+  word-break: break-all;
+  writing-mode: vertical-rl;
+}
+.container {
+  column-count: 3;
+  column-rule: 1px solid black;
+  column-width: 300px;
+  column-gap: 100px;
+}

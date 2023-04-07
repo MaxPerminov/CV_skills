@@ -1,0 +1,146 @@
+display: inline; - element does not start on a new line and takes up as much width
+                    as necessary. Width and height can't be adjusted. Margin
+                    top/bottom doesn't work for it.
+
+
+         block; - element starts on a new line and takes up the full width
+                  available. Width and height can be adjusted. Browser adds top and
+                  bottom space for it.
+
+         inline-block; - element does not start on a new line and takes up as much
+                         width as necessary. Width and height can be adjusted.
+                         Browser adds top and bottom space for it.
+
+         flex; - element becomes Flex Container and takes up the full 
+                     width available.
+
+         inline-flex; - element becomes Flex Container and takes up 
+                                as much width as necessary.
+
+The display property - specifies how an element is displayed. Every element has a
+default display value( block, inline).
+
+_________________________________________________________________________________
+Flex Container - element with <display:flex/inline-flex> property.
+
+----
+The flex container properties are:
+
+flex-direction
+flex-wrap
+flex-flow
+justify-content
+align-items
+align-content
+gap
+
+____________________________________________________________________________________
+Flex Items - elements of Flex Container. By default, size of Flex Items adjusts to
+content in Main Axis and takes all Flex Container's space(and can go out, if set)
+in Cross Axis direction.
+
+
+----
+The flex item properties are:
+
+order
+flex-grow
+flex-shrink
+flex-basis
+flex
+align-self
+
+___________________________________________________________________________________
+Main Axis - horizontal, Cross Axis - vertical; (default)
+
+                  ||
+                  ||
+                  ||
+                  ||
+                  ||
+                  ||
+__________________||______________________>
+                  ||                      x Main Axis (justify-content)
+                  ||
+                  ||
+                  ||
+                  ||
+                  ||
+		          \/  y Cross Axis(align-items)
+
+__________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Flexbox</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="flex-container">
+      <div class="flex-item item-1">1</div>
+      <div class="flex-item item-2">2</div>
+      <div class="flex-item item-3">3</div>
+      <div class="flex-item item-4">4</div>
+      <div class="flex-item item-5">5</div>
+      <div class="flex-item item-6">6</div>
+      <div class="flex-item item-7">7</div>
+      <div class="flex-item item-8">8</div>
+    </div>
+  </body>
+</html>
+
+------------
+styles.css
+
+----
+/* base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.flex-container {
+  border: 10px solid  #7f00ff;
+}
+.flex-item {
+  padding: 10px;
+  font:900 60px "Roboto", sans-serif;
+  color: #777;
+  text-align: center;
+  text-shadow: 4px 2px 0 rgba(0, 0, 0, 0.2);
+}
+.item-1 {
+  background-image: linear-gradient(45deg, #ff8177, #cf556c);
+}
+.item-2 {
+  background-image: linear-gradient(45deg, #84fab0, #8fd3f4);
+}
+.item-3 {
+  background-image: linear-gradient(45deg, #a6c0fe, #f68084);
+}
+.item-4 {
+  background-image: linear-gradient(45deg, #d4fc79, #96e6a1);
+}
+.item-5 {
+  background-image: linear-gradient(45deg, #43e97b, #38f9d7);
+}
+.item-6 {
+  background-image: linear-gradient(45deg, #a18cd1, #fbc2eb);
+}
+.item-7 {
+  background-image: linear-gradient(45deg, #8e2de2, #4a00e0);
+}
+.item-8 {
+  background-image: linear-gradient(45deg, #e1eec3, #f05053);
+}
+/* custom styles */
+.flex-container {
+  display: inline-flex;
+  min-height: 100vh;
+}

@@ -1,0 +1,30 @@
+bash commands:
+
+mkdir - create dir: $ mkdir <name> or: $ mkdir <name> <name1> <name2>
+echo - create file: $ echo "# Max" >> README.md
+touch - create file: $ touch <name> or: $ touch <name> <name1> <name2> or:$ touch index.html public/style.css
+cd - change dir
+cd .. back
+cd .. / go up: $ cd ../../
+cd // = go to root folder
+ls - list dir
+ls -a list dir hidden files
+cp - copy file
+cp -r copy dir
+rm - del file
+rm -r -  del dir
+mv - move file: $ mv /d/Max/it/itstep/VSCode/lesson2/public/style.css /d/Max/it/itstep/VSCode/lesson2/public/styles
+mv -v renames file, dir: $ mv -v git-commnads.txt git-commands.txt
+clear - clear
+
+___________________________________________________________________________________________________
+to run python in terminal, go to working directory and:
+if file name -  <x.py>:
+
+bash:
+$ python x.py
+---
+cmd:
+x.py
+
+or enter <python> and input python code, but don't forget about indents.

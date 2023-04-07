@@ -1,0 +1,2 @@
+Cypress, Jest, Vite - JS.
+MongoDB, Flask, Selenium, Unittest - Python.

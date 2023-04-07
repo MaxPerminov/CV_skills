@@ -1,0 +1,52 @@
+
+<head> - is a container for metadata:
+    <link> - links the current document and an external resource:
+        -rel - specifies the relationship to linked source:
+            -icon - sets favicon;
+            -stylesheet - sets CSS.
+    <meta> - specifies webpage peculiarities:
+        -content - provides the value for meta's name or http-equiv;
+        -charset - specifies the character encoding;
+        -name - specifies option type for the meta:
+            -viewport - controls the user's visible area of a web page;
+        -http-equiv - specifies option type for the meta:
+            -refresh - refreshes page; refreshing time is a content value.
+    <title> - defines the title of the document.
+
+<html> - declares language:
+    -lang:
+        -en
+
+<!DOCTYPE html> - identifies type of document.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- ability to handle responsive design-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!--no resize-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0
+              user-scalable=no">
+
+  <!-- Document title in browser tabs -->
+  <title>HTML basics</title>
+
+  <!-- Document favicon in browser tabs -->
+  <link rel="shortcut icon" href="/icons/heroes_icon.png">
+
+  <!-- for external styles -->
+  <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+  <h1>hello world!</h1>
+
+  <!-- scripts should be located at the end of body -->
+  <script  src="/js/main.js"></script>
+  <script>
+  console.log("Gran Turismo 5");
+  </script>
+</body>
+</html>

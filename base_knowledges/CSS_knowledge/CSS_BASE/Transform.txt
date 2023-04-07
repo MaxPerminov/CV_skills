@@ -1,0 +1,84 @@
+transform: translate(202px, -10px); - moves element in x y
+           translateX(110px); - moves element in x
+           translateY(110px); - moves element in y
+           scale(3, 0.4); - resizes element in x y ; or both if one argument
+           scaleX(1.5); - resizes element in x
+           scaleY(1.5); - resizes element in y
+           rotate(100deg); - rotate element
+           skew(30deg, 30deg); - skew element in x y
+           skewX(30deg); - skew element in x
+           skewY(30deg); - skew element in y
+
+           matrix(1.5, 0, 2, 0.8, 180, 60); - scaleX(), skewY(), skewX(), scaleY(),
+                                                        translateX(), translateY()
+
+--------
+.wr {
+  position: relative;
+  top: 100px;
+  left:300px;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+div:hover {
+  transform: scale(3);
+}
+
+___________________________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <img
+       src="https://images.pexels.com/photos/1447092/pexels-photo-1447092.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
+        alt="image"
+        width="300">
+    </div>  
+  </body>
+</html>
+
+-------------------------
+styles.css
+
+----
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  border: 2px solid black;
+  height: 169px;
+  /* overflow: hidden; */
+}
+img {
+  transition: all 1s ease;
+  transform-origin: 50px 100px;
+}
+img:hover {
+  /* transform: rotate(360deg);
+  transform: scale(0.2, 1.2);
+  transform: scaleX(0.2);
+  transform: scaleY(1.2);
+  transform: scale(1.2);
+  transform: translate(-50px, -80px);
+  transform: translate(50px);
+  transform: translateX(50px);
+  transform: translateY(80px);
+  transform: skewX(45deg);
+  transform: skewY(45deg);
+  transform: rotate(10deg) scale(1.2) skew(10deg); */
+  transform: rotate(90deg);
+}

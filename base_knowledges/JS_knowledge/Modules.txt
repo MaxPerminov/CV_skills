@@ -1,0 +1,38 @@
+Modules - allows to structurize code and to exclude code duplicates.
+Modules must have single purpose (if possible it's better to use
+export default).
+examples: create two .mjs files(<m> stands for module):
+
+//default export/import
+
+const a = () => {
+    console.log( "mAx")
+}
+export default a // <default> means that when import - it's possible to
+                // change the name of exported variable <a>
+//second file:
+import myName from "./first.mjs"
+myName()
+--------------------------------------------------------------------
+// several items export/import
+
+const a = (x,y) => x+y
+const b = "two"
+export {
+    a,
+    b
+}
+//second file:
+import {
+    a,
+    b as oneRenamed // renaming variable during import
+} from "./first.mjs"
+const res1 = a(1, 2)
+console.log(res1)
+console.log(oneRenamed)
+-------------------------------------------------------------------------
+//React app with moules 
+npx - node command, that allows launch packages without installing:
+npx create-react-app my-app:
+$ npx create-react-app my-app // <create-react-app> - package, <my-app> - 
+                             // folder name

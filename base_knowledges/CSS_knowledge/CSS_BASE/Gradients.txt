@@ -1,0 +1,118 @@
+Linear gradient:
+
+background-image: linear-gradient(red, yellow);
+background-image: linear-gradient(to right/left/top, red , yellow);
+background-image: linear-gradient(to bottom right, red, yellow);
+background-image: linear-gradient(180/90/0/-90deg, red, yellow);
+
+background-image: linear-gradient(45deg, red 10%, orange 50%, yellow 70%,
+   green, aqua, blue);
+
+background-image: linear-gradient(red 10%, green 90%, blue 90%);
+background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+background-image: repeating-linear-gradient(red, yellow 10%, green 20%);
+background-image: repeating-linear-gradient(45deg,red,yellow 7%,green 10%);
+background-image: repeating-linear-gradient(190deg,red,yellow 7%,green 10%, red 15%);
+background-image: repeating-linear-gradient(90deg,red,yellow 7%,green 10%);
+
+background-image: repeating-linear-gradient(45deg, yellow 25px, black 25px,
+    black 50px, yellow 50px, yellow 75px, black 75px);
+
+background-image: repeating-linear-gradient(45deg, red 0px, red 10px, red 10px,
+    yellow 10px, yellow 20px);
+
+__________________________________________________________________________________
+A radial gradient is defined by its center. The default value is ellipse:
+
+background-image: radial-gradient(red, yellow, green);
+background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+background-image: radial-gradient(circle, red, yellow, green);
+background-image: radial-gradient(closest-side, red, yellow, black);
+background-image: radial-gradient(closest-side at 60% 55%, red, yellow, black);
+background-image: radial-gradient(farthest-side at 60% 55%, red, yellow, black);
+background-image: radial-gradient(closest-corner at 60% 55%, red, yellow, black);
+background-image: radial-gradient(farthest-corner at 60% 55%, red, yellow, black);
+background-image: repeating-radial-gradient(circle, aqua 20px, red 80px)
+background-image: repeating-radial-gradient(red, yellow 10%, green 15%, red 25%);
+
+______________________________________________________________________________________
+A conic gradient is a gradient with color transitions rotated around a center point.
+
+background-image: conic-gradient(red, yellow, green);
+background-image: conic-gradient(red, yellow, green, blue, black);
+background-image: conic-gradient(red 45deg, yellow 90deg, green 210deg);
+
+background-image: conic-gradient(red, yellow, green, blue, black);
+border-radius: 50%;
+
+background-image: conic-gradient(red 0deg, red 90deg, yellow 90deg,
+                        yellow 180deg, green 180deg, green 270deg, blue 270deg);
+border-radius: 50%;
+
+background-image: conic-gradient(from 90deg, red, yellow, green);
+border-radius: 50%;
+
+background-image: conic-gradient(at 60% 45%, red, yellow, green);
+border-radius: 50%;
+
+background-image: repeating-conic-gradient(red 10%, yellow 20%);
+border-radius: 50%;
+
+background-image: repeating-conic-gradient(red 0deg 10deg, yellow 10deg 20deg,
+blue 20deg 30deg);
+border-radius: 50%;
+
+____________________________________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS3 Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+  </body>
+</html>
+
+-------------------------
+styles.css
+
+----
+body{
+  height: 100vh;
+  width: 100%;
+  background-image:
+}
+
+------------------------
+for border-radius: 50%
+
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS3 Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>
+
+--------------------------------
+styles.css
+
+----
+div {
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  top: 30%;
+  right: 44%;
+}

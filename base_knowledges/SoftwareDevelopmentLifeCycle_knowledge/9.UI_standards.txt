@@ -1,0 +1,7 @@
+1.the interface should be nice, simple and clear
+2.use the standard elements and visual images
+3.use less text if possible
+4.divide the information into logical blocks, so it is easier to navigate
+5.there should be no more than 3 clicks to go from one section to another
+6.users need to be protected from accidental actions
+7.settings and controls should be managed from one place

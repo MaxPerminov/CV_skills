@@ -1,0 +1,97 @@
+
+<audio> - allows adding audio to the page:
+    -src - specifies the location (URL) of the file.
+
+<audio controls> - allows adding audio with control to the page:
+    -preload - specifies audio loading:
+        -none - audio should NOT be loaded when the page loads.
+    <source> - browser will choose the first <source> it supports:
+        -src - specifies the location (URL) of the file.
+        -type - specifies file type.
+
+<video> - allows adding video to the page:
+    -height;
+    <source> - browser will choose the first <source> it supports:
+        -src - specifies the location (URL) of the file;
+        -type - specifies file type.
+    -width.
+
+<video controls> - allows adding video with control to the page:
+    -autoplay - (autoplay in Google Chrome only when video is muted);
+    -height;
+    -loop - loops video;
+    -muted - mutes video by default;
+    -poster - sets starting image to the video;
+    -preload - specifies video loading:
+        -none - video should NOT be loaded when the page loads.
+    <source> - browser will choose the first <source> it supports:
+        -src - specifies the location (URL) of the file;
+        -type - specifies file type.
+    -width.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Learnings</title>
+</head>
+<body>
+  
+  <!-- Audio without interface -->
+  <audio src="/audio/example.mp3">
+    Your browser does not support the audio tag.
+  </audio>
+  <hr>
+
+  <!-- Video -->
+  <video width="320" height="240">
+    <source src="/video/example.ogg" type="video/ogg"> 
+    <source src="/video/example.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <hr>
+
+  <!-- Audio -->
+  <audio controls>
+    <source src="/audio/example.mp3" type="audio/mpeg">
+    Your browser does not support the audio tag.
+  </audio>
+  <hr>
+
+  <!-- Video -->
+  <video controls width="320" height="240">
+    <source src="/video/example.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <hr>
+
+  <!-- Video loop-->
+  <video controls loop width="320" height="240">
+    <source src="/video/example.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <hr>
+
+  <!-- Video autoplay-->
+  <video controls autoplay width="320" height="240">
+    <source src="/video/example.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <hr>
+
+  <!-- Video muted -->
+  <video controls muted width="320" height="240">
+    <source src="/video/example.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <hr>
+
+  <!-- Video poster-->
+  <video controls poster="/images/preview.png" width="320" height="240">
+    <source src="/video/example.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <hr>
+</body>
+</html>

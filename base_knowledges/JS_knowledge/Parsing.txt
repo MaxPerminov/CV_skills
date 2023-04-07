@@ -1,0 +1,19 @@
+JSON (JavaScript Object Notation) — is a !!!data interchange
+language!!! and file format for transmitting data, !!!derived from
+JavaScript!!!. Information describes by tags. It is popular because it’s
+readable by both humans and machines; and compatible with many other
+programming languages.
+
+const postJs = {           
+    userId: 1,        
+    title: "Test title"
+} 
+const a = JSON.stringify(postJs)//converting JS object into JSON string
+const b = JSON.parse(a)        //converting JSON string into JS object
+---------------------------------------------------------------------------------------------------------
+transmitting JSON from server to client DevTools checking:
+1)open Network's Fetch/XHR of DevTools.
+2)open website
+3)at DevTools open request (item of <Name> column)
+4)choose Response tab - there is JSON string there!
+5)choose Preview tab - there is parsed JSON there(JS object)

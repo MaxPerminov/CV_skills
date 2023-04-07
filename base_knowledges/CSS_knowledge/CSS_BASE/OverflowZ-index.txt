@@ -1,0 +1,111 @@
+overflow: visible;
+          hidden; - the overflow is clipped and invisible
+
+          scroll; - the overflow is clipped, a scrollbar is added (even
+                        if you do not need it)to see the rest of the content
+
+          auto; - the overflow is clipped, a scrollbar is added only when necessary
+
+
+The overflow property specifies whether to clip the content or to add scrollbars
+when the content of an element is too big to fit in the specified area.
+
+Note: The overflow property only works for block elements with a specified height.
+
+--------------------------------------------
+overflow-wrap: break-word; - the browser doesn't consider the soft wrap opportunities
+               anywhere; - the browser considers the soft wrap opportunities
+
+The overflow-wrap break lines with long words, if they overflow its container.
+
+__________________________________________________________________________________
+z-index: 1;
+
+The z-index property specifies the stack order of an element.
+
+An element with greater stack order is always in front of an element with a lower
+stack order.
+
+Note: z-index only works on positioned elements and flex items.
+
+__________________________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS3: Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+      <ul class="main">
+        <li>
+          First level
+          <ul>
+            <li>
+              Second level
+              <ul>
+                <li>
+                  Third level
+                  <ul>
+                    <li>Fourth level</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <hr>
+      <div class="modal">
+        MODAL
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quidem
+          accusantium nisi, aut ad rerum sit sapiente optio vero suscipit hic
+          dolor, vitae et eaque qui provident harum cumque officiis eveniet!
+        </p>
+      </div>
+      <hr>
+      <div class="overlay"></div>
+  </body>
+</html>
+
+-----------------------
+styles.css
+
+----
+li {
+  font-size: 2rem;
+}
+.main {
+  font-size: 2px;
+}
+html {
+  font-size: 10px;
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left:0;
+  z-index:1;
+}
+.modal {
+  border: 2px solid black;
+  width: 300px;
+  height: 100px;
+  background-color: cornflowerblue;
+  font-size: 20px;
+  color: white;
+  position: absolute;
+  z-index: 2;
+  overflow: hidden;
+}

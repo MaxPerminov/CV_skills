@@ -1,0 +1,50 @@
+1) what is bug, difference between bug, error, failure, fault
+
+Bug is an error in a program or a system, that
+causes an unexpected or incorrect result.
+
+An ERROR is a mistake of a developer.
+BUG is an error founded before the product is shipped to the customer. 
+The DEFECT is an error founded after the application goes into production.
+A FAILURE is a defect reaches the end customer.
+FAULT is a process in a program that causes incorrect function.
+
+2)what are bug report attributes
+
+ID - to easily identify the bug.
+Summary - defines Where, What and When
+Description - not necessarily
+Steps To Reproduce
+Actual result
+Expected result
+Attachments - screenshots, videos, files
+Severity
+Priority
+Status - open, closed 
+Environment - browser, os
+
+3) what is the difference between priority and severity
+
+priority - sets by manager - high, medium, low - depends on importance for business
+severity - sets by tester - blocker, critical, major, minor, trivial -
+depends on impact level to function
+
+4)give an example of serious, but not priority bug
+
+Web page is not found when a user clicks on a link, but no one visits this webpage.
+
+5)what is bug resolution
+
+It is a bug status, that determines what we have to do with it.
+Can be:
+-new
+-rejected
+-postponed
+-duplicate
+-opened
+-in progress
+-fixed
+-unfixable
+-verified
+-closed
+-opened again

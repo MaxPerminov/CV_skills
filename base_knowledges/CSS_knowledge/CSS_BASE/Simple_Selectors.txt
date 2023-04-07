@@ -1,0 +1,99 @@
+A CSS selector selects the HTML element(s) you want to style.
+
+1)The element selector selects HTML elements based on the element's(tag) name.
+
+priority 1: header {}
+
+---------------------------------------------------------------------
+2)The id selector uses the unique id attribute of an HTML element to select a
+specific element.
+
+priority 3: <p id="one"></p> - #id {}
+
+-------------------------------------------------------------------------------
+3)The class selector selects HTML elements with a specific class attribute.
+
+priority 2: <ul class="items2"></ul> -  .items2 {}
+
+----
+-the element.class selector is used to select the specified element with the
+specified class:
+
+      p.intro -	selects only <p> elements with class="intro"
+
+----
+-HTML elements can also refer to more than one class:
+
+<p class="center large">This paragraph refers to two classes.</p> -
+
+in this example the <p> element will be styled according to class="center" and
+to class="large"!
+
+---------------------------------------------------------------------------------
+4) Universal selector(*) - selects all elements.
+
+priority 0: * {}
+
+-----------------------------------------------------------------------------------
+5) The CSS Grouping Selector.
+
+table,
+table * {}  - selects table and every element of table
+
+__________________________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS3 Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <h1 class="simple">Hello World!</h1>
+    <p>Text paragraph</p>
+    <p class="fz20">Text paragraph 2</p>
+    <p class="fz20">Text paragraph 3</p>
+    <h2 class="heading1 fz20">Heading</h2>
+    <span class="heading2">Simple span element</span>
+    <h3 id="heading">Hello World!</h3>
+    <h3 id="heading2">Hello World!</h3>
+    <q class="simple">Hello WebDev!</q>
+  </body>
+</html>
+
+----------
+style.css
+
+----
+* {
+    color: red;
+  }
+  p {
+    color: green;
+  }
+  .heading1 {
+    text-decoration: underline;
+  }
+  .heading2 {
+    text-transform: uppercase;
+  }
+  p.fz20 {
+    font-size: 20px;
+  }
+  #heading,
+  #heading2 {
+    font-size: 40px;
+    border: 1px solid #000;
+  }
+  q {
+    color: blue;
+  }
+  q.simple {
+    color: aqua;
+  }
+  body q.simple {
+    color: fuchsia;
+  }

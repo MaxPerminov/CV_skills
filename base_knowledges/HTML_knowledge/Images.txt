@@ -1,0 +1,52 @@
+ Sizing of images should be executed on  CSS side!!!
+
+<img> - used to embed an image:
+-src - URL;
+-alt - specifies an alternate text for an image, if the image cannot be displayed.
+
+<figure>(semantic) - specifies self-contained content, like illustrations,
+diagrams, photos, code listings, etc.
+    <figcaption>(semantic) - defines a caption for a <figure> element.
+
+<picture> - the first source that fits the preferences is the one being used.
+    <source> - browser will choose the first <source> it supports:
+    -media - accepts any valid for CSS media query;
+    -srcset - specifies the URL of the image to use in different situations.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Basics</title>
+</head>
+<body>
+  
+  <!-- Simple image -->
+  <img src="https://picsum.photos/300/300" alt="Just image">
+  
+  <!-- Responsive image -->
+  <picture>
+    <source media="(min-width:1024)" srcset="https://picsum.photos/600/600">
+    <source media="(min-width:768)" srcset="https://picsum.photos/300/300">
+    <source media="(min-width:360)" srcset="https://picsum.photos/100/100">
+    <img src="https://picsum.photos/300/300" alt="Just image">
+  </picture>
+  
+  <!-- Image with semantic description. Appropriate way to put images -->
+  <figure>
+    <img src="https://picsum.photos/300/300" alt="Just image">
+    <figcaption>It's a simple description for a picture above</figcaption>
+  </figure>
+
+  <!-- Images with semantic description -->
+  <figure>
+    <img src="https://picsum.photos/300/300" alt="Just image">
+    <img src="https://picsum.photos/300/300" alt="Just image">
+    <img src="https://picsum.photos/300/300" alt="Just image">
+    <figcaption>
+      <p>It's a simple description for a couple of pics above.It's a simple description for a couple of pics above.It's a simple description for a couple of pics above.</p>
+    </figcaption>
+  </figure>
+</body>
+</html>

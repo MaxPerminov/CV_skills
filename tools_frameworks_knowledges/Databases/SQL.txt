@@ -1,0 +1,748 @@
+1)what are primary and foreign keys
+
+These are columns or group of columns in relational database tables.
+
+A primary key defines data in the corresponding column of the table as unique.
+A foreign key provides a link between data in two tables.
+
+2)command types SQL
+
+1.Data Definition Language
+CREATE - creation of a new table;
+DROP - deletion of a table;
+ALTER - changing of a table;
+TRUNCATE - deleting all records from a database;
+RENAME - renaming object.
+
+2.Data Control Language - create, read, update, delete.
+GRANT - database access to user;
+REVOKE - delete user database access;
+DENY - database denied to user.
+
+3.Transaction Control Language - database changes manipulation.
+COMMIT - finishing transaction and saving changes;
+SAVEPOINT - saving of transaction progress;
+SET TRANSACTION - transaction settings;
+ROLLBACK - backup.
+
+3)Data Manipulation Language - manipulating database data(INSERT&UPDATE&DELETE)
+_________________________________________________________________________________
+INSERT - insert data into table record: 
+
+Syntax:
+INSERT INTO table (column1, column2, column3,...)
+VALUES(value1, value2, value3,...)
+
+example:
+table: Store_Info, fields: Store_name, Manager_ID, Sales, Txn_Date
+Task: INSERT New York into Store_name, 500 into Sales, Jan-10-1999 into Txn_Date
+Resolve:
+INSERT INTO Store_Info (Store_name, Sales, Txn_Date)
+VALUES ('New York', 500, 'Jan-10-1999');
+__________________________________________________________________________________
+
+UPDATE -  value changing.
+
+Syntax:
+UPDATE table
+SET column1=value, column2=value2,...
+WHERE some_column=some_value
+
+example1:
+table: Store_Info, fields: Store_name, Sales, Txn_Date
+Task: change to 500 in Sales, where Store_name - Los Angeles, Txn_Date - Jan-08-1999.
+Resolve:
+UPDATE Store_Info
+SET Sales=500
+WHERE Store_name='Los Angeles' AND Txn_Date='Jan-08-1999';
+
+example2:
+table: Store_Info, fields: Store_name, Sales, Txn_Date
+Task: change: to 600 in Sales, to Jan-15-1999 in Txn_date, where Store_name - San Diego.
+Resolve:
+UPDATE Store_Info
+SET Sales=600, Txn_Date='Jan-15-1999'
+WHERE Store_name='San Diego';
+
+example3:
+table: Store_Info, fields: Store_name, Sales, Txn_Date
+Task:change to 1000 in Sales, where Txn_Date - Jan-7-1999 
+Resolve:
+UPDATE Store_Info 
+SET Sales=1000
+WHERE Txn_Date='Jan-7-1999';
+_________________________________________________________________________________________________
+
+DELETE - records deletion. 
+
+Syntax:
+DELETE FROM table
+WHERE some_column=some_value
+or
+DELETE FROM table - delete all
+
+example1:
+table: Store_Info, fields: Store_name, Sales, Txn_Date
+Task: delete record in Store_name, where Store_name - Los Angeles
+Resolve:
+DELETE FROM Store_Info
+WHERE Store_Name='Los Angeles';
+
+example2:
+table: Store_Info, fields: Store_name, Sales, Txn_Date
+Task: delete record in Store_name, where Sales - 700, Txn_Date - Jan-8-1999
+Resolve:
+DELETE FROM Store_Info
+WHERE Sales=700 AND Txn_Date='Jan-8-1999';
+
+example3:
+table: Store_Info, fields: Store_name, Sales, Txn_Date
+Task: delete record in Store_name, where Txn_Date - Jan-8-1999 or Sales - 250
+Resolve:
+DELETE FROM Store_Info
+WHERE Sales=250 OR Txn_Date='Jan-8-1999';
+
+4)SELECT
+
+SELECT - selecting data from database
+Syntax:
+0. SELECT * FROM table; - gets all table
+1. SELECT column name FROM table;-gets all values of the column
+2. SELECT column name, column name2 FROM table;
+3. SELECT DISTINCT column name FROM table; - gets all unique values of the column
+4. SELECT column name FROM table WHERE column2>1000;
+5. SELECT * FROM table WHERE column2>1000 OR column3=value; getting all from table with WHERE
+6. SELECT column name FROM table WHERE column2>1000 OR(column2<500 AND column2>275);
+7. SELECT * FROM table WHERE column3 BETWEEN valueN AND valueM;
+8. SELECT * FROM table WHERE column2 NOT BETWEEN 280 AND 1000;
+9. SELECT * FROM table ORDER BY column2 DESC;
+
+example1:
+table: Store_Info, fields: Store_name, Sales, Txn_Date
+Task: get data, where Sales>300 and Txn_Date between 1 and 10 January
+Resolve:
+SELECT * FROM Store_Info
+WHERE Sales>300 AND Txn_Date BETWEEN 'Jan-1-1999' AND 'Jan-10-1999';
+
+example2:
+table: Store_Info, fields: Store_name, Sales, Txn_Date
+Task: get data order by desc - where Sales>300 and Store_name - Los Angeles
+Resolve:
+SELECT * FROM Store_Info
+WHERE Sales>300 AND Store_name='Los Angeles' ORDER BY Sales DESC;
+
+example3:
+table: Store_Info, fields: Store_name, Sales, Txn_Date
+Task: get data - where Store_name - Boston and Sales not between 500 and 900
+Resolve:
+SELECT * FROM Store_Info
+WHERE Store_name='Boston' AND Sales NOT BETWEEN 500 AND 900;
+
+example4:
+table: Store_Info, fields: CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country
+Task: get data - where Country - Mexico and PostalCode - 05023
+Resolve:
+SELECT * FROM Store_Info
+WHERE Country='Mexico' AND PostalCode=05023;
+
+example5:
+Table=table, fields:OrderDetailID, OrderID, ProductID, Quantity
+Task: get OrderID, quantity WHERE product id>14 and <22
+SELECT OrderID, Quantity
+FROM table
+WHERE ProductID>14 OR ProductID<2;
+
+example6:
+Table=Employee, fields:Employee id, Employee name, age, Gender, Location, Salary
+Task: get data: Employee name, where age BETWEEN 20 AND 30 and Gender is Female
+SELECT Employee name
+FROM Employee
+WHERE age BETWEEN 20 AND 30 AND Gender='Female';
+
+5)LIKE
+
+Syntax:
+1. WHERE value LIKE '10%' - Find any values that starts with 10
+2. WHERE value LIKE '%10%' - Find any values that have 10 in any position
+3. WHERE value LIKE '_00%' - Find any values that have 00 in the second and third position
+4. WHERE value LIKE '1_%_%' - Find any values that start with 1 and are at least 3 characters in length
+5. WHERE value LIKE '_1%2' - Find any values that have a 1 in the second position and end with a 2
+6. WHERE value LIKE '1___2' - Find any values in a five-digit number that start with 1 and end with 2
+
+Examples:
+
+1. Table=student_details, fields: id, first_name, last_name, age, subject, games
+Task: get first name and last name, where first name begins with S
+SELECT first_name, last_name
+FROM student_details
+WHERE first_name LIKE 'S%';
+
+2. Table=student_details, fields: id, first_name, last_name, age, subject, games
+Task: get first name and last name, where first name contains 2nd letter a
+SELECT first_name, last_name
+FROM student_details
+WHERE first_name LIKE '_a%';
+
+3. Table=student_details, fields: id, first_name, last_name, age, subject, games
+Task: get first name and last name, where subject doesn't end with s
+SELECT first_name, last_name
+FROM student_details
+WHERE subject NOT LIKE '%s';
+-------------------------------------------------------------------------------------------------------------
+4. Table=student_details, fields: id, first_name, last_name, age, subject, games
+Task: get first name and last name, where first name begins with S and consists of 4 letters
+SELECT first_name, last_name
+FROM student_details
+WHERE first_name LIKE 'S___';
+
+5. Table=student_details, fields: id, first_name, last_name, age, subject, games
+Task: get first name and last name, where first name begins with S and last letter is A
+SELECT first_name, last_name
+FROM student_details
+WHERE first_name LIKE 'S%A';
+
+6. Table=student_details, fields: id, first_name, last_name, age, subject, games
+Task: get first name and last name, where game contains S
+SELECT first_name, last_name
+FROM student_details
+WHERE games LIKE '%S%';
+
+7. Table=student_details, fields: id, first_name, last_name, age, subject, games
+Task: get first name, where id ends with 2. 
+SELECT first_name
+FROM student_details
+WHERE id LIKE '%2';
+
+8. Table=student_details, fields: id, first_name, last_name, age, subject, games
+Task: get first name, age - where game last letter is t
+SELECT first_name, age
+FROM student_details
+WHERE games LIKE '%t';
+
+9. Table=student_details, fields: id, first_name, last_name, age, subject, games
+Task: get first name, where subject's first letter is s and 3rd letter - i.
+SELECT first_name
+FROM student_details
+WHERE subject LIKE 's_i%';
+
+10. Table=student_details, fields: id, first_name, last_name, age, subject, games
+Task: get name, where age>10 or subject contains N
+SELECT first_name
+FROM student_details
+WHERE age>10 OR subject LIKE '%N%';
+
+6)BETWEEN&AND
+
+Examples:
+
+1. Table=student_details, fields: id, first_name, last_name, age, subject, games
+Task: get first_name, last_name, age - where age between 10 and 15
+SELECT first_name, last_name, age
+FROM student_details
+WHERE age BETWEEN 10 AND 15;
+
+2. Table=student_details, fields: id, first_name, last_name, age, subject, games
+Task: get first_name, last_name, age - where age>=10 and subject not Science
+SELECT first_name, last_name, age
+FROM student_details
+WHERE age>=10 AND subject NOT LIKE 'Science';
+
+3. Table=student_details, fields: id, first_name, last_name, age, subject, games
+Task: get first_name, last_name, age - where age not between 9 and 12
+SELECT first_name, last_name, age
+FROM student_details
+WHERE age NOT BETWEEN 9 AND 12;
+
+4. Table=student_details, fields: id, first_name, last_name, age, subject, games
+Task: get first_name, last_name, age - where age between (5 and 8) and  (13 and 15)
+SELECT first_name, last_name, age 
+FROM student_details
+WHERE age BETWEEN 5 AND 8 AND age BETWEEN 13 AND 15;
+
+5. Table=student_details, fields: id, first_name, last_name, age, subject, games
+Task: get first_name, last_name, age - where subject doesn't contain t and id between 101 and 103
+SELECT first_name, last_name, age 
+FROM student_details
+WHERE subject NOT LIKE '%t%' AND id BETWEEN 101 AND 103;
+
+7)ORDER BY
+
+ORDER BY
+The ORDER BY clause is used in a SELECT statement to sort results either in ascending or descending order.
+
+Syntax:
+SELECT column
+FROM table
+WHERE condition 
+ORDER BY column DECS (or ASC); where DESC - descending, ASC - ascending order of the value.
+
+Examples:
+
+1. Table=employee, fields: id, name, dept, age, salary, location
+Task: get name, salary  - where dept - electrical, sort by salary (ascending)
+SELECT name, salary
+FROM employee
+WHERE dept='Electrical' ORDER BY salary ASC;
+
+2. Table=employee, fields: id, name, dept, age, salary, location
+Task: get data, sort by descending
+SELECT * 
+FROM employee
+ORDER BY age DESC;
+
+8)ALIASES
+
+!!!ALIASES
+Adding of a new column through the request.
+
+Examples:
+
+1. Table=employee, fields: id, name, dept, age, salary, location
+Task:get name, salary, new salary+20% (new_salary) where new_salary> 30000, 
+sort by desc of a new salary
+SELECT name, salary, salary*1.2 AS new_salary
+FROM employee
+WHERE new_salary>30000 ORDER BY new_salary DESC;
+
+Task:get name, dept, new salary(-50% (new_salary))
+sort by descending of new salary;
+SELECT name, dept, salary*0.5 AS new_salary
+FROM employee
+ORDER BY new_salary DESC;
+
+3. Table=employee, fields: id, name, dept, age, salary, location
+Task:get name, salary, new salary+50% (new_salary), where dept is electronics
+SELECT name, salary, salary*1.5 AS new_salary
+FROM employee
+WHERE dept='Electronics';
+
+4. Table=Employee, fields:Employee id, Employee name, age, Gender, Location, Salary
+Task: get Employee name, new column - new salary*2 where age>=31 and Gender is Female
+SELECT Employee name, Salary*2 AS new_salary
+FROM Employee
+WHERE age>=31 AND Gender='Female';
+
+9)COUNT
+
+The function returns the number of rows in the table that satisfies the condition specified in the WHERE condition.
+If the WHERE condition is not specified, then the query returns the total number of rows in the table.
+Syntax:
+SELECT COUNT column
+FROM table
+WHERE condition;
+
+Examples:
+
+1. Table=employee, fields: id, name, dept, age, salary, location
+Task: get count of employees where dept is electronics
+SELECT COUNT * FROM employee
+WHERE dept='Electronics';
+
+2. Table=employee, fields: id, name, dept, age, salary, location
+Task: get count of employees, where salary<30000
+SELECT COUNT * FROM employee
+WHERE salary<30000;
+
+3. Table=employee, fields: id, name, dept, age, salary, location
+Task: get count of employees, where age > 28
+SELECT COUNT * FROM employee
+WHERE age>28;
+
+4. Table=employee, fields: id, name, dept, age, salary, location
+Task: get count of unique locations
+SELECT COUNT (DISTINCT location) FROM employee;
+
+5. Table=employee, fields: id, name, dept, age, salary, location
+Task: get count of unique dept
+SELECT COUNT (DISTINCT dept) FROM employee;
+
+6. Table=employee, fields: id, name, dept, age, salary, location
+Task: get all unique dept
+SELECT DISTINCT dept FROM employee;
+
+7. Table=Employee, fields:Employee id, Employee name, age, Gender, Location, Salary
+Task: get quantity of people, where age>30, men
+SELECT COUNT *
+FROM Employee
+WHERE Age>30 AND Gender='Male';
+
+10)MAX&MIN&AVG&SUM&GROUP_BY
+
+SELECT MAX(column) FROM table; 
+SELECT MIN(column) FROM table; 
+SELECT AVG(column) FROM table; 
+SELECT SUM(column) FROM table; 
+
+Examples:
+1. Table=employee, fields: id, name, dept, age, salary, location
+Task: get average salary in new column Average_Sal
+SELECT AVG (salary) AS Average_Sal FROM employee;
+
+2. Table=employee, fields: id, name, dept, age, salary, location
+Task: get maximal salary, minimal age
+SELECT MAX(salary), MIN(age )FROM employee;
+
+3. Table=employee, fields: id, name, dept, age, salary, location
+Task: get minimal salary
+SELECT MIN(salary) FROM employee;
+
+4. Table=employee, fields: id, name, dept, age, salary, location
+Task: get maximal age
+SELECT MAX(age) FROM employee;
+
+5. Table=employee, fields: id, name, dept, age, salary, location
+Task: get average age
+SELECT AVG(age) FROM employee;
+
+6. Table=Employee, fields:Employee id, Employee name, age, Gender, Location, Salary
+Task: get AVG SALARY, where age>=25
+SELECT AVG(Salary) AS Average_Sal
+FROM Employee
+WHERE Age>=25;
+
+__________________
+GROUP BY clause is used along with the group functions to retrieve data
+grouped according to one or more columns
+
+Examples:
+1. Table=employee, fields: id, name, dept, age, salary, location
+Task: group by name
+SELECT * FROM employee
+GROUP BY name;
+
+11)HAVING
+
+HAVING clause is used to filter data based on the group functions.
+This is similar to WHERE condition, but is used with group functions.
+Group function can't be used in WHERE.
+
+Examples:
+1. Table=employee, fields: id, name, dept, age, salary, location
+Task: SELECT dept, SUM(salary), where SUM (salary)>25000 and group by dept
+SELECT dept, SUM(salary) FROM employee
+GROUP BY dept
+HAVING SUM(salary)>25000;
+
+2. Table=employee, fields: id, name, dept, age, salary, location
+Task: SELECT dept, AVG(salary), where AVG(salary)>=30000 and group by dept
+SELECT dept, AVG(salary) AS Average_Sal FROM employee
+GROUP BY dept
+HAVING AVG(salary)>=30000;
+
+3. Table=employee, fields: id, name, dept, age, salary, location
+Task: SELECT location, AVG(age), where AVG(age)>22 and group by location
+SELECT location, AVG(age) AS Average_Age FROM employee
+GROUP BY location
+HAVING AVG(age)>22;
+
+4. Table=table, fields:OrderDetailID, OrderID, ProductID, Quantity
+Task: get OrderID, WHERE Quantity BETWEEN 9 AND 35 and group by order id
+SELECT OrderID
+FROM table
+GROUP BY OrderID
+HAVING Quantity BETWEEN 9 AND 35;
+
+12)SUBQUERY&NULL
+
+SUBQUERY or inner query or Nested query is a query in a query. It usually added in the WHERE clause.
+Most of the time it is used when you know how to search for a value using a SELECT statement, but don't know the
+exact value in DB.
+Syntax:
+SELECT column1, column2
+FROM table
+WHERE column1 IN (SELECT column2
+FROM table
+WHERE column3='value');
+
+________________________________________________________________________________________________________________
+NULL value represents a blank value in a table. It used for identifying any missing entries in a table.
+It is possible to use NOT NULL to display table entries which aren't NULL.
+Syntax:
+SELECT column
+FROM table
+WHERE column IS NULL;
+
+SELECT column
+FROM table
+WHERE column IS NOT NULL;
+
+Examples:
+1. Table=Employee, fields:Employee id, Employee name, age, Gender, Location, Salary
+Task: get data where Location is absent
+SELECT * FROM Employee WHERE Location IS NULL;
+
+2. Table=Employee, fields:Employee id, Employee name, age, Gender, Location, Salary
+Task: get data Location is present
+SELECT * FROM Employee WHERE Location IS NOT NULL;
+
+3. Table=Employee, fields:Employee id, Employee name, age, Gender, Location, Salary
+Task: get data: Employee name, age, where Location is present and Gender Male
+SELECT Employee name, age
+FROM Employee
+WHERE Location IS NOT NULL AND Gender='Male';
+
+4. Table=Employee, fields:Employee id, Employee name, age, Gender, Location, Salary
+Task: get Employee name, where Salary BETWEEN 40000 AND 70000 and Location is not null
+SELECT Employee name
+FROM Employee
+WHERE Salary BETWEEN 40000 AND 70000 AND Location IS NOT NULL;
+
+13)JOIN
+
+A JOIN clause is used to combine rows from two or more tables, based on a related column between them.
+
+1.JOIN (INNER) - returns rows when there is a match in both tables.
+2.LEFT JOIN - returns all rows from the left table, even if there are no matches in the right table.
+3.RIGHT JOIN - returns all rows from the right table, even if there are no matches in the left table.
+4.FULL JOIN - returns rows when there is a match in one of the tables.
+
+Scheme:
+SELECT---------------------WHAT
+FROM---------------LEFT TABLE
+   JOIN - FROM RIGHT TABLE
+ON - TABLE.KEY=TABLE.KEY
+
+_____________________________________________________________________________________________________________
+I
+INNER JOIN
+
+Syntax:
+SELECT column_name
+FROM table1
+INNER JOIN table2
+ON table1.column_name=table2.column_name	
+
+Example:
+
+1. tables:product, order_items; key:product_id; fields: 
+1)product_id, product_name, supplier_name, unit_price
+2)order_id, product_id, total_units, customer
+task:order_id, product_name, unit_price, supplier_name, total_units
+
+SELECT order_id, product_name, unit_price, supplier_name, total_units
+FROM product
+JOIN order_items
+ON product.product_id=order_items.product_id;
+
+2. tables:employees, departments; key:department_id; fields:
+1)id, employee_name, department_id
+2)department_id, department_name
+task: all inner
+
+SELECT *
+FROM employees
+JOIN departments
+ON employees.department_id=departments.department.id;
+
+3. tables:employees, departments; key:department_id; fields:
+1)id, employee_name, department_id
+2)department_id, department_name
+task: department_id, employee_name, department_name
+
+SELECT department_id, employee_name, department_name
+FROM employees
+JOIN departments
+ON employees.department_id=departments.department.id;
+_____________________________________________________________________________________________________________
+II
+LEFT JOIN
+The LEFT JOIN keyword returns all records from the left table (table1), and the matched records from the right
+table(table2). The result is NULL from the right side, if there is no match.
+Syntax:
+SELECT column_name(s)
+FROM table1
+LEFT JOIN table2
+ON table1.column_name=table2.column_name;
+
+Example:
+
+1. tables:product, order_items; key:product_id; fields: 
+1)product_id, product_name, supplier_name, unit_price
+2)order_id, product_id, total_units, customer
+task:order_id, product_name, unit_price, supplier_name, total_units with left join
+
+SELECT order_id, product_name, unit_price, supplier_name, total_units
+FROM product
+LEFT JOIN order_items
+ON product.product_id=order_items.product_id;
+______________________________________________________________________________________________________________
+III
+RIGHT JOIN
+The RIGHT JOIN keyword returns all records from the right table (table2), and the matched records from the left
+table(table1). The result is NULL from the left side, when there is no match.
+Syntax:
+SELECT column_name(s)
+FROM table1
+RIGHT JOIN table2
+ON table1.column_name=table2.column_name;
+
+Example:
+
+1. tables:Authors, Books; key:AuthorID=BookID; fields: 
+1)AuthorID, AuthorName
+2)BookID, BookName
+task:all data with right join
+
+SELECT *
+FROM Authors
+RIGHT JOIN Books
+ON Authors.AuthorID=Books.BookID;
+_________________________________________________________________________________________________________________
+IV
+FULL JOIN
+The FULL OUTER JOIN keyword return all records when there is a match in either left(table1) or 
+right(table2) table records. 
+Syntax:
+SELECT column_name(s)
+FROM table1
+FULL JOIN table2
+ON table1.column_name=table2.column_name;
+
+Example:
+
+1. tables:Authors, Books; key:AuthorID=BookID; fields: 
+1)AuthorID, AuthorName
+2)BookID, BookName
+task:all data with full join
+
+SELECT *
+FROM Authors
+FULL JOIN Books
+ON Authors.AuthorID=Books.BookID;
+__________________________________________________________________________________________________________________
+14)PRACTICE:
+
+1. tables: employees, departments; key:department_id; fields:
+1)id, employee_name, department_id;
+2)department_id, department_name;
+task:id, department_id, employee_name, department_name
+
+SELECT id, employee_name, department_name
+FROM employees
+LEFT JOIN departments
+ON employees.department_id=departments.department_id;
+------------
+2. tables: employees, departments; key:department_id; fields:
+1)id, employee_name, department_id;
+2)department_id, department_name;
+task:id, department_id, employee_name, department_name
+
+SELECT id, department_id, employee_name, department_name
+FROM employees
+FULL JOIN departments
+ON employees.department_id=departments.department_id;
+--------------
+3. tables: employees, departments; key:department_id; fields:
+1)id, employee_name, department_id;
+2)department_id, department_name;
+task:id, department_id, employee_name, department_name where employee_name = Homer Simpson
+
+SELECT id, department_id, employee_name, department_name
+FROM employees
+FULL JOIN departments
+ON employees.department_id=departments.department_id
+WHERE employee_name='Homer Simpson';
+-----------------------------	
+4. tables: employees, departments; key:department_id; fields:
+1)id, employee_name, department_id;
+2)department_id, department_name;
+task:id, department_id, employee_name, department_name where department_name=Human Resources OR Customer Service
+
+SELECT id, department_id, employee_name, department_name
+FROM employees
+JOIN departments
+ON employees.department_id=departments.department_id
+WHERE department_name='Human Resources' OR department_name='Customer Service';
+------------------------------------------------------------------
+5. tables: employees, departments; key:department_id; fields:
+1)id, employee_name, department_id;
+2)department_id, department_name;
+task: employee_name without department
+
+SELECT employee_name
+FROM employees
+WHERE department_id IS NULL;
+-----------------------------------------------------------------------
+6. tables: employees, departments; key:department_id; fields:
+1)id, employee_name, department_id;
+2)department_id, department_name;
+task:id, employee_name, department_id order by department_id asc
+
+SELECT id, employee_name, department_id
+FROM employees
+ORDER BY department_id ASC;
+-----------------------------------------------------------------------------
+7. tables: USER, ORDER; key:USER.id=ORDER.user_id; fields:
+1)USER.id, name, phone, Delivery address;
+2)ORDER.id, user_id, from_user,sum;
+task:phone, delivery address, where name=music
+
+SELECT phone, Delivery address
+FROM USER
+WHERE name='Muzik';
+-----------------------------------------------------------------------------
+8. tables: USER, ORDER; key:USER.id=ORDER.user_id; fields:
+1)USER.id, name, phone, Delivery address;
+2)ORDER.id, user_id, from_user,sum;
+task:user data, where sum>2000
+
+SELECT USER.id, name, phone, Delivery address
+FROM USER
+FULL JOIN ORDER
+ON USER.id=ORDER.user_id
+WHERE sum>2000;
+----------------------------------------------------------------------------------
+9. tables: USER, ORDER; key:USER.id=ORDER.user_id; fields:
+1)USER.id, name, phone, Delivery address;
+2)ORDER.id, user_id, from_user,sum;
+task:Deliver address, sum where name kolya or sasha
+
+SELECT name, Delivery address, sum
+FROM USER
+JOIN ORDER
+ON USER.id=ORDER.user_id
+WHERE name IN ('Kolya', 'Sasha');
+---------------------------------------------------------------------------------------
+10. tables: USER, ORDER; key:USER.id=ORDER.user_id; fields:
+1)USER.id, name, phone, Delivery address;
+2)ORDER.id, user_id, from_user,sum;
+task:user id, name, phone where order id %4
+
+SELECT USER.id, name, phone
+FROM USER
+JOIN ORDER
+ON USER.id=ORDER.user_id
+WHERE ORDER.id LIKE '%4';
+------------------------------------------------------------------------------------------
+11. tables: USER, ORDER; key:USER.id=ORDER.user_id; fields:
+1)USER.id, name, phone, Delivery address;
+2)ORDER.id, user_id, from_user,sum;
+task:phone, sum where USER.id in 0,3
+
+SELECT phone, sum
+FROM USER
+JOIN ORDER
+ON USER.id=ORDER.user_id
+WHERE USER.id IN (0, 3);
+---------------------------------------------------------------------------------------------
+12. tables: USER, ORDER; key:USER.id=ORDER.user_id; fields:
+1)USER.id, name, phone, Delivery address;
+2)ORDER.id, user_id, from_user,sum;
+task: SELECT AVG (sum)
+
+SELECT AVG (sum) as avg_sum FROM ORDER;
+------------------------------------------------------------------------------------------
+13. tables: USER, ORDER; key:USER.id=ORDER.user_id; fields:
+1)USER.id, name, phone, Delivery address;
+2)ORDER.id, user_id, from_user,sum;
+task: SELECT all without duplicate
+
+SELECT USER.id, name, phone, Delivery address, ORDER.id,sum
+FROM USER
+JOIN ORDER
+ON USER.id=ORDER.user_id;
+
+15) types of SQL data
+
+Numbers, text, data and time
+

@@ -1,0 +1,10 @@
+MongoDB is a source-available cross-platform document-oriented database program.
+Classified as a NoSQL database program, MongoDB uses JSON-like documents with optional schemas.
+
+1)in working directory of flask:$python -m pip install "pymongo[srv]"
+2)in mongo db connect to cluster:
+-Add your connection string into your application code
+3)create connection.py
+4)$ python -m pip install python-dateutil
+5)$ python -m pip install motor##
+6)$ pip install flask[async]##

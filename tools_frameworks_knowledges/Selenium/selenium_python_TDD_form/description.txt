@@ -1,0 +1,3 @@
+This is a start of form's TDD, using selenium and python.
+There are two tests: 1 - registration testing; 2 - log in testing; that are providing functions to iterate 
+through input data on registration and log in.

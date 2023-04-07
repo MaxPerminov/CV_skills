@@ -1,0 +1,11 @@
+get page = get_page/get_page.py  
+Positive max email = test_registration/registration_tests.py
+Positive min email = test_registration/registration_tests.py
+Positive max pass = test_registration/registratione_tests.py
+Positive min pass = test_registration/registratione_tests.py
+Do not enter any value in all fields = test_registration/registration_tests.py
+Enter valid value in email field, do not enter any value in pass field = test_registration/registration_tests.py
+Enter valid value in email field, enter 4 spaces in pass field = test_registration/registratione_tests.py
+Enter valid value in pass field, do not enter any value in email field = test_registration/registration_tests.py
+Enter valid value in pass field, enter 4 spaces in email field = test_registration/registration_tests.py
+Enter valid value in pass field, enter email without @(at sign) in email field = test_registration/registration_tests.py

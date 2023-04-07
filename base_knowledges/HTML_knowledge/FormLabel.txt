@@ -1,0 +1,127 @@
+<form>(semantic) - is a container for different types of input elements:
+-action - URI of a program that processes the form information.
+-autocomplete - allows browser to complete content of input elements automatically.
+-novalidate - doesn't validate the form on submit.
+    <input>(inline-block) - specifies an input field where the user can enter data.
+    <fieldset>(block) - groups and draws a box around the related elements:
+        <legend>(block) - define a name for the fieldset.
+    <select>(inline-block) - creates a drop-down list:
+    -multiple - multiple select.
+        <option> - defines an item in a select list:
+        -label - change option syntax;
+        -selected - sets option by default;
+        <optgroup> - is used to group related options in a select:
+        -label - sets a label for a group.
+    <textarea>(inline-block) - a multi-line text input control:
+
+<label>(semantic, inline) - defines a label for: <input>, <meter>,
+                           <textarea>, <progress>, <select>:
+-for - must be equal to the id of the related element to bind them together.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Basics</title>
+</head>
+<body>
+
+  <!-- Simple form with select-->
+  <form action="formHandler.php" name="simple form" autocomplete="on">
+    <input type="text"><br>
+    <select>
+      <option value="Front-end">Front-end</option>
+      <option value="Back-end">Back-end</option>
+      <option value="QA" label="QA">
+      <option value="FS" selected>Full-stack</option>
+    </select><br>
+    <textarea name="text" cols="45" rows="10"></textarea><br>
+    <input type="submit"><br>
+  </form>
+  <hr>
+
+  <!--Fieldset & legend  -->
+  <form action="formHandler.php" name="simple form 2">
+    <fieldset>
+      <legend>Simple form legend</legend>
+      <input type="text" /><br>
+      <select>
+        <option value="Front-end">Front-end</option>
+        <option value="Back-end">Back-end</option>
+      </select><br>
+      <textarea name="text" cols="45" rows="10"></textarea><br>
+      <input type="submit"><br>
+    </fieldset>
+  </form>
+  <hr>
+
+  <!-- Inner fieldset & legend -->
+  <form action="formHandler.php" name="simple form 3">
+    <fieldset>
+      <legend>Personal Data</legend>
+      <input type="text"/><br>
+      <select>
+        <option value="Front-end">Front-end</option>
+        <option value="Back-end">Back-end</option>
+      </select><br>
+    </fieldset>
+    <fieldset>
+      <legend>Personal Message</legend>
+      <textarea name="text" cols="45" rows="10"></textarea><br>
+    <input type="submit"><br>
+    </fieldset>
+  </form>
+  <hr>
+
+  <!-- Label -->
+  <label for="username">Username</label>
+  <input type="username"><br>
+  <label>
+    Password
+    <input type="password">  
+  </label>
+  <hr>
+
+  <!-- Result form -->
+  <form action="formHandler.php" name="simple form 4">
+    <fieldset>
+      <legend>Personal data</legend>
+      <label for="name">Your name</label>
+      <input type="text" id="name"><br>
+      <label for="speciality">Choose your speciality</label>
+      <select id="speciality">
+        <option value="Front-end">Front-end</option>
+        <option value="Back-end">Back-end</option>
+      </select><br>
+    </fieldset>
+    <fieldset>
+      <legend>Personal Message</legend>
+      <label for="message">Enter your message</label>
+      <textarea name="text" id="message" cols="45" rows="10"></textarea><br>
+    </fieldset>
+    <input type="submit"><br>
+  </form>
+  <hr>
+
+  <!-- Select with optgroup -->
+  <select>
+    <optgroup label="Speciality">
+      <option value="Front-end">Front-end</option>
+      <option value="Back-end">Back-end</option>
+    </optgroup>
+    <optgroup label="Direction">
+      <option value="Mobile">Mobile development</option>
+      <option value="Node">Node.js development</option>
+    </optgroup>
+  </select>
+  <hr>
+
+  <!-- Multiple select -->
+  <select multiple>
+    <option value="Front-end">Front-end</option>
+    <option value="Back-end">Back-end</option>
+  </select>
+  <hr>
+</body>
+</html>

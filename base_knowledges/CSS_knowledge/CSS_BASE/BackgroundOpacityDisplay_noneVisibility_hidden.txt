@@ -1,0 +1,110 @@
+
+background-attachment: fixed; - specifies whether the background image should
+                       local;   scroll or be fixed.
+
+background-color: gainsboro;
+background-image: url();
+
+---
+background-position: 50% 50%; - sets the starting position of a background image.
+
+    left top;  - if you only specify one keyword, the other value will be "center".
+    left center;
+    left bottom;
+    right top;
+    right center;
+    right bottom;
+    center top;
+    center center;
+    center bottom;
+
+    x y; - the first value is the horizontal position and the second value is
+    the vertical. The top left corner is 0 0. The right bottom corner is 100% 100%.
+    If you only specify one value, the other value will be 50%. Default is: 0 0.
+
+---
+background-repeat: no-repeat;
+                   repeat-x;
+                   repeat-y;
+                   space;
+                   round;
+
+---
+background-size: contain; - resize the background image to make the image is fully
+                            visible;
+
+                 cover; - resize the background image to cover the container, even
+                 if it has to stretch or cut the image;
+
+                 x y; - width height. If only one value is given, the second is set
+                        to "auto".
+
+----------------
+Background shorthand property:
+
+<background: background-color background-image background-repeat
+            background-attachment background-position>:
+
+background: #fff url("img_tree.png") no-repeat right top;
+---------------
+Multiple backgrounds - to display background at top among others - it should be
+declared higher, then others, in CSS code.
+
+_____________________________________________________________________________________
+display: none; - removes the element from the document. It does not take up any space.
+visibility:hidden; - hides the element, but it still takes up space in the layout.
+
+opacity: 0.3; - the lower value is - the more transparent element is.
+           0;
+           1;
+
+background-color: transparent; - element set by this is hidden.
+
+_________________________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS3 Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+  <div class="wrapper"></div>    
+  </body>
+  <aside>
+    <h2 class="first">Hello World!</h2>
+  </aside>
+</html>
+
+--------------------------------------------------------------------------------
+styles.css
+
+----
+body {
+  padding: 0;
+  margin: 0;
+}
+.wrapper {
+  min-height: 100vh;
+  width: 100%;
+/* background-color: gainsboro;
+background-image: url(https://images.pexels.com/photos/691571/pexels-photo-691571.
+jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+background-size: cover;
+background-size: auto 300px;
+background-repeat: no-repeat;
+background-position: 50% 50%;
+background-attachment: fixed;
+opacity: 1;*/
+background: url(https://seeklogo.com/images/C/css3-logo-8724075274-seeklogo.com.png)
+    center no-repeat,
+  url(https://images.pexels.com/photos/691571/pexels-photo-691571.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+}
+.first {
+  /* visibility: hidden;
+  opacity: 0; */
+  display: none;
+}

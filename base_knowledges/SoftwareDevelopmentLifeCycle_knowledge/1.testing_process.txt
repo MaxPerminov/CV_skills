@@ -1,0 +1,57 @@
+1)what's testing
+
+Software testing is the process of evaluating and verifying,
+that a product does what it should.
+
+2)why do we have to test software
+
+Testing is important because it discovers defects/bugs before a product delivery
+to a client, which guarantees high quality of the software. It saves money
+and reputation for developers.
+
+3)what is testing process
+
+1. Study and analysis of the subject of testing.
+2. Planning of testing.
+3. Execution of testing.
+
+4)what are main phases of STLC, what are entry and exit criteria
+
+test analysis;
+test planning;
+test design;
+test implementation;
+test monitoring and control;
+test execution;
+test completion.
+
+Entry and exit criteria - set of conditions to begin and to finish testing.
+1.Entry criteria is met when test tools, testable code, test data are ready for testing.
+2.Exit criteria depends on time estimated, code coverage by tests, number of founded bugs.
+
+5)what are testing levels
+
+unit testing
+integration testing
+system testing
+acceptance testing
+
+6)what are principles of testing
+
+1. Testing shows the presence of defects, not their absence.
+2. Exhaustive testing is impossible.
+3. Early testing saves time and money.
+4. Defects cluster together: 80 percent of defects are in 20 percent of code!
+5. Pesticide Paradox: If the same tests are repeated many times, they will not find new bugs.
+6. Testing is context dependent.
+7. Absence-of-errors is a mistake: meeting client needs and requirements are important too, not only absence of errors.
+
+7)do we need to test all test scenarios
+
+If it's possible we have to test all test scenarios, but if there is no time for exhaustive testing - 
+we can prioritize testing to test scenarios that are more important, and we can use different methods
+of test design to reduce number of test cases.
+
+8) at what STLC phase do I write testcases.
+
+Test cases are written at Test case development phase.

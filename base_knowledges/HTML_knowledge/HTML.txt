@@ -1,0 +1,41 @@
+The HyperText Markup Language describes the structure of Web Pages.
+
+
+                         1)HTML
+                         /    \
+                        /      \
+                       /	  \
+	               jsx        ejs
+                     / \         |
+                    /   \        |
+                   js  html     html   
+
+//jsx - JSX stands for JavaScript XML. JSX allows us to write HTML in React.
+JSX makes it easier to write and add HTML in React.
+ 
+//ejs - HTML markup generates dynamically using JavaScript.
+________________________________________________________________________________
+
+//HTML elements - tags(pair and single), within tags are attributes ( extends
+tag functionality) and content:
+
+<button type = "button">Button</button>
+
+<!-- <button> - tag; type - attribute; <Button> - content -->
+
+------------------------------------------------------------------------------------
+
+//Block-level Elements: starts on a new line; takes up the full width available;
+browser adds top and bottom space for the element.
+
+----------------------------------------------------------------------------------------
+
+//Inline Elements:does not start on a new line; takes up as much width as necessary.
+
+-----------------------------------------------------------------------------------------------
+
+//Block-Inline Elements:does not start on a new line; browser adds top and bottom space for the element.
+
+
+checking HTML standard(specifications) by validator
+https://validator.w3.org/

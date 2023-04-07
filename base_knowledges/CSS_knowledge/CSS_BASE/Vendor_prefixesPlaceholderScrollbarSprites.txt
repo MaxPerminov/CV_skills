@@ -1,0 +1,236 @@
+Vendor prefixes giving access to CSS features not yet considered stable:
+
+-webkit- (Chrome, Safari, iOS Safari / iOS WebView, Android)
+-moz- (Firefox)
+-ms- (Edge, Internet Explorer)
+-o- (Opera, Opera Mini)
+
+_______________________________________________________________________________
+::placeholder pseudo-element selects form elements with placeholder text and allows
+to style the placeholder text.
+
+_________________________________________________________________________________
+::-webkit-scrollbar pseudo-element allows to modify the look of the browser's
+ scrollbar:
+
+::-webkit-scrollbar - the scrollbar;
+
+::-webkit-scrollbar-button - the buttons on the scrollbar (arrows pointing upwards
+and downwards);
+
+::-webkit-scrollbar-thumb - the draggable scrolling handle;
+::-webkit-scrollbar-track - the track (progress bar) of the scrollbar;
+::-webkit-scrollbar-track-piece - the track (progress bar) NOT covered by the handle;
+
+::-webkit-scrollbar-corner - the bottom corner of the scrollbar, where horizontal
+and vertical scrollbars meet;
+
+::-webkit-resizer - the draggable resizing handle that appears at the bottom corner
+of some elements.
+
+___________________________________________________________________________________
+
+CSS Image Sprites are the set of images combined in a single image and used by CSS
+in the different positions for different purposes within the web page.
+It is used to decrease the download burden of the site and save bandwidth.
+
+1)adding the element's tag to the HTML body(if img - with no src attribute);
+2)in CSS - setting the combined image as the background of the element;
+3)positioning it using the background-position property.
+
+----
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <img class="home1"  alt="" width="1" height="1";>
+  <img class="home2"  alt="" width="1" height="1";>
+  <img class="home3"  alt="" width="1" height="1";>
+</html>
+
+----
+styles.css
+
+----
+.home1 {
+  position:absolute;
+  top: 100px;
+  left:200px;
+  width: 45px;
+  height: 44px;
+background: url(/source/images/img_navsprites.gif) 88px 0;
+}
+.home2 {
+  position:absolute;
+  top: 100px;
+  left:300px;
+  width: 45px;
+  height: 44px;
+background: url(/source/images/img_navsprites.gif);
+}
+.home3 {
+  position:absolute;
+  top: 100px;
+  left:400px;
+  width: 45px;
+  height: 44px;
+background: url(/source/images/img_navsprites.gif) 44px 0;
+}
+
+________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <input type="text" placeholder="Please enter your name">
+    <hr>
+    <input type="date">
+    <br>
+    <input type="time">
+    <hr>
+    <button>Button</button>
+    <hr>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+      recusandae accusantium commodi itaque at quas, inventore ratione, tempora
+      dolorem reprehenderit officia ad ipsum! Minus, autem. Debitis, praesentium
+      quidem neque architecto sapiente ea delectus minima a excepturi, sed
+      libero amet id quo. Aliquam ducimus iure architecto, at delectus eum,
+      sequi quasi minima assumenda nemo, esse magnam reiciendis praesentium
+      harum et veniam illo sed sapiente cumque. Et ratione cupiditate
+      accusantium? Accusantium expedita possimus minus est odio quo dolores
+      perspiciatis enim aliquam reprehenderit! Labore explicabo necessitatibus
+      impedit eius recusandae optio aliquam repudiandae dolor est perspiciatis
+      quas fuga veniam, rerum blanditiis. Error, deserunt. Error repellendus
+      facere laboriosam saepe qui provident magnam incidunt quasi id odit
+      corrupti, modi pariatur ut fugiat iusto vel non dolore quia nulla
+      doloremque eligendi. Consectetur, explicabo aspernatur itaque quas nisi ut
+      ullam laudantium quidem delectus dicta autem ipsa aliquam? Earum, ad
+      dolorum. Minus aperiam iusto suscipit cum perferendis excepturi ullam nam
+      molestias nihil. Officiis voluptatem quis ullam optio eaque dolor esse
+      explicabo autem quod illum! Ullam incidunt ab eaque omnis laudantium,
+      placeat temporibus fugiat nisi blanditiis accusamus nihil aperiam, saepe
+      pariatur qui iusto aspernatur consequuntur. Minus hic voluptas a adipisci
+      quae quibusdam illum beatae facilis nam eos voluptate, cupiditate minima
+      accusantium. Consequatur doloribus natus, corporis voluptate in ea
+      adipisci. Rerum aut eveniet fugit voluptatem optio ullam quo quae ex
+      commodi debitis sequi repudiandae labore rem assumenda, delectus porro
+      veniam quia soluta quidem a magni molestiae! Quae earum ipsa at
+      aspernatur? Explicabo vitae, id ratione odio eum in tempore numquam
+      corrupti illum eos eveniet, quis ea ducimus? Quas commodi voluptatibus
+      molestiae officia iste voluptates maiores, tenetur autem enim harum
+      ratione eaque. Nostrum nam possimus neque? Ullam dicta nam labore et error
+      dolores odio quas earum voluptatem? Rerum dolores cum omnis eum expedita?
+      Blanditiis odio laborum quae id ipsa temporibus assumenda quos, rerum unde
+      at omnis accusamus aliquam voluptates tempora doloremque earum cupiditate
+      repellat deserunt sed consequuntur quaerat. Provident ipsam labore,
+      eveniet voluptate sed placeat nihil atque et suscipit voluptatibus
+      accusamus corporis! Nulla inventore ipsam aliquid officiis, maxime,
+      placeat accusantium repudiandae deserunt voluptatem error a id.
+      Dignissimos assumenda, consequuntur pariatur harum porro facilis, saepe
+      quasi ipsa asperiores officia autem corporis totam? Maxime soluta eius,
+      molestias nesciunt quidem, nihil veniam nostrum rerum officiis ad velit
+      consectetur beatae. Odio exercitationem labore illum rem quae consequatur,
+      aliquid accusantium repellat rerum natus, beatae consectetur dolorum
+      similique praesentium ullam debitis amet omnis soluta temporibus
+      repellendus obcaecati. Ea commodi dolor, explicabo est minima sunt modi
+      placeat. Autem, soluta similique nobis facilis laboriosam fuga error a quo
+      numquam necessitatibus delectus deserunt. Nobis eaque dolores, quisquam
+      quaerat deleniti iure est non sint vero eos esse vitae fuga id corrupti
+      dignissimos. Dolorum et voluptatibus eligendi inventore? Eaque blanditiis
+      porro minima! Soluta earum fugit esse sequi consequatur eaque amet
+      asperiores quia nulla sit, dolorem accusamus incidunt, odit deleniti,
+      obcaecati cum itaque dignissimos placeat sint commodi rem illum ipsa
+      voluptatum! Sint ipsum voluptatem eligendi aperiam? Omnis ipsa animi odit
+      libero! Totam, eius ad id ea assumenda illo maiores provident vero
+      temporibus, pariatur rem recusandae quae consequatur. Cumque earum nemo
+      culpa esse magnam quae officia sunt? Nemo voluptatibus, itaque quam
+      repudiandae expedita voluptatem modi sequi, nihil impedit iste fuga
+      distinctio saepe dolorem maxime ipsa sunt officiis, maiores enim
+      blanditiis sit quasi.
+    </p>
+    <img src="/source/images/preview.png" alt="">
+  </body>
+</html>
+
+------------------------
+styles.css
+
+----
+body {
+ padding: 10px 30px;
+ margin: 0;
+ background-color: lightgray;
+ font-size: 24px;
+ font-family: monospace;
+}
+input {
+  font-size: 24px;
+  padding: 5px 10px;
+  color: red;
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: blue;
+  opacity: 1; /*Firefox*/
+}
+::-ms-input-placeholder {
+  /* Edge */
+  color:blue
+}
+::-ms-input-placeholder {
+  /* IE 10-11 */
+  color:blue
+}
+ ::-webkit-scrollbar {
+  width: 40px;
+}
+::-webkit-scrollbar-track {
+  background: red;
+  border: 5px solid rgba(255, 255, 255, 0.5);
+  box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
+}
+::-webkit-scrollbar-thumb {
+  height: 20px;
+  background: linear-gradient(45deg, #00ffa1, #00ffff);
+  border-radius: 15px;
+}
+::-webkit-scrollbar-button {
+  background: black;
+  height: 120px;
+}
+ ::-webkit-scrollbar-track-piece {
+  background: yellow;
+}
+::-webkit-scrollbar-corner {
+  background: green;
+}
+button {
+  width: 200px;
+  height: 80px;
+  background-image: url(/source/icons/23.png);
+  background-size: cover;
+  text-indent: -9999px;
+  border: none;
+  background-color: transparent;
+  outline: grey;
+}
+button:hover {
+  background-position: center;
+}
+button:active {
+  background-position: bottom;
+}

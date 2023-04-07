@@ -1,0 +1,184 @@
+The @media rule allows:
+
+-to define different CSS for different media types: screens,
+printers, desktops, laptops, tablets, and mobile phones;
+
+-to check width and height of the viewport or the device;
+-to check orientation and resolution.
+
+----
+It useful for:
+
+-adjustment of quantity of columns in layout;
+-agilling width and height;
+-collapsing of empty spaces;
+-changing of navigation's displaying;
+-setting font sizes;
+-displaying and hiding content on different devises;
+-using of different images;
+-adjustment to different orientation, device-aspect-ratio and resolution.
+
+____________________________________________________________________________________
+
+Media Query Syntax consists of a media type and can contain one or more expressions,
+which return true or false.
+
+----
+Media rule - simple condition of media types with using of special keywords:
+
+@media screen and (max-width: 900px) {}
+
+----
+Media types:
+
+all - devices of all media type;
+print - printers;
+screen - computer screens, tablets, smart-phones etc;
+speech - screen-readers.
+
+----
+Keywords fro media rules - are optional. If you use <not> or <only>, you must also
+specify a media type.
+
+not - inverts the meaning of an entire media query;
+
+only - prevents older browsers, that do not support media queries with media
+features, from applying the specified styles;
+
+and - combines a media feature with a media type or other media features.
+
+----
+The result of the query is true if the specified media type matches the type of
+device the document is being displayed on and all expressions in the media query
+are true. When a media query is true, the corresponding style sheet or style
+rules are applied, following the normal cascading rules.
+
+---------------
+Better using of media queries is to have an alternate CSS section inside style sheet,
+having different stylesheets for different media:
+
+<link rel="stylesheet" media="screen and (min-width: 900px)" href="widescreen.css">
+<link rel="stylesheet" media="screen and (max-width: 600px)" href="smallscreen.css">
+
+___________________________________________________________________________________
+Media Queries Simple Examples
+
+The following example changes the background-color to lightgreen if the viewport is
+480 pixels wide or wider (if the viewport is less than 480 pixels, the
+background-color will be pink):
+
+@media screen and (min-width: 480px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+
+--------------------------------
+This example shows a menu that will float to the left of the page if the viewport is
+480 pixels wide or wider. If the viewport is less than 480 pixels, the menu will be
+on top of the content:
+
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>CSS/CSS3 Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+  <div class="wrapper">
+    <div id="leftsidebar">
+      <ul id="menulist">
+        <li class="menuitem">Menu-item 1</li>
+        <li class="menuitem">Menu-item 2</li>
+        <li class="menuitem">Menu-item 3</li>
+        <li class="menuitem">Menu-item 4</li>
+        <li class="menuitem">Menu-item 5</li>
+      </ul>
+    </div>
+    <div id="main">
+      <h1>Resize the browser window to see the effect!</h1>
+      <p>lorem60</p>
+    </div>
+  </div>
+  </body>
+</html>
+
+----------------------------
+styles.css
+
+----
+.wrapper {overflow: auto;}
+#main {margin-left: 4px;}
+#leftsidebar {
+  float: none;
+  width: auto;
+}
+#menulist {
+  margin: 0;
+  padding: 0;
+}
+.menuitem {
+  background: #CDF0F6;
+  border: 1px solid #d4d4d4;
+  margin: 4px;
+  padding: 2px;
+}
+@media screen and (min-width: 480px) {
+  #leftsidebar {width: 200px; float: left;}
+  #main {margin-left: 216px;}
+}
+
+---------------------------------------------------------
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <h1>Hello World</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis cum
+      veritatis iste dolore, deserunt reprehenderit saepe animi blanditiis?
+      Optio blanditiis eaque cumque quis fuga impedit, similique odio voluptate
+      ex aliquam.
+    </p>
+  </body>
+</html>
+
+--------------------
+styles.css
+
+----
+body {
+ padding: 10px 30px;
+ margin: 0;
+ height: 100vh;
+ background-color: lightgray;
+ font-size: 24px;
+ font-family: monospace;
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+  body {
+    background-color: aqua;
+  }
+}
+@media screen and (orientation: portrait) {
+  h1 {
+    display: none;
+  }
+}
+@media print {
+  body {
+    color:blue;
+  }
+}

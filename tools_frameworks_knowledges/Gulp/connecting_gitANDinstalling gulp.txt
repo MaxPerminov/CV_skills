@@ -1,0 +1,55 @@
+alg to install gulp
+
+0.npm rm --global gulp
+1. create git rep in browser
+2. mkdir my-project, creating files in my-project:.gitignore(node_modules) and index.html
+5. git init
+6. git add . 
+7. git commit
+8. git remote add origin https://github.com/
+9. git push -u origin main
+10. npm init
+11. npm install --global gulp-cli
+12. npm install --save-dev gulp
+
+13. gulpfile.js in root:
+function defaultTask(cb) {
+    // place code for your default task here
+    cb(console.log("All right"));
+  }
+  
+  exports.default = defaultTask
+
+14. enter gulp
+15. git add . , commit, push
+16. npm install --save-dev gulp-babel @babel/core @babel/preset-env - install gulp babel
+17. npm install --save-dev gulp-uglify
+18. npm install --save-dev gulp-concat
+19. npm install --save-dev gulp-clean
+
+
+alg official documentation
+0. npm rm --global gulp
+1. create git rep in browser
+2. npm install --global gulp-cli
+3. npx mkdirp my-project
+4. creates files in my-project: .gitignore(node_modules) and index.html
+5. git init
+6. git add . 
+7. git commit
+8. git remote add origin https://github.com/
+9. git push -u origin main
+10. npm init
+11. npm install --save-dev gulp
+12. check .gitignore - node_modules
+
+13. gulpfile.js in root:
+function defaultTask(cb) {
+    // place code for your default task here
+    cb(console.log("All right"));
+  }
+  
+  exports.default = defaultTask
+
+14. run gulp
+15. git add ., commit, push

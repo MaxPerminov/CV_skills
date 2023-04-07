@@ -1,0 +1,83 @@
+selectors specificity example:
+
+
+  #main .item				===> 110
+  #test:not(.main)			===> 110
+  #test p 					===> 101
+  #test						===> 100
+  li.item.main				===> 21
+  ul ol li.item				===> 13
+  span.test ul li			===> 13
+  h1 + *[href="test"] 		===> 11
+  a:hover					===> 11
+  ul ol+li 					===> 3
+  ul li						===> 2
+  p:first-line				===> 2
+  h2 strong					===> 2
+  li						===> 1
+
+
+---
+Cascading defines which of conflicting properties must be applied to the element.
+If selectors are of the same specificity - must be applied the property, that is in
+the lower line of code.
+
+---
+In DevTools styles struck with a line reassigned by selectors with higher priority.
+
+------------------------------
+Reset or Normalised - provides cross browser mock upping. These code should be
+linked before working CSS file, so it's allows making changes in style.
+
+_______________________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS3 Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <p>I'm just a paragraph</p>
+    <p class="style1">style1 controls me</p>
+    <p class="style1" id="style2">style2 controls me</p>
+    <p id="style2">and me</p>
+    <a href="#">Link</a>
+  </body>
+</html>
+
+----------------------------
+styles.css
+
+----
+/*
+p {
+  background-color: green;
+  color: white;
+  padding: 10px;
+}
+.style1 {
+  background-color: aqua;
+  color: black;
+  border: none !important;
+}
+#style2 {
+  background-color: pink;
+  border: 2px solid black;
+}
+p {
+  background-color: gray;
+}
+*/
+body {
+  color: red;
+  border: 1px solid black;
+  margin-bottom: 30px;
+}
+p{
+  border: inherit;
+  margin: inherit;
+}

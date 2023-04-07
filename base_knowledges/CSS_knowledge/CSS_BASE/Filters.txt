@@ -1,0 +1,68 @@
+filter: blur(px);
+filter: brightness(%); - 100% is default;
+filter: contrast(%) - 100% is default;
+
+filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.5));:
+
+h-shadow - horizontal shadow, required. Negative values place the shadow to the left.
+v-shadow - vertical shadow, required. Negative values place the shadow above.
+spread - positive values cause shadow expanding, negative - shrinking, optional.
+color - optional.
+blur - optional.
+
+filter: grayscale(%);
+filter: hue-rotate(deg);
+filter: invert(%);
+filter: opacity(%);
+filter: saturate(%);
+filter: sepia(%);
+
+____________________________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <img
+      src="https://images.pexels.com/photos/1447092/pexels-photo-1447092.png?auto=compress&cs=tinysrgb&dpr=2&w=500"
+      alt="image"
+      width="500">
+  </body>
+</html>
+
+-----------------
+styles.css
+
+----
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+img {
+  transition: all 1s ease;
+}
+img:hover {
+  /* filter: blur(2px);
+  filter: drop-shadow(5px 6px 4px rgba(0, 0, 0, 0.5));
+  filter: grayscale(80%);
+  filter: brightness(150%);
+  filter: contrast(150%);
+  filter: hue-rotate(180deg);
+  filter: hue-rotate(180deg);
+  filter: invert(100%);
+  filter: saturate(165%);
+  filter: sepia(100%);
+  filter: opacity(50%);
+  filter: url(#toSvg); */
+  filter: blur(2px) brightness(150%);
+}

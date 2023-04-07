@@ -1,0 +1,90 @@
+<a>(inline) - defines a hyperlink:
+    -download;
+
+    -href - URL:
+        -tel: < >;
+        -mailto: < >;
+        -skype: < >;
+        -# with id value - goes to page's element with this id;
+        -# - doesn't link.
+
+    -target - specifies where to open link:
+        "_blank" - new window.
+
+<button>(inline) - defines a button:
+    -autofocus - makes the button automatically focused when the page loads;
+    -disabled - disables the button;
+
+    -type:
+        -button - button;
+        -reset - specifies the button to reset entered data;
+        -submit - specifies the button to submit entered data.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset=UTF-8">
+  <title>HTML Basics</title>
+</head>
+<body>
+
+  <!-- Simple link -->
+  <a href="https://youtube.com/YauhenKavalchuk">Youtube</a>
+  <hr>
+
+  <!-- Download link -->
+  <a href="test.txt" download="">Download</a>
+  <hr>
+
+  <!-- Open link in a new tab -->
+  <a href="https://youtube.com/YauhenKavalchuk" target = "_blank">Youtube</a>
+  <hr>
+
+  <!-- Phone, email, skype (in new window) -->
+  <a href="tel:+123-32-23">+123-32-23</a><br>
+  <a href="mailto:test@test.com">My e-mail</a><br>
+  <a href="skype:test">Skype Call</a><br>
+  <hr>
+
+  <!-- Anchor link -->
+  <a href="#bottom">Go to Bottom</a>
+  <hr>
+
+  <!-- Simple buttons -->
+  <button type="button">Button</button>
+  <button type="submit">Button</button>
+  <button type="reset">Button</button>
+  <hr>
+
+  <!-- Button with autofocus -->
+  <button type="button" autofocus>Button</button>
+  <hr>
+
+  <!-- Disabled button -->
+  <button type="button" disabled>Button</button>
+  <hr>  
+  
+  <!-- Necessary div for anchor link -->
+  <p>
+    Lorem ipsum dolor sit amet consecrate, radicalising elit. Dolor au tem tenet
+     dolores total ipsum magni cum voluptuary antique dolorous. Enum solute
+      consequent illumos dolorous deque architect, maitres impeded incident ipsum?
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore autem tenetur
+     dolores totam ipsum magni cum voluptatum atque doloremque. Enim soluta
+      consequuntur illum doloribus eaque architecto, maiores impedit incidunt ipsum?
+  </p>
+  <p id = "bottom">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore autem tenetur
+     dolores totam ipsum magni cum voluptatum atque doloremque. Enim soluta
+      consequuntur illum doloribus eaque architecto, maiores impedit incidunt ipsum?
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore autem tenetur
+     dolores totam ipsum magni cum voluptatum atque doloremque. Enim soluta
+      consequuntur illum doloribus eaque architecto, maiores impedit incidunt ipsum?
+  </p>
+</body>
+</html>

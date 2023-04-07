@@ -1,0 +1,51 @@
+let iters = "abcqwerty"
+len(itets) = 9
+
+a (index=0, -9)
+b (index=1, -8)
+c (index=2, -7)   
+q (index=3, -6)
+w (index=4, -5)   
+e (index=5, -4)
+r (index=6, -3)
+t (index=7, -2)
+y (index=8, -1)
+
+
+-------------------------
+To find element's positive rotated index:
+	positive indexing
+		index = index rotated % len(iters)
+	negative indexing
+		index = index rotated % -len(iters)
+
+-----
+for example:
+
+index rotated = 40
+positive indexing: 40 % 9 = 4 is w
+negative indexing: 40 % -9 = -5 is w
+
+
+-------------------------
+To find element's negative rotated index:
+	positive indexing
+		index = index rotated % len(iters)
+	negative indexing
+		index = index rotated % len(iters)
+
+-----
+for example:
+
+index rotated = -34
+positive indexing: -34 % 9 = 2 is c
+negative indexing: -34 % -9 = -7 is c
+
+
+
+
+
+
+		 
+
+

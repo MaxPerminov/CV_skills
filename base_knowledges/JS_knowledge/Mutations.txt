@@ -1,0 +1,31 @@
+//preventing  mutation of root properties of object's copy:
+
+1)using Object.assign({}):
+
+const person = {
+    name: "Bob",
+    age:25
+}
+const person2 = Object.assign({}, person)//<{}> - taking entire object to
+person2.age = 26                        //assign and returning it
+----------------------------------------------------------------------------
+2)using Spread operator (...). Spread divides object into single
+properties and then unites them into new object.
+
+const person = {
+    name: "Bob",
+    age:25
+}
+const person2 = { ... person}
+person2.age = 26
+------------------------------------------------------------------------
+//preventing  mutation of root and nested properties of object's copy:
+
+const person = {
+    name: "Bob",
+    age:25
+}
+const person2 = JSON.parse(JSON.stringify(person))
+person2.age = 26
+console.log (person)
+console.log (person2)

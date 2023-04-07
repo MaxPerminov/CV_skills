@@ -1,0 +1,49 @@
+1)SoftwareDevelopmentLifeCycle
+
+1. Gathering of requirements and their analysis.
+2. Design of a product.
+3. Coding.
+4. Testing.
+5. Implementation.
+6. Maintenance.
+
+2)what SDLC methodologies do exist
+
+1. Waterfall - in waterfall model next stage of development always goes after previous in strict order:
+analysis of goals, product design, coding, testing. There is a lot of documentation in waterfall.
+
+2. V-Model - V-model inherited strict order of development stages from waterfall. The main difference from waterfall:
+development of testing is running simultaneously with the corresponding stage of the development process.
+
+
+Waterfall and V-model are good for the projects, where there are concrete goals and requirements and where
+deficiencies in quality are really expensive.
+ 
+
+------------------------------------------------------------------------------------------------------------------
+
+3. Iterative model consists of repeating iterations: planning of development, implementation of product,
+testing, evaluating results.
+Every iteration produces some complete part of a product with working functionality.
+During iteration the analyzing, the improvements are committed constantly.
+advantages:
+- communication with customer during the development process
+- managing efforts of work according to development needs
+- continuous testing
+- efficient usage of experience.
+
+4. Incremental Model is an iterative development model, where the first iteration produces the main complete
+part of the product and further iterations enhance it, adding new features to it and fixing deficiencies.
+
+5. Agile - it is a kind of iterative development model. In agile - the quality of the end product takes
+the first place by importance in competition with development tools and documentation.
+
+6. Spiral: In a spiral model, one loop of spiral is an iteration.
+The main feature that distinguishes this model from others is
+good controlling of risks. 
+
+3)what is Scrum and Kanban, difference between them
+
+Scrum and Kanban are agile frameworks of software development.
+Scrum iteration consists of from 2 up to 4-week sprints.
+Kanban iteration consists of planned scope of work, that is visualised at a kanban desk.

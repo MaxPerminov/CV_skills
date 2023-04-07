@@ -1,0 +1,18 @@
+methods:
+setup() and teardown() settings run after and before each test.
+SetupClass() and TearDownClass() settings run once for the whole class.
+to skip tests:
+ -@unittest.skip(reason)
+ -@unittest.skipIf(condition, reason)
+ -@unittest.skipUnless(condition, reason)
+
+----------
+testsuite
+addTest
+addTests - adding all tests and testsuite
+
+-------------------
+In terminal input: 
+python -m unittest test3.py  # -v instead -m = more info
+python -m unittest test3.CalcTest		     
+python -m unittest test3.CalcTest.test_sub  

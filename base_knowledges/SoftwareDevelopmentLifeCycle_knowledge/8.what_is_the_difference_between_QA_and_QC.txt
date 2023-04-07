@@ -1,0 +1,16 @@
+-QC(control)Engineering improves product quality during product-developing process.
+-QA(assurance)Engineering improves product quality, using methods of quality control
+and improves testing processes by analyzing results of previous developing processes. 
+
+What Does a QA Engineer Do
+
+1)Testing process analysis
+2)Testing process optimization
+3)Documentation management
+4)Analysis of testing
+5)Planning of testing
+6)Communication with developers
+7)Test-case writing
+8)Functional testing
+9)Bug tracking, bug reporting
+10)Confirmation testing

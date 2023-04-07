@@ -1,0 +1,26 @@
+Vite is tool for developing client side apps. It requires npm and node.js to run.
+
+1)npm create vite@latest
+2)cd client
+  npm install
+  npm run dev
+3)from working directory delete:
+public
+counter.js;
+javascript.svg;
+from index.html delete <link rel="icon" type="image/svg+xml" href="/vite.svg" />;
+code from main.js;
+code from styles.css.
+4)create folder test with main.test.js file in working directory
+5)create folders components, core in working directory
+6)create files component.js and render.js in core
+7)create files component.test.js and render.test.js in test
+8)create utils with getData.js and isArray.js
+9)create public/styles with adaptive.css and variables.css(and put style.css to it)and public/fonts
+10)create header(with index.js) footer(with index.js) input form button cards navigation(with index.js)
+link main(with main.js) with header.js footer.js input.js form.js button.js cards.js navigation.js link.js
+main_component.js in components
+
+
+ code - lesson 12, lesson 12(2) 
+

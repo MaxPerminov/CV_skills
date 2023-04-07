@@ -1,0 +1,178 @@
+<table> - arranges data into rows and columns:
+    <caption> - defines a table caption(description below or above the table);
+    <tbody> - groups the body content in a table;
+    <tfoot> - groups the footer content in a table;
+    <thead> - groups the header content in a table:
+        <tr> - stands for table row:
+            <td> - defines a standard data cell;
+            <th> - defines a header cell:
+                -colspan - specifies the number of columns a cell should span;
+                -rowspan - specifies the number of rows a cell should span.
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Basics</title>
+  <style>
+    table,
+    table * {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Minimum valid markup for table -->
+  <table>
+    <tr>
+      <td>Front-end</td>
+    </tr>
+  </table>
+  <hr>
+
+  <!-- Table row with four items -->
+  <table>
+    <tr>
+      <td>Front-end</td>
+      <td>Back-end</td>
+      <td>Full-stack</td>
+      <td>QA</td>
+    </tr>
+  </table>
+  <hr>
+
+  <!-- Table column with data, rowspan & colspan-->
+  <table>
+    <tr>
+      <td>Front-end</td>
+      <td rowspan="3">Empty row</td>
+    </tr>
+    <tr>
+      <td>Back-end</td>
+    </tr>
+    <tr>
+      <td>Full-stack</td>
+    </tr>
+    <tr>
+      <td colspan="2">Qa</td>
+    </tr>
+  </table>
+  <hr>
+
+  <!-- Simple example of table -->
+  <table>
+    <tr>
+      <td>Front-end</td>
+      <td>1 Person</td>
+    </tr>
+    <tr>
+      <td>Back-end</td>
+      <td>7 Person</td>
+    </tr>
+    <tr>
+      <td>Full-stack</td>
+      <td>2 Person</td>
+    </tr>
+    <tr>
+      <td>QA</td>
+      <td>5 Persons</td>
+    </tr>
+  </table>
+  <hr>
+
+  <!-- Table with caption -->
+  <table>
+    <caption>Team members list</caption>
+    <tr>
+      <td>Front-end</td>
+      <td>1 Person</td>
+    </tr>
+    <tr>
+      <td>Back-end</td>
+      <td>7 Person</td>
+    </tr>
+    <tr>
+      <td>Full-stack</td>
+      <td>2 Person</td>
+    </tr>
+    <tr>
+      <td>QA</td>
+      <td>5 Persons</td>
+    </tr>
+  </table>
+  <hr>
+
+  <!-- Table with semantic sections -->
+  <table>
+    <caption>Team members list</caption>
+    <thead>
+      <tr>
+        <td>Speciality</td>
+        <td>Quantity</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Front-end</td>
+        <td>1 Person</td>
+      </tr>
+      <tr>
+        <td>Back-end</td>
+        <td>7 Persons</td>
+      </tr>
+      <tr>
+        <td>Full-stack</td>
+        <td>2 Persons</td>
+      </tr>
+      <tr>
+        <td>QA</td>
+        <td>5 Persons</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td></td>
+        <td>15</td>
+      </tr>
+    </tfoot>
+  </table>
+  <hr>
+
+  <!-- Colspan in tfoot and th tag for table head -->
+  <table>
+    <caption>Team members list</caption>
+    <thead>
+      <tr>
+        <th>Speciality</th>
+        <th>Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Front-end</td>
+        <td>1 Person</td>
+      </tr>
+      <tr>
+        <td>Back-end</td>
+        <td>7 Persons</td>
+      </tr>
+      <tr>
+        <td>Full-stack</td>
+        <td>2 Persons</td>
+      </tr>
+      <tr>
+        <td>QA</td>
+        <td>5 Persons</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2">15</td>
+      </tr>
+    </tfoot>
+  </table>
+  <hr>
+</body>
+</html>

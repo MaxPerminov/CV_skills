@@ -1,0 +1,78 @@
+CSS transitions allows to change property values smoothly, over a given duration.
+To create a transition effect, it is necessarily to specify the CSS property.
+
+div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s;
+}
+The transition effect will start when the specified CSS property changes value:
+
+div:hover {
+  width: 300px;
+}
+
+-----------------------------------------------------------------------------
+transition-delay: 3s;
+transition-duration: 10s;
+transition-property: color;
+
+transition-timing-function: ease; - a slow start, then fast, end slowly(default)
+                            linear; - the same speed from start to end
+                            ease-in; - a slow start
+                            ease-out; - a slow end
+                            ease-in-out; - a slow start and end
+
+                            cubic-bezier(n,n,n,n); - defining values in a
+                                                        cubic-bezier function
+
+---------------------------------------------------------------
+Transition shorthand property:
+
+transition: width 2s linear 1s; (duration - 1st, delay - second)
+
+__________________________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="example"></div>
+  </body>
+</html>
+
+------------------
+styles.css
+
+----
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.example {
+  border: 2px solid black;
+  width: 200px;
+  height: 200px;
+  background-color: aqua;
+  /* transition-duration: 500ms, 2s;
+  transition-property: transform, background-color;
+  transition-delay: 0, 10s;
+  transition-timing-function: linear; */
+  transition: all 1s ease .5s;
+}  
+.example:hover {
+  background-color: red;
+  transform: scale(1.2);
+}
+styles.css

@@ -1,0 +1,16 @@
+jest initialization
+
+1)create .gitignore (node_modules)
+2)$npm init ## initialization
+3)$npm install jest --save-dev
+4)in package.json edit "scripts" - "test": "jest"
+5)to run test: $npm run test
+
+6)create folder validate_value with files validate_value.js and
+validate_value.test.js(test suit)   --pay attention to the same names of files and folder
+
+7)create file index.html with range input
+8)create folder mapArrToString with files mapArrToString.js and mapArrToString.test.js
+
+-----------------------
+for code look lesson7 and 8 of VS, also homework 7

@@ -1,0 +1,176 @@
+Functions are objects, reexecutable code's blocks, that can take different
+parameters. Functions must execute single task.
+
+//function declaring:
+function sum(a, b) {    // <{}> - function's body; <a>,<b> - parameters
+    const c = a + b
+    console.log(c)
+}
+// function's calling 
+sum(10,8)          //<10>, <8> - arguments
+sum(110,18)
+----------------------------------------------------------------------------
+//function's types:
+1)named - function declaring
+2)assigned to variable
+3)anonymous - function expression or arrow functon expression
+4)argumented (callback)
+5)method - object's property  
+--------------------------------------------------------------------------
+In DevTools console use <console.dir> to display function as an object
+with attributes:
+
+function myFn(a,b) {
+    let c
+    a = a + 1
+    c = a + b
+    return c    // after <return> stops function's execution
+}      
+console.dir(myFn) 
+--------------------------------------------------------------------------
+function myFn() {} //the shortest function      
+myFn()            // returns undefined
+---------------------------------------------------------------------------
+//it is not recommended mutate external objects inside function(changing 
+attribute's value of object using object's reference and function):
+
+const personOne = {
+    name: "Bob",
+    age: 21
+}
+function increasePersonAge(x) {
+    x.age += 2
+    return x
+}
+increasePersonAge(personOne) //function takes object as argument using
+                             //object's reference
+----------------------------------------------------------------------------
+//instead of mutating external objects inside function it's appropriate
+copying objects:
+
+const personOne = {
+    name: "Bob",
+    age: 21
+}
+function increasePersonAge(x) {
+    const updated_x = Object.assign({}, x)//<{}> - taking entire object to
+    updated_x.age += 2                   //assign and returning it
+    return updated_x
+}
+const updatedPersonOne = increasePersonAge(personOne)
+--------------------------------------------------------------------------------
+//Callback function (cb) - runs inside other function as an argument.
+
+function myName () {        // will be callback function
+    console.log("Max")     // of setTimeout
+}
+setTimeout(myName, 4000)
+----------------------------------------------------------------------------
+
+//function expression is used to avoid polluting the global scope:
+-anonymous
+-can't be used singly
+-can be assigned to variable:
+
+const myFunction = function(a, b) {
+    let c
+    a = a + 1
+    c = a + b
+    return c
+}
+
+-can be callback function:// the most often
+
+setTimeout(function(){
+    console.log("delayed message")
+}, 3000)
+--------------------------------------------------------------------------
+
+//arrow function expression is used to avoid polluting the global scope:
+-anonymous
+-can't be used singly
+-can be assigned to variable:
+
+const myFunction = (a, b) => {
+    let c
+    a = a + 1
+    c = a + b
+    return c
+}
+
+-can be callback function:// the most often
+
+setTimeout(()=>{
+    console.log("delayed message")
+}, 3000)
+--------------------------------------------------------------------------
+//arrow function expression shortening:
+
+a => { // reduction of parentheses if there's only one parameter
+}
+----
+(a,b) => a + b // if function body is one expression. There is implicit
+              //return (without using the return keyword) in this case.
+-------------------------------------------------------------------------
+//default value for a JavaScript function parameter:
+
+const a = (b, c = " morning") => b + c
+console.log(a("good ","night")//output: good night
+console.log(a("good"))       //if one argument is given -
+                            //output: good morning
+----
+const newPost = function (a, b = Date()){
+    let c = {
+    ... a,
+    b
+    }
+    return c
+}
+const firstPost = {
+    id: 1,
+    author: "Max",
+}
+newPost(firstPost)//second argument is by default(<Date()>)
+----
+const newPost = (a, b= Date())=>({ //<({})> implicit return of
+    ...a,                         //an object
+    b
+})
+const firstPost = {
+    id: 1,
+    author: "Max"
+}
+newPost(firstPost)
+__________________________________________________________________________________________________________________
+
+Method - object's property with a function as a value
+
+const myCity = {
+    city: "New York",
+    cityGreeting: function () {
+        console.log("Greetings!!")
+    }
+}
+myCity.cityGreeting()
+----------------------------------------------------------------------
+const myCity = {
+    city: "New York",
+    cityGreeting () {//<()> - function calling without <function> keyword
+        console.log("Greetings!!")
+    }
+}
+myCity.cityGreeting()
+__________________________________________________________________________________________________________________
+in-build functions 
+
+console - global's property, has  methods - log, dir, table:
+console.dir()                  // displays all objects' attributes
+global.console.table()        // displays all objects' attributes in table
+                             //console.log always returns undefined!!!!
+-----------------------------------------------------------------------------
+setTimeout(event, timer) - executes <event> by timer
+-----------------------------------------------------------------------------
+performance.now() - keeps track of time:
+1)it's necessarily to assign <performance.now()> to variables;
+2)wrap time event into these variables;
+3)output this variables

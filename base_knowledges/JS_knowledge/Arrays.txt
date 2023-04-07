@@ -1,0 +1,92 @@
+Arrays - objects with properties named by numbers (indexation); ordered;
+mutable.
+//creating arrays
+const myArray = [1, 2, 3]
+----
+const myArray2 = new Array(1, 2, 3)
+-------------------------------------------------------
+//getting elements
+
+myArray[0]//1
+myArray.length//3
+myArray[0] = true//console.log(myArray) - output [true, 2, 3]
+myArray[3] = "MAx"//console.log(myArray) - output [true, 2, 3, "MAx"]
+-------------------------------------------------------------------------
+//push - adding of a new element to the end of array
+
+const myArray = [1, 2, 3]
+myArray.push(4)
+------------------------------------------------------------------------
+//pop - deletion from the end of array; with return of an element
+
+const myArray = [1, 2, 3, 4]
+myArray.pop()
+console.log(myArray)//[1, 2, 3]
+const b = myArray.pop()
+console.log(myArray)//[1, 2]
+console.log(b)//3
+----------------------------------------------------------------------
+//unshift - adding of a new element to the array's beginning
+
+const myArray = [1, 2, 3, 4]
+myArray.unshift("abc")
+-----------------------------------------------------------------------
+//shift - deletion of the first array's element; with return of an element
+
+const myArray = [1, 2, 3, 4]
+myArray.shift()
+console.log(myArray)//[2, 3, 4]
+const b = myArray.shift()
+console.log(myArray)//[3, 4]
+console.log(b)//2
+-------------------------------------------------------------------------------
+//forEach - calls a function for each element in array; does not
+change current array
+
+const myArray = [1, 2, 3, 4]
+myArray.forEach(a => console.log(a*2))//2, 4, 6, 8 and returns undefined
+console.log(myArray)                 //1, 2, 3, 4
+----
+const a = [1,2,3]
+a.forEach((x,y) =>{ //x = element, y - index
+    console.log(x,y)
+})
+------------------------------------------------------------------------
+//forEach for !!!!!objects!!!!!!!:
+
+Object.keys(myObj).forEach(key=>{  //<Object.keys> - getting all keys as
+    console.log(key, myObj[key])  //array
+})
+----
+Object.values(myObj).forEach(value=>{  //<Object.values> - getting all values
+    console.log(value)                //as array
+})
+-------------------------------------------------------------------
+//map calls a function for each element in array; makes new array
+
+const myArray = [1, 2, 3, 4]     //1, 2, 3, 4
+const a = myArray.map(a => a*3) //3, 6, 9, 12
+-----------------------------------------------------------------------
+// reduce - calls a function for each element in array; does not
+change current array. It returns a single value: the function's accumulated
+result.
+
+const myArray = [1, 356, 89, 17]
+console.log(myArray.reduce ((acc, x) => acc + x, 10 ))       
+                     // <acc> - accumulates iterables, <x> - iterable,
+                    //  <10> - initial value(optional); output - 473
+			 // also possible parameters: -currentIndex(index of the current element)
+			//					-arr(array the current element belongs to)
+-----------------------------------------------------------------------------
+//filter - creates a new array from array, filled with filtered by a function elements.
+parameters:
+1)function
+2)value of current element
+optional - index;array;thisValue
+
+const ages = [32, 33, 16, 40];
+const result = ages.filter(checkAdult);
+
+function checkAdult(age) {
+  return age >= 18;
+}

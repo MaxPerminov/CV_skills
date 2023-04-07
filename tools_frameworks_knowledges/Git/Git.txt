@@ -1,0 +1,57 @@
+git file conditions:
+
+M = modified
+T = a file type changed (regular file, symbolic link or submodule)
+A = added
+D = deleted
+R = renamed
+C = copied 
+U = updated but unmerged
+
+________________________________________________________________________________________________________________
+
+git bash commands:
+
+- touch .gitignore - create file to except data
+
+-------------------------------------------------------------------------------------------------------------------
+-git init - to begin local repository
+-git status - check repozitory status
+-git add - adding for tracking: $ git add helloworld.html
+-git add . - adding everything:
+-git reset - stop tracking: $ git reset helloworld.html
+-git reset --hard - roll back to the current state of the remote repository.
+-git commit - altering data to send to repository
+-git commit -m - altering data to send to repository with message:$ git commit -m "Added some struct to git-hub-project"
+-git remote add - new connection record to a remote repository:
+$ git remote add origin https://github.com/MaxPerminov/Max.git
+-git push -u - upload branch and creates a tracking reference:$ git push -u origin(name) master(main branch)
+-git push - upload
+-git push origin - upload new branch: $ git push origin test
+-git push --set-upstream  - pushes new branch as default remote branch:$ git push --set-upstream origin QA
+-git branch - check branch
+-git branch - creating branch:$ git branch QA
+-git branch -M rename branch :git branch -M main
+-git branch --delete:$ git branch --delete QA
+-git switch -c create and switch to created branch:$ git switch -c QA
+-git checkout - change branch
+-git checkout commit:$ git checkout eaae3d016e946b3cc218e94804537a08df142af0
+
+-git clone - open project: $ git clone https://github.com/katas8n/git-hub-project.git
+after cloning a project, it's necessarily to run:<$ nmp i> to get all project's dependencies.
+
+-git merge - update your current branch from chosen: $ git merge main ###main is chosen
+-git fetch - updates the remote tracking branches
+-git pull - merge+fetch
+-git log - commits info
+-git status - project info
+
+-----------------------------------------------------------------------------------------------
+
+when adding branch, new branch receives previous branch data
+
+-----------------------------------------------------------------------------------------------------
+
+merge in browser:
+-go to branches in working repository at GitHub
+-go to pull request

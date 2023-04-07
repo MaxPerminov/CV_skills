@@ -1,0 +1,19 @@
+Flask is tool for developing server side apps.
+1)Create flask project in PyCharm
+2)Create server folder in the folder of VCStudio, where vite working folder is situated.
+3)Copy code from app.py of PyCharm flask project to server folder py file.
+4)pip install Flask - in terminal of server folder
+or
+1)Create server folder in the folder of VCStudio, where vite working folder is situated.
+2)$python -m venv venv - in terminal of server folder
+3)$pip install Flask - in venv
+4)create app.py in venv
+5)create folder test in working directory
+6)pip install -U flask-cors - for allowing access to server
+7)create folder Users with user.py and __init__.py; create folder Products with __init__.py
+8)create folder model with __init__.py and put there folders Users and Products
+9)create folder utils with toJSON.py and __init__.py
+10)create folder database with __init__.py, products.py and people.py
+
+
+ code - lesson 12, lesson 12(2) and lesson 12_server

@@ -1,0 +1,20 @@
+/* base styles */
+.flex-container {
+  background-image: linear-gradient(45deg, #84fab0, #8fd3f4);
+  padding: 1em;
+ }
+ p {
+   color: #fff;
+   font-size: 16px;
+ }
+ /* custom styles */
+ .flex-container {
+   display: flex;
+   align-items: center;
+   flex-direction: row-reverse;
+   gap: 1em;
+ }
+ .content {
+   flex:1;
+ }
+ 

@@ -1,0 +1,358 @@
+1)checklist for cart
+
+check deleting product from cart
+check captcha
+check checkouting by different payment methods
+check different delivery methods
+check adding quantity of product item
+check reducing quantity of product item
+check privacy policy hyperlink
+check changing of personal information
+
+2)test data for date field 18+
+
+18-100 valid range
+invalid data:
+1.letters
+2.symbols
+3.empty field
+4.0-17including
+5.space
+Using boundary values technique, I propose to use this data
+1.18
+2.100
+3.0
+4.17
+5.101
+6.letters
+7.symbols
+8.empty field
+9.space
+
+3)checklist for payment card field
+
+1.card number
+enter valid 16 numbers
+don't enter anything
+enter 17 numbers
+enter 15 numbers
+enter letters
+enter symbols
+enter space
+
+2.The expiration date (12/31)
+enter valid date
+don't enter anything
+enter invalid date
+enter symbols
+enter letters
+enter spaces
+enter zeroes
+enter 9/2
+enter 123/456
+enter 13/20
+enter invalid boundary dates (02/30, 04/31, etc.)
+
+3.CW
+enter valid number
+don't enter anything
+enter invalid number
+enter symbols
+enter letters
+enter spaces
+enter zeroes
+enter 2
+enter 34
+enter 5678
+
+
+4)test elevator, pencil, calculator
+
+1. Elevator:
+positive-test of opening elevator doors with an elevator button.
+negative-test of opening elevator doors with hands.
+functional-test of lifting from the second to the sixth floor.
+ux-test of such characteristics, as a lifting comfort, colors niceness, floor flatness.
+performance-test of lifting 6 persons.
+verification-test of presence of a floor in the elevator.
+Environmental-test of lifting from the second to the sixth floor in the summer, winter.
+security-test of access to an elevator maintenance room.
+documentation testing.
+stress testing-test of lifting 500 kg from the second to the sixth floor.
+
+2. Pencil:
+positive-test of writing a text on paper, erasing a text with an eraser.
+negative-test of writing with an eraser, erasing with a tip of the pencil. 
+functional-test of drawing a picture.
+ux-test of such characteristics, as a writing comfort, colors niceness, flatness.
+performance-test of a number of written pages without pencil sharpening, test of a number of pencil's sharpening.
+verification-test of lead hardness (hardness of a graphite, it is indicated on the side of a pencil).
+Environmental-test of writing a text on paper in the summer, winter, under the water.
+security-test of possibility of stealing the pencil.
+stress testing-testing of dropping the pencil to the floor, pencil bending. 
+compatibility-testing of sharping the pencil with a pencil sharpener, a knife, an axe.
+
+3. Calculator:
+positive-test of finding square root of 81.
+negative-test of writing SMS (Short Message Service).
+functional-test of adding 2+2.
+ux-test of such characteristics, as a using comfort, colors niceness, symbols displaying.
+performance-test of discharging time.
+verification-test of presence of a subtraction function.
+Environmental-test of calculating in the summer, winter, under the water.
+security-test of possibility of calculator stealing.
+documentation testing.
+stress testing-test of calculating during 10 hours in the summer heat, at a temperature of 40 degrees Celsius.
+compatibility-test of compatibility with different types of batteries.
+
+5) valid18-99incl - test by BVA
+
+17,18,99,100
+
+6)webpage with email, pass fields and submit button-negative testcases
+
+Don't enter any value in all fields. Click on the submit button.
+Enter valid value in email field, don't enter any value in pass field. Click on the submit button.
+Enter valid value in email field, enter any invalid value in pass field. Click on the submit button.
+Enter valid value in email field, enter 4 spaces in pass field. Click on the submit button.
+Enter valid value in email field, enter max+1 number of symbols in pass field. 
+Check HTML support of pass field.
+Check Javascript support of pass field.
+Enter valid value in pass field, don't enter any value in email field. Click on the submit button.
+Enter valid value in pass field, enter any invalid value in email field. Click on the submit button.
+Enter valid value in pass field, enter 4 spaces in email field. Click on the submit button.
+Enter valid value in pass field, enter max+1 number of symbols in email field. 
+Enter valid value in pass field, enter email without @(at sign) in email field.
+Check HTML support of email field.
+Check Javascript support of email field.
+Enter valid value in email field, enter valid email value in pass field. Click on the submit button.
+
+7)give an example of good testcase
+
+Test Case 1: Check results on to register via Facebook at web-site
+Preconditions:
+1. registration and authorization on at Facebook
+2. authorization and registration off at web-site
+Steps	                                            ER
+at homepage click on navigation menu icon:  	   side bar menu appears
+at side bar menu click on <<Registration>> button: registration menu appears
+at registration menu click on <<Facebook>> button: register at web-site via Facebook
+
+8)messenger test cases - message field, submit button
+
+1.send all capital and small Cyrillic letters.
+2.send all capital and small letters of the Latin alphabet.
+3. send 0, 1, 2, 3, 4, 5, 6, 7, 8, 9.
+4. send all characters.
+5. send <<test, of testing>> in Ukrainian.
+6. send <<test, of testing>>.
+7. send 4 spaces.
+8. send all emoticons.
+9. send an image.
+10. send two images.
+11. send the maximum number of characters.
+12. send the maximum number of characters+1.
+13. check HTML support.
+14. check Javascript support.
+15. check for SQL vulnerability.
+16. copy the text (different ways).
+17. insert text (different ways).
+18. check the appearance of the cursor when entering content.
+19. send an empty message.
+20. check the displacement of the messenger interface.
+21. check the sending of the message using enter.
+22. check the sending of the message using the mouse.
+23. check the sending of the message in the mobile version.
+24. check message sending in different OS.
+25. check the spelling of the text of the messenger interface.
+26. send text in bold.
+27. send text in italics.
+28. send text with changed font size.
+29. send text with changed font size and italics.
+30. send text with changed font size and bold.
+
+9)give an example of positive and negative test
+
+Positive test - check authorization with valid username and password.
+Negative test - check authorization with invalid username and password.
+
+10) write test cases for functionality, that is on several web-pages (for example, search field)
+
+I. Check the location of the search field
+precondition - the search field is in the upper right corner of the home page
+1.step - go to page a; er - the search field is in the same upper right corner of the web page
+2.step - go to page b; er - the search field is in the same upper right corner of the web page
+3.step - go to page c; er - the search field is in the same upper right corner of the web page
+
+II. Check the presence of the search field on all the pages.
+1.step - go to page a; er - the search field is present
+2.step - go to page b; er - the search field is present
+3.step - go to page c; er - the search field is present
+
+III. Check if search searches from all actual pages
+precondition - make a list of pages(a, b, c) with searchable content
+1.step - enter query for content from a; er-  searchable content for a is found
+2.step - enter query for content from b; er-  searchable content for b is found
+3.step - enter query for content from c; er-  searchable content for c is found
+
+11)test check out in internet-store
+
+check buying a product with correct entered data
+check buying a product with different payment methods
+check buying a product with different delivery methods
+check entering personal info when check out(correct or incorrect)
+check changing product quantity
+check deleting a product from check out
+check buying a product with incorrect entered data
+check buying a product with empty main fields of check out
+
+12)test a broken toster
+
+documentation testing
+check the lever at the side of the toaster
+check if the carriage latches can stay in lower position
+check if internal switch activates the heating process, after the carriage latches are in lower position
+check thermostat's condition using heating control lever
+check power cable
+
+13)name quantity of functional test-cases to test log in form
+
+1.Check if Sign-Up button is hoverable.
+2.Check if Sign-Up button is clickable.
+3.Enter valid values in all required fields. Click on Sign-Up  button.
+4.Check cursor (login field)(mouse).
+5.Check cursor (password field)(mouse).
+6.Check text selection (login field)(mouse).
+7.Check text selection (password field)(mouse).
+8.Check cursor (login field)(keyboard).
+9.Check cursor (password field)(keyboard).
+10.Check text selection (login field)(keyboard).
+11.Check text selection (password field)(keyboard).
+12.Check copy text function from login field is available (mouse).
+13.Check copy text function from login field is available (keyboard).
+14.Check paste text function in login field is available (mouse).
+15.Check paste text function in login field is available (keyboard).
+16.Check cut text function from login field is available (mouse).
+17.Check cut text function from login field is available (keyboard).
+18.Check copy text function from password field is available (mouse).
+19.Check copy text function from password field is available (keyboard).
+20.Check paste text function in password field is available (mouse).
+21.Check paste text function in password field is available (keyboard).
+22.Check cut text function from password field is available (mouse).
+23.Check cut text function from password field is available (keyboard).
+24.Check entering maximal number of characters (login field).
+25.Check entering maximal number of characters (password field).
+26.Check entering maximal+1 number of characters (login field).
+27.Check entering maximal+1 number of characters (password field).
+28.Check entering minimal number of characters (login field).
+29.Check entering minimal number of characters (password field).
+30.Check entering all possible correct characters (login field).
+31.Check entering all possible correct characters (password field).
+32.Check password masking when log in.
+
+14)checklist registration(first name, last name,username,pass,repass)
+
+1.Buttons are clickable.
+2.Enter valid values in all required fields and register.
+3.Check cursor in all fields using keyboard and mouse.
+4.Check text selection in all fields using keyboard and mouse.
+5.Check copy text function in all fields using keyboard and mouse.
+6.Check paste text function in all fields using keyboard and mouse.
+7.Check cut text function in all fields using keyboard and mouse.
+8.Check entering maximal number of characters in all fields.
+9.Check entering minimal number of characters in all fields.
+10.Check entering all possible correct characters in all fields.
+11.Check password masking when log in.
+12.Enter max+1 number of symbols (try all fields)
+13.Do not enter any value in all fields and register.
+14.Check HTML, Javascript, SQL support in all fields
+15.Enter valid value in some fields, and don't enter in others - try to use different combinations.
+16.Enter valid value in pass field, enter email without @(at sign) in email field and register.
+
+15)Bug report - username field must be filled
+
+Login - username field is not required to log in
+STR:
+1. Go to log in screen, being unauthorized and registered.
+2. Fill all required fields to authorize, except username field.
+
+screenshot
+
+AR: log in successfully
+ER: <<enter your username>> message appears
+Severity: Critical
+Environment: OS, browser
+
+16)smoke testing for viber
+
+1. Open application.
+2. Register.
+3. Make and receive a call.
+4. Send and receive a Text Message.
+5. Make and receive a video call.
+6. Send and receive an image.
+7. Make contacts and check that contacts are available.
+
+17)Bug report for broken kettle
+
+Kitchen, kettle bottom has hole
+STR:
+1. Go to the kitchen to make tea.
+2. Fill the kettle with water.
+
+screenshot
+
+AR: water goes through kettle bottom outside
+ER: kettle is filled with water
+Severity: Critical
+Environment: address, financial status
+
+18)Test types and techniques to web calculator that only divides from 0,1 to 99,9
+
+I will use Boundary Value Analysis technique and Pairwise Testing Technique to drive positive and negative testing.
+
+It is necessary to make pairs of -1;-0,1;0;0,1;99,9;100 numbers and test with these numbers as input data.
+
+Also, we can make ux-test of such characteristics as a using comfort, interface colors' niceness and symbols displaying.
+
+19)Equivalence Partitioning tests
+
+The health program for employees:
+1.Employees who consume 15 units or fewer of alcohol per week receive 10% higher salary.
+2.Employees who take part in special health program receive 12% higher salary.
+3.Employees who take part in forced health program receive 20% higher salary
+when having a body mass index (BMI) of 25.5 or less, and 15% higher salary for BMIs under 30.
+4.Non-smokers receive 30% higher salary.
+5.Smokers, who've joined a course to stop smoking receive 25% higher salary.
+6.Smokers, who haven't joined the smoking cessation receive 2% lower salary.
+
+Using the equivalence class technique, how many tests should be written to cover conditions at 100%?
+
+1.2 - positive and negative.
+2.2 - positive and negative.
+3.3 - BMI 25 and BMI 30 and negative.
+4.+5.+6.:3 - non-smokers and smoking cessation smokers and smokers
+=10 tests will cover these conditions.
+
+20)Minimal test number for auto insurance
+
+Cases:
+a) people under 18 don't receive insurance;
+b) for men with red auto insurance costs 15% more;
+c) for women from 18 to 64 insurance is reduced by 20$;
+d) for men from 18 to 64 insurance is reduced by 25$;
+e) for people under 64 insurance is reduced by 30$;
+
+If the program answers on input of gender, age and presence of man's red car,
+count of tests: 
+1.age zero, any gender
+2.age 17, any gender
+3.age 18, woman
+4.age 18, man
+5.age 18, man, red car
+6.age 18, woman, red car
+7.age 64, man
+8.age 64, woman
+9.age 65, man
+10.age 65, woman
+11.maximum age, any gender

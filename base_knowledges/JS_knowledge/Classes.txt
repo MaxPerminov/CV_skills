@@ -1,0 +1,84 @@
+Class allows to create prototypes (templates of objects).
+Then, using these templates it's possible to create exemplares
+of class - new objects with inherited or new properties. 
+
+class Car {
+    constructor(a, b, c) {
+        this.model = a
+        this.color = b
+        this.year = c
+        }
+    buying() {
+        console.log(`${this.color} ${this.model} has been bought`)
+        
+    }
+}
+const mazda = new Car("Miata", "Red", 1989)
+const honda = new Car("Civic", "Green", 1993)
+const nissan = new Car("Silvia", "Yellow", 1995)
+console.log(mazda)
+nissan.buying()
+----------------------------------------------------------------------
+class Comment { 
+    constructor (text) {  //<constructor> called, when creating new exemplar
+        this.text = text //<this> endows object-inheritor with property and
+        this. votesQty = 0//refers to it. 
+    }
+    upvote() { //<upvote> method will be inherited by all class' exemplares 
+        this.votesQty += 1
+   }
+}
+----
+//exemplar creating
+const firstComment = new Comment("First comment")// calling constructor
+                                                //function;<new> - operator;
+----
+Prototype's chain in JS:
+<firstComment> -> exemplar of <Comment> and inherits from <constructor> of
+ it; <Comment> -> inherits <Object> properties
+----
+//hasOwnProperty method checks belonging of property to constructor
+(in devTools console and node.js)
+firstComment.hasOwnProperty("text")       //true
+firstComment.hasOwnProperty("votesQty")  //true
+firstComment.hasOwnProperty("upvote")   //false -  <upvote> it's an
+                                       // object's property
+----
+creation of several exemplares:
+
+const secondComment = new Comment("2comment")
+const thirdComment = new Comment("3comment")
+----
+static methods - uninheritable class' properties:
+
+class Comment { 
+    constructor (text) {  
+        this.text = text 
+        this. votesQty = 0
+    }
+    upvote() { 
+        this.votesQty += 1
+    }
+    static mergeComments (a, b) {//  static method
+        return `${a} ${b}`
+    }
+}
+Comment.mergeComments("Text1", "Text2")
+-------------------------------------------------------------------------
+//Extension of other classes: the <extends> keyword is used to create a
+child class of another class (parent).
+
+//Let's create class <SumArray> (with all properties of already existing
+class <Array> + method <sum()>). And then - object <myArray> with 100, 200
+as arguments:
+
+class SumArray extends Array {// parental(of <Array>) constructor will be  
+    sum() {                      //called automatically
+        return this.reduce ((acc, el) => acc += el, 0)
+    }    
+}
+const myArray = new SumArray (100,200)
+-------------------------------------------------------------------------
+//Prototype is an object of class, that contains constructor and other 
+possible properties;
+<.prototype> of class === <__proto__> of class' exemplar

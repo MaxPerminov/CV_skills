@@ -1,0 +1,75 @@
+1)why do we need test documentation; types of it
+
+It provides testers with reliable data to plan and execute.
+It coordinates the development team:
+0.User cases and check list.
+1.Master plan.
+2.Test plan.
+3.Requirement traceability matrix(RTM).
+4.Test suit.
+5.Test scenario(any capability, that can be evaluated).
+6.Test case.
+7.Test execution report.
+8.Bug report.
+
+2)what is testplan, what are elements of test plan
+
+Test plan is a document. It contains objectives, resources, and processes of product testing.
+IEEE 829:
+а) Test plan identifier;
+b) Introduction;
+c) Test items;
+d) Features to be tested;
+e) Features not to be tested;
+f) Approach;
+g) Item pass / fail criteria;
+h) Suspension criteria and resumption requirements;
+i) Test deliverables;
+j) Testing tasks;
+k) Environmental needs;
+l) Responsibilities;
+m) Staffing and training needs;
+n) Schedule;
+o) Risks and contingencies;
+p) Approvals.
+
+It is important because all high-level scenarios, business requirements and estimates
+are situated in one place
+
+3)what's Traceability Matrix
+
+Traceability Matrix - is a table, that shows how requirements are covered by testcases.
+In rows are situated test cases, in columns - requirements. 
+Intersection cell shows if requirement is covered by a testcase.
+
+4) what is the difference between checklist and testcase
+
+The Checklist consists of a list, every item of which points at what must be tested.
+Test case points at what must be tested, but contains detailed instruction
+(preconditions, steps, results).
+
+5) what are test case attributes
+
+1. Unique ID
+2. Summary
+3. Preconditions
+4. Description:
+-steps to reproduce with an expected result
+
+6)what are user stories and acceptance criteria
+
+User story - explanation of a software feature written from the perspective of the customer.
+User story scheme: As a <role> I want <functionality> so that <benefit> 
+User story Example: As a user I want to have access to write letter function, so that I can
+write letters
+User story divides into acceptance Criteria - basis for checklist
+-Acceptance Criteria 1: As a user I want to have ability to choose letter recipient,
+so that I can write letters to concrete people
+-Acceptance Criteria 2: As a user I want to have ability to send mp3 files, so that I can send
+ music
+-Acceptance Criteria 3: As a user I want to have ability to choose 7 letter recipients at
+once, so that I can write one letter, not seven
+
+7)what is the basis for checklist
+
+the basis for checklist is product requirements

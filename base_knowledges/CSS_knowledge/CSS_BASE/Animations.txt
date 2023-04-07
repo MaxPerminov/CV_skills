@@ -1,0 +1,114 @@
+
+Animation - allows to animate a transition of one set of properties to the second set
+of properties, then to the third, the fourth etc... It's able to cycle and stop
+animation.
+
+----------------------------
+1 - setting keyframes:
+<@keyframes> <animation name> <{>
+<from { property }> - initial state;
+<%{ property }> - transition states;
+<to{ property }> - final state <}>.
+
+----
+or
+
+----
+<@keyframes> <animation name> <{>
+<0% { property }> - initial state;
+<%{ property }> - transition states;
+<100%{ property }> - final state <}>.
+
+----
+2 - defining of animation proceeds in declaration block of element's selector:
+
+animation-delay: 3s;
+               :-3s;
+
+animation-direction: reverse;
+                   : alternate;
+                   : alternate-reverse;
+
+animation-duration: 5s;
+
+animation-fill-mode: forwards; - specifies a style for the element before animation
+                   : backwards;              starts, ends, or both
+                   : both;
+
+animation-iteration-count: infinite; - specifies the number of times an animation
+                                       should run.
+
+animation-name: myAnimation;
+animation-play-state: paused;
+
+animation-timing-function: linear; - specifies the speed curve of the animation.
+                         : ease-in-out;
+----
+Animation shorthand property(delay presents only if duration presents):
+
+<animation: animation-name animation-duration animation-timing-function
+           animation-delay animation-iteration-count animation-direction>:
+
+animation: example 5s linear 2s infinite alternate;
+---------------------------------------------------
+Several animations can be applied for the element.
+
+---------------------------------------------------
+For smooth animation the final state should be the same, as the initial,
+or it's necessary to use <animation-direction: reverse>.
+
+_________________________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS/CSS Learnings</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="example"></div>
+  </body>
+</html>
+
+-----------------------------------------------------------------------------------
+styles.css
+
+----
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.example {
+  border: 2px solid black;
+  width: 200px;
+  height: 200px;
+  background-color: aqua;
+  /* animation-name: myAnimation;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+  animation-delay: 3s; */
+  animation: bgChange 5s linear infinite, sizeChange 5s linear infinite;
+}
+.example:hover {
+  animation-play-state: paused;
+}
+@keyframes bgChange {
+  from { background-color: aqua; }
+  50% {background-color: red;}
+  to {background-color: green;}
+}
+@keyframes sizeChange {
+  from { transform: scale(1); }
+  50% {transform: scale(1.2); }
+  to { transform: scale(1); }
+}

@@ -1,0 +1,24 @@
+Statements are programming instructions. It differs in syntax from
+expressions by adding the semicolon to the end of statement. Statements
+can not be used as arguments during function calling.
+
+let a; // ends with semicolon
+----
+const b = 5;                 // every statement must be on different lines
+----
+if (a > b) {
+    console.log("a is larger");
+}                         //it's no need to put semicolon after block ending 
+----
+for (let i = 0; i++; i<5) {
+    console.log(i);
+}
+-----------------------------------------------------------
+expression-statements
+
+"abc";
+a = a + 3;
+c = a + b;
+d = "Good" + "Evening";
+myFunction(c, d);
+console.log("Hey");

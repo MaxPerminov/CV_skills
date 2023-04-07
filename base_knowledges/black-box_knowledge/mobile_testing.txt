@@ -1,0 +1,53 @@
+1) At what is necessary to pay attention when testing mobile apps
+
+- screen rotation;
+- a mobile device is in permanent condition of searching network;
+- incoming calls, sms, battery discharge interruptions;
+- features of advertising;
+- it is necessarily to test energy consumption of application.
+
+2)what are types of mobile apps
+
+Educational apps - Duolingo
+Lifestyle apps - Uber
+Social media apps - Facebook
+Productivity apps - calculator
+Entertainment apps - YouTube
+Game apps - NFS Asphalt 
+
+native - designed for current mobile platform
+hybrid - cross-platform
+web apps - that can be launched with a mobile device
+
+3)what file formats stores app archives for android and iOS
+
+The Android Package (apk file extension) is the file format,
+used by the Android operating system for distribution and installation of apps.
+
+App Store Package (ipa file extension) is an iOS application archive
+file, which stores an iOS app.
+
+4)what is ADB
+
+The Android Debug Bridge (ADB) is a programming tool used for
+the debugging of Android-based devices. It is a command-line tool
+that lets you communicate with an Android-based device through PC.
+
+5)how to test face_id
+
+test scanning of face from distance in range of 25–50 cm
+test scanning of face from 10 cm
+test scanning of face from 1m
+test scanning of face using portrait orientation
+test scanning of face using landscape orientation
+test unlocking the device via face_id
+test in-app verification via face_id
+test scanning of face when wearing face-mask
+test scanning of face when wearing glasses
+test scanning of face when hair is covering the face
+test scanning of not face
+test scanning of two faces
+test scanning of half face
+test scanning of face during a phone call
+test scanning of face when receiving sms
+test scanning of face when there is a battery of low charge

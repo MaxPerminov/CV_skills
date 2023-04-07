@@ -1,0 +1,85 @@
+1)type:
+
+    -checkbox:
+        -checked.
+
+    -image;
+
+    -radio:
+        -checked;
+        -name - should be the same to be able choosing one radio option
+
+2)value - is used differently for different input types:
+
+For <button>, <reset>, and <submit> - it defines the text on the button.
+For <text>, <password>, and <hidden> - it defines default value of the input field.
+For <checkbox>, <radio>, <image> - it defines the value associated with the input
+                                    (this is also the value that is sent on submit).
+
+3)list
+    <datalist> - specifies a list of pre-defined options. It is used to provide an
+                "autocomplete" feature. id must be equal to list attribute value
+                (this binds them together).
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Learnings</title>
+</head>
+<body>
+  
+  <!-- Submit & reset buttons with value -->
+  <input type="submit" value="Submit form"><br>
+  <input type="reset" value="Reset form"><br>
+  <hr>
+
+  <!-- Hidden -->
+  <input type="hidden" value="webDev">
+  <hr>
+
+  <!-- List of options -->
+  <input type="text" list="a">
+  <datalist id="a">
+    <option value="Front-end">
+    <option value="Back-end">
+    <option value="Full-stack">
+  </datalist>
+  <hr>
+
+  <!-- Image -->
+  <input type="image" src="https://picsum.photos/300/300" aria-label="Just img">
+  <hr>
+
+  <!-- Checkbox with label -->
+  <label>
+    <input type="checkbox" value="option1" checked>
+    Front-end dev
+  </label><br>
+  <label>
+    <input type="checkbox" value="option2">
+    Back-end dev
+  </label><br>
+  <label>
+    <input type="checkbox" value="option3">
+    Full-stack dev
+  </label>
+  <hr>
+
+  <!-- Radio with label -->
+  <label>
+    <input type="radio" name="a" value="option1">
+    Front-end dev
+  </label><br>
+  <label>
+    <input type="radio" name="a" value="option2"checked>
+    Back-end dev
+  </label><br>
+  <label>
+    <input type="radio" name="a" value="option3">
+    Full-stack dev
+  </label>
+  <hr>
+</body>
+</html>

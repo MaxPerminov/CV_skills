@@ -1,0 +1,113 @@
+-autofocus - makes an input or an button automatically focused when the page loads.
+
+-aria-label - defines a string and provides information about the structure of
+ the document for users using assistive technology. Can be used with:
+                                        <select>;
+                                        <textarea>;
+                                        <button>;
+                                        <a>(when href=”#” is in use);
+                                        <audio>/<video>(when control=”#” is in use).
+
+-class - specifies a class for an HTML element.
+-contenteditable - allows edit content.
+-dir - allows to change text direction.
+-disabled - disables an element.
+
+-hidden - hides an element from user until other condition has been met (with JS
+    help).
+
+-id - specifies a unique id for an HTML element.
+-lang - specifies language style for text.
+-maxlength - sets max length of input.
+-placeholder - fills input field with hint.
+-readonly - specifies that an input is read-only.
+-required - specifies that the input must be filled out before submitting.
+-reset - specifies an input or a button to reset entered data.
+-spellcheck - allows having grammar checking.
+-style - specifies an inline style for an element (overrides styles set globally).
+-submit -  specifies an input or a button to submit entered data.
+-tabindex - specifies the order of elements selecting when user uses tab.
+
+-title - specifies extra information about an element (shown as a tooltip
+    when the mouse moves over the element).
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTML Learnings</title>
+</head>
+<body>
+
+  <!-- Input attributes -->
+  <textarea  cols="20" rows="5" autofocus></textarea><br>
+  <textarea  cols="20" rows="5" disabled></textarea><br>
+  <textarea  cols="20" rows="5" readonly>This text you can't change</textarea><br>
+  <textarea  cols="20" rows="5" placeholder ="your message..."></textarea><br>
+  <textarea  cols="20" rows="5" maxlength="5"></textarea><br>
+  <textarea  cols="20" rows="5" required></textarea><br>
+  <hr>
+
+  <!-- Submit & reset  -->
+  <input type="submit"><br>
+  <input type="reset"><br>
+  <hr>
+
+  <!-- ID -->
+  <h1 id="heading">Simple text</h1>
+  <hr>
+
+  <!-- Class -->
+  <p class="text idea">Simple text</p>
+  <p class="text">Simple text 2</p>
+  <hr>
+
+  <!-- Title -->
+  <h2 title="HyperText Markup Language">HTML</h2>
+  <hr>
+
+  <!-- Inline styles -->
+  <h2 style="color: red;">CSS</h2>
+  <hr>
+
+  <!-- Contenteditable -->
+  <h2 contenteditable="true">This content you can change</h2>
+  <hr>
+
+  <!-- Spellcheck -->
+  <textarea name="text" spellcheck="true" cols="45" rows="10">
+    This text cantain a cople misstakes
+  </textarea>
+  <hr>
+
+  <!-- Hidden -->
+  <h2 hidden>Hidden content</h2>
+  <hr>
+
+  <!-- Without tabindex -->
+  <input type="text" placeholder="name"><br>
+  <input type="text" placeholder="password"><br>
+  <input type="button" value="Submit"><br>
+  <hr>
+
+  <!-- With tabindex -->
+  <input type="text" placeholder="name" tabindex="1"><br>
+  <input type="text" placeholder="password" tabindex="3"><br>
+  <input type="button" value="Submit" tabindex="2"><br>
+  <hr>
+
+  <!-- Text direction -->
+  <h2 dir="rtl">Hello World!</h2>
+  <hr>
+
+  <!-- Language -->
+  <h2 lang="fr"><q>Hello World!</q></h2>
+  <h2 lang="en"><q>Hello World!</q></h2>
+  <hr>
+
+  <!-- Aria-label -->
+  <input type="image" src="https://picsum.photos/300/300" aria-label="Just img">
+  <hr>
+</body>
+</html>

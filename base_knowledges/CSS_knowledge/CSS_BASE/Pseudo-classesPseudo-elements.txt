@@ -1,0 +1,325 @@
+                                 Pseudo-classes selects:
+
+:active	                a:active	             the active link
+:checked	            input:checked	         every checked <input> element
+:disabled	            input:disabled	         every disabled <input> element
+
+:empty	                p:empty	                 every <p> element that has no
+                                                 children
+
+:enabled	            input:enabled	         every enabled <input>
+
+:focus	                input:focus	             the <input> element that has focus
+:hover	                a:hover	                 links on mouse hover
+
+:in-range	            input:in-range	         <input>, with min and/or max
+                                                 attributes, that has a value within
+                                                 a specified range
+
+:invalid	            input:invalid	         all <input> elements with an
+                                                 invalid value
+
+:lang                   p:lang(it)	             every <p> element with a lang
+                                                 attribute value starting with "it"
+
+:link	                a:link	                 all unvisited links
+
+:not	                :not(p)	                 every element that is not a <p>
+                                                 element
+
+:optional	            input:optional	         <input> elements with no "required"
+                                                 attribute
+
+:out-of-range	        input:out-of-range	     <input>, with min and/or max
+                                                 attributes, that has a value outside
+                                                 a specified range
+
+:read-only	            input:read-only	         "readonly" <input> elements
+:read-write	            input:read-write	     not "readonly" <input> elements
+
+:required	            input:required	         <input> elements with a "required"
+                                                 attribute specified
+
+:root	                root	                 the document's root element(<html>)
+
+:target	                #news:target	         the current active #news target
+                                                 element. Target element is the
+                                                 element that is the target of anchor name
+                                                 link
+
+:valid	                input:valid	             all <input> elements with a valid
+                                                 value
+works for form elements with limitations, such as input elements with min and max
+attributes, email fields with a legal email, or number fields with a numeric value,
+etc.
+
+
+:visited	            a:visited	             all visited links:
+
+                                :visited styles: color;
+                                                 background-color;
+                                                 border-color (and border-color for
+                                                                    separate sides);
+                                                 outline color;
+                                                 column-rule-color;
+                                                 the color parts of fill and stroke;
+
+----
+p {
+  display: none;
+  background-color: yellow;
+  padding: 20px;
+}
+
+div:hover p {
+  display: block;
+}
+
+----
+Note a:hover MUST come after a:link and a:visited in the CSS definition in order to
+be effective! a:active MUST come after a:hover in the CSS definition in order to be
+effective!
+
+____________________________________________________________________________________
+                            Pseudo-classes-children selects:
+
+:first-child	        p:first-child	         every <p> elements that is the
+                                                 first child of its parent
+
+:first-of-type	        p:first-of-type	         every <p> element that is the first
+                                                 <p> element of its parent
+
+:last-child	            p:last-child	         every <p> elements that is the last
+                                                 child of its parent
+
+:last-of-type	        p:last-of-type	         every <p> element that is the last
+                                                 <p> element of its parent
+
+:nth-child(n)	        p:nth-child(2)	         every <p> element that is the
+                                                 second child of its parent
+
+:nth-last-child(n)	    p:nth-last-child(2)	     every <p> element that is the
+                                                 second child of its parent,
+                                                 counting reverse
+
+:nth-last-of-type(n)	p:nth-last-of-type(2)	 every <p> element that is the
+                                                 second <p> element of its parent,
+                                                 counting reverse
+
+:nth-of-type(n)	        p:nth-of-type(2)	     every <p> element that is the
+                                                 second <p> element of its parent
+
+:only-of-type	        p:only-of-type	         every <p> element that is the only
+                                                 <p> element of its parent
+
+:only-child	            p:only-child	         every <p> element that is the only
+                                                 child of its parent
+
+Note. :nth pseudo-classes can take <even>, <odd> and  <xn + y> expression as an
+argument.
+
+__________________________________________________________________________________
+                                    Pseudo-elements:
+
+::after	               p::after	            Insert content after every <p> element;
+                                            <content> property must be used
+
+::before	           p::before	        Insert content before every <p> element;
+                                            <content> property must be used
+
+::first-letter	       p::first-letter	    Selects the first letter of every <p>
+
+                            ::first-letter: font properties;
+                                            color;
+                                            background;
+                                            margin;
+                                            padding;
+                                            border;
+                                            text-decoration;
+                                            vertical-align (only if float is 'none');
+                                            text-transform;
+                                            line-height;
+                                            float;
+                                            clear;
+
+
+
+::first-line	       p::first-line	    Selects the first line of every <p>
+
+                               ::first-line: font properties;
+                                             color properties;
+                                             background properties;
+                                             word-spacing;
+                                             letter-spacing;
+                                             text-decoration;
+                                             vertical-align;
+                                             text-transform;
+                                             line-height;
+                                             clear;
+
+
+
+::selection	           p::selection	        Selects selected by a user element
+
+                               ::selection: color;
+                                            background;
+                                            cursor;
+                                            outline;
+
+----
+Note: The ::first-letter, ::first-line	selectors can only be used with block-level
+elements.
+
+____________________________________________________________________________________
+index.html
+
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS/CSS3 Basics</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- link -->
+    <a href="https://www.youtube.com/YauhenKavalchuk">webDev YouTube channel</a>
+    <hr />
+    <!-- text -->
+    <p>
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium
+      voluptas cupiditate quam nemo incidunt nulla asperiores nesciunt, commodi
+      autem numquam.
+    </p>
+    <hr />
+    <!-- after/before -->
+    <h1>webDev</h1>
+    <hr />
+    <!-- first/last -->
+    <ul class="list1">
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+      <li>Four</li>
+      <li>Five</li>
+      <li>Six</li>
+    </ul>
+    <hr />
+    <!-- even/odd -->
+    <ul class="list2">
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+      <li>Four</li>
+      <li>Five</li>
+      <li>Six</li>
+    </ul>
+    <hr />
+    <!-- nth-child -->
+    <ul class="list3">
+      <li>One</li>
+      <li>Two</li>
+      <li>Three</li>
+      <li>Four</li>
+      <li>Five</li>
+      <li>Six</li>
+    </ul>
+    <hr />
+    <!-- *-of-type -->
+    <span class="text">
+      <span>First SPAN text</span>
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, repudiandae.</div>
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, repudiandae.</div>
+      <span>Second SPAN text</span>
+      <span>Last SPAN text</span>
+    </div>
+    <hr />
+    <!-- not -->
+    <ul class="list4">
+      <li class="item">One</li>
+      <li class="item">Two</li>
+      <li>Three</li>
+      <li>Four</li>
+      <li class="item">Five</li>
+      <li>Six</li>
+    </ul>
+  </body>
+</html>
+
+------------------------
+styles.css
+
+----
+a {
+  color: black;
+  text-decoration: none;
+}
+/*pseudo classes*/
+a:hover {
+  color: red;
+}
+a:visited {
+  color: aqua;
+}
+a:active {
+  color: green;
+}
+a:focus {
+  font-weight: bold;
+}
+/*pseudo elements*/
+p::first-letter {
+  font-size: 40px;
+}
+p::first-line {
+  text-decoration: underline;
+}
+p::selection {
+  background-color: yellow;
+  color: red;
+}
+h1::before {
+  content: "This is ";
+  text-transform: uppercase;
+}
+h1::after {
+  content: " channel";
+  color: red;
+}
+/*other selectors*/
+.list1 li:first-child {
+  color: blue;
+}
+.list1 li:last-child {
+  color: green;
+}
+.list2 li:nth-child(even) {
+color: blue;
+}
+.list2 li:nth-child(odd) {
+color: green;
+}
+.list3 li:nth-child(2) {
+color: blue;
+}
+.list3 li:nth-child(3) {
+color: green;
+}
+.list3 li:nth-child(3n + 1) {
+text-transform: uppercase;
+}
+.list3 li:nth-child(4n + 2) {
+border: 1px solid black;
+}
+.text span:first-of-type {
+  color:red;
+}
+.text span:last-of-type {
+  color: green;
+}
+.text span:nth-of-type(2) {
+   border: 1px solid black;
+}
+.list4 li:not(.item) {
+  border: 1px solid black;
+}

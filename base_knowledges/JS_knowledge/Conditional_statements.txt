@@ -1,0 +1,124 @@
+1)if: 
+
+if  (condition) {
+    code block executes once, when condition is
+true
+}: 
+
+let val = 10
+if(val>5) {
+    val += 20
+}
+----
+const person = {
+    age:20
+}
+if (!person.name) {
+    console.log("No name")
+}
+-------------------------------------------
+2)if  else:
+
+if (condition) {
+    code block executes once, when condition is
+true
+} else {
+    code block executes once, when condition is
+false
+}:
+
+let val = 10
+if(val<5) {
+    val += 20
+} else {
+    val -= 20
+}
+--------------------------------------------------
+3)if; else if; else:
+
+if  (condition) {
+    code block executes once, when condition is
+true
+} else if (condition2) {
+    code block executes once, when condition is
+false and condition2 is true
+}
+else {
+    code block executes once, when previous conditions are
+false
+}:
+
+const age = 35
+if (age>=18) {
+    console.log("Is adult")
+} else if (age>=12) {
+    console.log("Teen")
+} else {
+    console.log("Child")
+}
+--------------------------------------------------
+//using if in function:
+
+const sumPositiveNums = (a,b) => {
+    if (typeof a !== "number" || typeof b !== "number"){
+        return "One of the args isn't a num"
+    }
+    if (a <=0 || b<=0) {
+    return "nums aren't positive"
+    }
+return a + b
+}
+--------------------------------------------------------------------------
+4) switch:
+
+switch(expression) {
+    case A:
+      //execution, if expression === A 
+      break
+    case B:
+      //execution, if expression === B
+      break
+    default:
+      //default execution
+}:
+
+const month = 2
+switch (month) {
+    case 12:
+        console.log("December")
+        break
+    case 1:
+        console.log("January")
+        break
+    case 2:
+        console.log("February")
+        break
+    default:
+        console.log("Isn't a winter month")
+}
+---------------------------------------------------------------------
+5)ternary operator - is an expression
+
+//condition ? Expression 1 : Expression 2
+if condition true, Expression 1 returns
+if condition false, Expression 2 returns:
+
+const value = 11
+value  ? console.log("true") : console.log("false")
+----
+function myFunct(x,y) {
+    const z = x + y
+    return z
+}
+function myFunct2() {
+    console.log("wrong")
+}
+const value = 11
+const value2 = null
+value && value2 ? console.log(myFunct(value, value2)) : myFunct2()
+----
+let value = 11
+console.log(value>=0 ? value: -value)
+value = -5
+const res = value >= 0 ? value: -value
+console.log(res)

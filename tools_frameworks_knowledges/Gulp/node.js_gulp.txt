@@ -1,0 +1,36 @@
+Node.js an open source, cross-platform runtime environment for executing JavaScript code, mostly on servers
+
+______________________________________________________________________________________________________
+
+A code package is a way of organizing a set of dependent files in a folder structure.
+Each code package has a main executable file that in turn accesses other files in the code package.
+
+______________________________________________________________________________________________________
+
+npm - Node Package Manager, contains over 800,000 code packages.
+The content of package.json must be written in JSON.
+
+______________________________________________________________________________________________________
+npm commands:
+1. npm rm --global gulp ## remove old gulp
+2. gulp -v ## check gulp version
+3. npm init ## initialization
+4. npm init -y ## quick initialization
+
+5. npm install <name> ##installing package:
+-$ npm install --global gulp-cli ##instal gulp task runner(its neccesarilly to create
+gulpfile.js in the root of project)
+-$ npm install --save-dev gulp ## make gulp save files in development section
+
+-$ npm install --save-dev gulp-babel @babel/core @babel/preset-env ## to convert ECMAScript 2015+ to
+a backwards compatible version of JavaScript in current and older browsers or environments
+
+-$ npm install --save-dev gulp-uglify ## minimilize code
+-$ npm install --save-dev gulp-concat ## making main file
+-$ npm install --save-dev gulp-clean ## removes specofied files
+6. npm -i ## install dependencies(for example - when clone, install ignored node_modules)
+-----------------------------------------------------
+package.json - project settings file
+
+----
+code - lesson3
