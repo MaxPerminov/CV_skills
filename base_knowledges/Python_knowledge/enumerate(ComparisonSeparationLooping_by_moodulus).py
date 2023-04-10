@@ -43,6 +43,17 @@ for en, el in enumerate(a):
     print(el, end="")
 
 ###########################################################################
+# Applying something to all iterations, except for the last:
+number = "1243579"
+for i, numeral in enumerate(number):
+    if i != len(number)-1:
+        print(numeral)
+
+
+# i = (len(number) - 1)  only on last i, so this statement allows
+# applying something to all iterations, except for the last.
+
+###########################################################################
 # looping iterable's elements using enumerate and modulus division:
 
 x = "abc"
