@@ -4,6 +4,11 @@ for i, j in enumerate(string1, 1):  # i - enumeration, j - iterated list's eleme
 x = (list(enumerate(string1, 10)))  # returns tuples of pair(enumeration and iterated list's element)
 print(x)
 
+#####
+# comprehension
+a = "abc"
+print([str(i)+": " + x for i, x in enumerate(a)])
+
 #############################################################################
 # Pairwise comparison:
 x = [10, 20, 30, 40, 10]

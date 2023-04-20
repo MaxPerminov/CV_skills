@@ -1,5 +1,5 @@
-let iters = "abcqwerty"
-len(itets) = 9
+iters = "abcqwerty"
+len(iters) = 9
 
 a (index=0, -9)
 b (index=1, -8)

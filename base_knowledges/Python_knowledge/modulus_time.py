@@ -16,3 +16,13 @@ seconds = 12345 % 60  # get remained seconds of minutes
 print(seconds)
 print()
 print("12345 sec is", hours, "hours", minutes, "minutes", seconds, "seconds")
+
+##########################################
+# converting 24-hour clock to 12-hour clock
+import time
+
+x = time.localtime().tm_hour % 12
+if x == 0:
+  x = 12
+
+print(x)
