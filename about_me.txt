@@ -14,7 +14,7 @@ Rapid Testing by Robert Culbertson
 Software Testing - Base Course (Svyatoslav Kulikov) - 3rd edition
 Roman Savin - Testirovanie dotcom
 Joseph M. Juran, A. Blanton Godfrey - Juran's Quality Handbook, fifth edition - up to section 7.2
-Al Sweigart - The Big Book of Small Python Projects - project 64 and from 1 up to project 21
+Al Sweigart - The Big Book of Small Python Projects - project 64 and from 1 up to project 23
 
 
 Typing speed: 60 WPM
