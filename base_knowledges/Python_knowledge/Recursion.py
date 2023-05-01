@@ -30,10 +30,12 @@ def int_sums(n):
 # 0,1,1,2,3,5,8,13
 
 # to make function that counts fibonacci nums: first, index the nums (to understand the function:)
-# 0,1,1,2,3,5,8 = 0,1,2,3,4,5,6
+# 0,1,1,2,3,5,8 = 1,2,3,4,5,6,7
 
 def fib(n):
-    if n in (0, 1, 2):
+    if n == 1:
+        return 0
+    elif n == 2:
         return 1
     return fib(n-1) + fib(n-2)
 
@@ -47,29 +49,29 @@ def fib(n):
 # fib(3)(l) = fib(2)(l) + fib(1)(r)
 # fib(2)(l) = 1
 # fib(3)(l) = fib(2)(l)(1) + fib(1)(r)
-# fib(1)(r) = 1
-# fib(3)(l) = fib(2)(l)(1) + fib(1)(r)(1) = 2
-# fib(4)(l) = fib(3)(l)(2) + fib(2)(r)
+# fib(1)(r) = 0
+# fib(3)(l) = fib(2)(l)(1) + fib(1)(r)(0) = 1
+# fib(4)(l) = fib(3)(l)(1) + fib(2)(r)
 # fib(2)(r) = 1
-# fib(4)(l) = fib(3)(l)(2) + fib(2)(r)(1) = 3
-# fib(5)(l) = fib(4)(l)(3) + fib(3)(r)
+# fib(4)(l) = fib(3)(l)(1) + fib(2)(r)(1) = 2
+# fib(5)(l) = fib(4)(l)(2) + fib(3)(r)
 # fib(3)(r) = fib(2)(l1) + fib(1)(r1)
 # fib(2)(l1) = 1
 # fib(3)(r) = fib(2)(l1)(1) + fib(1)(r1)
-# fib(1)(r1) = 1
-# fib(3)(r) = fib(2)(l1)(1) + fib(1)(r1)(1) = 2
-# fib(5)(l) = fib(4)(l)(3) + fib(3)(r)(2) = 5
-# fib(6) = fib(5)(l)(5) + fib(4)(r)
+# fib(1)(r1) = 0
+# fib(3)(r) = fib(2)(l1)(1) + fib(1)(r1)(0) = 1
+# fib(5)(l) = fib(4)(l)(2) + fib(3)(r)(1) = 3
+# fib(6) = fib(5)(l)(3) + fib(4)(r)
 # fib(4)(r) = fib(3)(l2) + fib(2)(r2)
 # fib(3)(l2) = fib(2)(l2) + fib(1)(r2)
 # fib(2)(l2) = 1
 # fib(3)(l2) = fib(2)(l2)(1) + fib(1)(r2)
-# fib(1)(r2) = 1
-# fib(3)(l2) = fib(2)(l2)(1) + fib(1)(r2)(1) = 2
-# fib(4)(r) = fib(3)(l2)(2) + fib(2)(r2)
+# fib(1)(r2) = 0
+# fib(3)(l2) = fib(2)(l2)(1) + fib(1)(r2)(0) = 1
+# fib(4)(r) = fib(3)(l2)(1) + fib(2)(r2)
 # fib(2)(r2) = 1
-# fib(4)(r) = fib(3)(l2)(2) + fib(2)(r2)(1) = 3
-# fib(6) = fib(5)(l)(5) + fib(4)(r)(4) = 8
+# fib(4)(r) = fib(3)(l2)(1) + fib(2)(r2)(1) = 2
+# fib(6) = fib(5)(l)(3) + fib(4)(r)(2) = 5
 
 ##########################################################
 def factorial(n):
