@@ -6,7 +6,7 @@
 def sums(n):
     if n == 1:
         return 1
-    # (n-1) is not an expression, it is a value!!!
+    # (n-1) is not an expression, it is a value!!! parameters are not constant, they change during recursion!!!
     return n + sums(n-1)  # 4 + sums(3)  <-3 + sums(2)  <-2 + sums(1) <-1
 
 
