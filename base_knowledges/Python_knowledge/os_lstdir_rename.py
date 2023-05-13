@@ -1,7 +1,7 @@
 import os
 
 
-path = r"C:\Users\test"  # check path to contain files' folder 
+path = r"C:\Users\test"  # check path to contain files' folder
 
 files = os.listdir(path) 
 for i in files:
