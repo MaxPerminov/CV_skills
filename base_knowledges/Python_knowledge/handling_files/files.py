@@ -118,3 +118,15 @@
 # file1 = open("text2.txt", "w")
 # with file1:
 #     file1.writelines(text)
+
+#########################################################################################
+# editing file's lines
+
+# file1 = open("text1.txt", "r")
+# edited = []
+# with file1:
+#     for line in file1.readlines():
+#         edited.append("Edited " + line)
+# file1 = open("text1.txt", "w")
+# with file1:
+#     file1.writelines(edited)
