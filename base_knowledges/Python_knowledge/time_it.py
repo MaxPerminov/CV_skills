@@ -8,12 +8,13 @@
 # but can be sluggish with big code.
 
 # Check out the example below demonstrating the execution time difference
-# between 2 very similar list comprehension methods in Python:
+# between 2 very similar list comprehension methods in Python and with different number argument:
 
 
 import timeit
-lst1 = '''list(range(100))'''
-lst2 = '''[i for i in range(100)]'''
+lst1 = "list(range(100))"
+lst2 = "[i for i in range(100)]"
 a = timeit.timeit(lst1)
 b = timeit.timeit(lst2)
-print(a, b, sep="------")
+c = timeit.timeit(lst2, number=100)  # run it 100 times(default is 1000000)
+print(a, b, c, sep="------")
